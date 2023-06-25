@@ -80,6 +80,8 @@ When working with EC2, it's essential to understand the following key concepts:
 
 If you're new to AWS and want to learn how to create an EC2 instance and get started with AWS services, you can follow step-by-step tutorials and guides available in the AWS documentation and various online resources.
 
-> **Note:** If you face any issues during the account opening process, you can search for tutorials and guides on platforms like YouTube. Here's a helpful video tutorial: [AWS Account Creation Tutorial on YouTube](https://www.youtube.com/watch?v=f-T4xWUZWSk&ab_channel=GauravSharma)
-
+> **Note:** If you face any issues during the account opening process, you can search for tutorials and guides on platforms like YouTube. Here's a helpful video tutorial:
+## :movie_camera: Helpful Video Tutorials
+1. [AWS Account EC2 Instance Creation Tutorial on YouTube in English](https://www.youtube.com/watch?v=0Gz-PUnEUF0)
+2. [AWS Account EC2 Instance Creation Tutorial on YouTube in Hindi/English](https://www.youtube.com/watch?v=f-T4xWUZWSk&ab_channel=GauravSharma)
 </div>
