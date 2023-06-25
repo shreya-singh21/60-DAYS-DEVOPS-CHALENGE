@@ -4,7 +4,7 @@ In this folder, we will explore two topics: transferring files to a server using
 
 ## :arrow_up: Transferring Files to a Server using SCP Command
 
-SCP (Secure Copy) is a command-line utility in Linux that allows you to securely transfer files between your local machine and a remote server. It uses the SSH protocol for secure data transfer.
+scp (Secure Copy) is a command-line utility in Linux that allows you to securely transfer files between your local machine and a remote server. It uses the SSH protocol for secure data transfer.
 
 To transfer a file from your local machine to a remote server using SCP, follow these steps:
 
