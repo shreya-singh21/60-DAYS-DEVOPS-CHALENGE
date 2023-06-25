@@ -1,4 +1,3 @@
-
 # DAY 1 OF DEVOPS LEARNING
 
 ## :cloud: What is Cloud Computing?
@@ -39,5 +38,27 @@ There are three primary types of cloud computing models:
 1. **Infrastructure as a Service (IaaS):** Provides virtualized computing resources such as virtual machines, storage, and networks, allowing users to build and manage their own infrastructure within the cloud environment.
 2. **Platform as a Service (PaaS):** Offers a platform for developing, testing, and deploying applications without the need to manage the underlying infrastructure. It provides a framework and runtime environment for developers.
 3. **Software as a Service (SaaS):** Delivers software applications over the internet on a subscription basis. Users can access and use the applications without having to worry about installation, maintenance, or infrastructure management.
+
+## :white_check_mark: AWS (Amazon Web Services)
+
+Amazon Web Services (AWS) is one of the leading cloud platform providers. It offers a wide range of cloud services and solutions, including computing power, storage, databases, machine learning, and more.
+
+### :free: How to Open an AWS Account for Free
+
+To open an AWS account for free, follow these steps:
+
+1. Visit the [AWS Free Tier](https://aws.amazon.com/free/) page.
+2. Click on the "Create a Free Account" button.
+3. Follow the on-screen instructions to provide your email address, set up a password, and enter your personal information.
+4. Provide your payment information, although you will not be charged unless you exceed the free tier limits or use services not covered by the free tier.
+5. Complete the verification process by providing a valid phone number.
+6. Review the AWS Customer Agreement and click on "Create Account and Continue."
+7. You will receive an email from AWS with further instructions to activate your account.
+8. Follow the email instructions to activate your account and access the AWS Management Console.
+
+**If you face any issues during the account opening process, you can search for tutorials and guides on platforms like YouTube. Here's a helpful video tutorial: [AWS Account Creation Tutorial on YouTube](https://www.youtube.com/watch?v=QDymcZ5xYow&ab_channel=GauravSharma)**
+
+
+Congratulations! You have successfully created your free AWS account. You can now explore the various AWS services and start building your cloud applications.
 
 </div>
