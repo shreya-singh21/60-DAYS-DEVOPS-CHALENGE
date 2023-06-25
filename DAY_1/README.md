@@ -1,6 +1,6 @@
-<div align="center">
+
 ![DevOps Logo](https://www.dayone-ent.com/)
-</div>
+
 
 # DAY 1 OF DEVOPS LEARNING
 
