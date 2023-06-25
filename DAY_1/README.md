@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dayone-ent.com%2F&psig=AOvVaw1D1hNURUUNlCCG-_1-p4MN&ust=1687773550438000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJiv48uU3v8CFQAAAAAdAAAAABAE" alt="DevOps Logo">
+![DevOps Logo](https://www.dayone-ent.com/)
 </div>
 
 # DAY 1 OF DEVOPS LEARNING
