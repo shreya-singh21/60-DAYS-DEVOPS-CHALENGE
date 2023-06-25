@@ -1,6 +1,3 @@
-<div align="center">
-  <img src="https://your-image-url" alt="DevOps Logo">
-</div>
 
 # DAY 1 OF DEVOPS LEARNING
 
