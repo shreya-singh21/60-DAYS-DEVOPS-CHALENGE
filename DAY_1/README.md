@@ -1,7 +1,4 @@
 
-![DevOps Logo](https://www.dayone-ent.com/)
-
-
 # DAY 1 OF DEVOPS LEARNING
 
 ## :cloud: What is Cloud Computing?
