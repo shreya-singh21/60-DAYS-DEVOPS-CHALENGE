@@ -1,4 +1,4 @@
-# 60-DAYS-DEVOPS-CHALENGE# DevOps 60-Day Challenge
+# DevOps 60-Day Challenge
 
 Welcome to the DevOps 60-Day Challenge! This challenge is designed to help you learn and explore various aspects of DevOps, including cloud computing, infrastructure automation, continuous integration and deployment, and more. Each day, you will focus on a specific topic and document your learnings in a corresponding folder.
 
