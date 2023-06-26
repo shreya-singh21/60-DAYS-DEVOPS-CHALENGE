@@ -84,6 +84,8 @@ Lower Total Cost of Ownership: One of the biggest benefits of SaaS is that it lo
 
 Better Security: Another benefit of SaaS is improved security. Since most services are hosted on secure servers in data centers with 24/7 monitoring, there’s less chance for hackers to gain access or steal your data. This makes SaaS a more secure option for storing sensitive information than other options like on-premise software or local servers.
 
+## : Cloud Shared Responsibility Model
+
 
 ## :white_check_mark: AWS (Amazon Web Services)
 
