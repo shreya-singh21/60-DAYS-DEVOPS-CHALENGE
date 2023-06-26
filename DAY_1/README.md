@@ -2,7 +2,9 @@
 
 ## :cloud: What is Cloud Computing?
 
-Cloud computing refers to the practice of using a network of remote servers hosted on the internet to store, manage, and process data, rather than using a local server or personal computer. It provides on-demand access to a shared pool of computing resources, including storage, servers, databases, software applications, and more.
+The term Cloud refers to a Network or Internet. In other words, we can say that Cloud is something, which is present at remote location. Cloud can provide services over public and private networks.
+
+<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/CloudComputing.jpeg" width="700">
 
 ### :bulb: Advantages and Scope
 
@@ -31,13 +33,64 @@ Some of the leading cloud platform companies in the industry are:
 - **Broad network access:** Cloud services can be accessed via the internet using a variety of devices and platforms.
 - **Security:** Cloud providers often offer robust security measures and compliance standards to protect data and ensure privacy.
 
-## :computer: Types of Cloud Computing
+## Types of Cloud Computing
+<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/Types_of_cloud_computing.PNG" width="700">
 
-There are three primary types of cloud computing models:
+## :computer: Service Model of  Cloud Computing
 
-1. **Infrastructure as a Service (IaaS):** Provides virtualized computing resources such as virtual machines, storage, and networks, allowing users to build and manage their own infrastructure within the cloud environment.
-2. **Platform as a Service (PaaS):** Offers a platform for developing, testing, and deploying applications without the need to manage the underlying infrastructure. It provides a framework and runtime environment for developers.
-3. **Software as a Service (SaaS):** Delivers software applications over the internet on a subscription basis. Users can access and use the applications without having to worry about installation, maintenance, or infrastructure management.
+1. **Infrastructure as a Service (IaaS):** 
+It is the most flexible type of cloud service which lets you rent the hardware and contains the basic building blocks for cloud and IT.
+It gives complete control over the hardware that runs your application (servers, VMs, storage, networks & operating systems).
+It’s an instant computing infrastructure, provisioned and managed over the internet.
+IaaS gives you the very best level of flexibility and management control over your IT resources.
+It is most almost like the prevailing IT resources with which many IT departments and developers are familiar.
+
+Examples of IaaS: Virtual Machines or AWS EC2, Storage or Networking
+
+Benefits of IaaS
+aaS is an efficient and cost-effective way to deploy, operate, and scale your IT infrastructure. It’s easy to set up and configure, so you can start using it quickly. And because it’s available as a service from an external provider, you don’t have to worry about building and maintaining your own infrastructure. IaaS offers the following benefits:
+
+Cost savings: IaaS is more cost-effective than building your own data center. You pay only for what you need — storage space, CPU power, bandwidth, and other resources. This makes it easier to scale up or down as needed.
+
+On-demand access: You can instantly provision new resources whenever they’re needed without having to invest in new hardware and software or hire additional IT staff members. The cloud provider takes care of all the maintenance and upgrades required to keep your servers online 24/7 with 99 percent uptime guarantees (or better).
+
+Flexibility: With cloud computing, you can easily add more resources when demand increases without having to upgrade equipment or hire more IT professionals
+
+2. **Platform as a Service (PaaS):** 
+PaaS is a cloud service model that gives a ready-to-use development environment where developers can specialize in writing and executing high-quality code to make customized applications.
+It helps to create an application quickly without managing the underlying infrastructure. For example, when deploying a web application using PaaS, you don’t have to install an operating system, web server, or even system updates. However, you can scale and add new features to your services.
+This cloud service model makes the method of developing and deploying applications simpler and it is more expensive than IaaS but less expensive than SaaS.
+This helps you be more efficient as you don’t get to worry about resource procurement, capacity planning, software maintenance, patching, or any of the opposite undifferentiated work involved in running your application.
+
+Examples of PaaS: Elastic Beanstalk or Lambda from AWS, WebApps, Functions or Azure SQL DB from Azure, Cloud SQL DB from Google Cloud, or Oracle Database Cloud Service from Oracle Cloud.
+
+Benefits of PaaS
+PaaS is an easy way to build an application, and it offers a lot of benefits. Here are just a few:
+
+Faster development time – You don’t have to build infrastructure before you can start coding.
+
+Reduced costs – Your IT department won’t need to spend time on manual deployments or server management.
+
+Enhanced security – PaaS providers lock down your applications so that they’re more secure than traditional web apps.
+
+High availability – A PaaS provider can make sure your application is always available, even during hardware failures or maintenance windows.
+
+3. **Software as a Service (SaaS):** 
+SaaS provides you with a complete product that is run and managed by the service provider.
+The software is hosted online and made available to customers on a subscription basis or for purchase in this cloud service model.
+With a SaaS offering, you don’t need to worry about how the service is maintained or how the underlying infrastructure is managed. It would help if you believed how you’d use that specific software.
+
+Examples of SaaS: Microsoft Office 365, Oracle ERP/HCM Cloud, SalesForce, Gmail, or Dropbox.
+
+Benefits of SaaS
+The benefits of SaaS are numerous and varied. Many businesses have already made the switch to SaaS, but some are still skeptical about making the change. Here are some of the top reasons why you should consider switching to SaaS:
+
+Lower Total Cost of Ownership: One of the biggest benefits of SaaS is that it lowers your total cost of ownership (TCO) by eliminating hardware expenses and maintenance costs. There is no longer a need to buy servers or hire IT professionals to maintain or monitor them, which results in fewer upfront costs and reduced maintenance fees over time.
+
+Better Security: Another benefit of SaaS is improved security. Since most services are hosted on secure servers in data centers with 24/7 monitoring, there’s less chance for hackers to gain access or steal your data. This makes SaaS a more secure option for storing sensitive information than other options like on-premise software or local servers.
+
+# Cloud Shared Responsibility Model
+<img src="https://k21academy.com/wp-content/uploads/2021/05/RWD_Shared_Responsibility_Graphics_V0-1024x576.webp" width="700">
 
 ## :white_check_mark: AWS (Amazon Web Services)
 
