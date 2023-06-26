@@ -31,9 +31,7 @@ Some of the leading cloud platform companies in the industry are:
 - **Broad network access:** Cloud services can be accessed via the internet using a variety of devices and platforms.
 - **Security:** Cloud providers often offer robust security measures and compliance standards to protect data and ensure privacy.
 
-## :computer: Types of Cloud Computing
-
-There are three primary types of cloud computing models:
+## :computer: Service Model of  Cloud Computing
 
 1. **Infrastructure as a Service (IaaS):** Provides virtualized computing resources such as virtual machines, storage, and networks, allowing users to build and manage their own infrastructure within the cloud environment.
 2. **Platform as a Service (PaaS):** Offers a platform for developing, testing, and deploying applications without the need to manage the underlying infrastructure. It provides a framework and runtime environment for developers.
