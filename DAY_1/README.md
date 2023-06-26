@@ -33,6 +33,9 @@ Some of the leading cloud platform companies in the industry are:
 - **Broad network access:** Cloud services can be accessed via the internet using a variety of devices and platforms.
 - **Security:** Cloud providers often offer robust security measures and compliance standards to protect data and ensure privacy.
 
+## Types of Cloud Computing
+<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/Types_of_cloud_computing.PNG" width="700">
+
 ## :computer: Service Model of  Cloud Computing
 
 1. **Infrastructure as a Service (IaaS):** 
