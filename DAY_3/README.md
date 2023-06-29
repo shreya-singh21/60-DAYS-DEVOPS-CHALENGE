@@ -2,10 +2,10 @@
 An Elastic Load Balancer is a service which uniformly distributes network traffic and workloads across multiple servers.
 
 ## Types of Load Balancer
-• Classic Load Balancer
-• Application Load Balancer
-• Network Load Balancer
-• Gateway Load Balancer
+• Classic Load Balancer <br>
+• Application Load Balancer<br>
+• Network Load Balancer<br>
+• Gateway Load Balancer<br>
 
 ## Classic Load Balancer
 A Classic load balancer distributes equally incoming application traffic across multiple EC2 instances in multiple Availability Zones. This increases the fault tolerance of your applications. Elastic Load Balancing detects unhealthy instances and routes traffic only to healthy instances.
