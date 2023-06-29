@@ -4,7 +4,7 @@
 
 The term Cloud refers to a Network or Internet. In other words, we can say that Cloud is something, which is present at remote location. Cloud can provide services over public and private networks.
 
-<img src="https://storage.cloud.google.com/shreya-images/github-image/CloudComputing.jpeg" width="700">
+<img src="https://storage.googleapis.com/shreya-images/github-image/CloudComputing.jpeg" width="700">
 
 ### :bulb: Advantages and Scope
 
