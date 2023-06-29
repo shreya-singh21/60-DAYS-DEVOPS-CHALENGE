@@ -78,5 +78,94 @@ The load balancer also monitors the health of its registered targets and ensures
 
 **Note**- Now you are able to access your two machine with single DNS and in the case of classic load balancer incoming traffic with route equally to both EC2 machines.
 
+## Application Load Balancer
+Application Load Balancer routing traffic to targets based on the content of the request.
+
+## Application Load Balancer Terms
+**• Listener:** A listener is a process that checks for connection requests.
+
+**• Response Timeout:** The amount of time to wait when receiving a response from the health check.
+
+**• Interval:** The amount of time between health checks of an individual instance.
+
+**• Unhealthy Threshold:** The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy.
+
+**• Healthy Threshold:** The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy.
+
+## Steps to create Application load balancer
+• Create Linux EC2 Machine
+
+• Add Bootstrap Script Code in the last for 1st instance<br>
+#!/bin/bash <br>
+sudo su<br>
+yum update -y<br>
+yum install httpd -y<br>
+cd /var/www/html<br>
+echo "AmazonWebservices" > index.html<br>
+service httpd start<br>
+chkconfig httpd on<br>
+
+• Connect to the machine using putty
+
+• Switch User<br>
+  sudo su
+
+• Switch to html folder<br>
+  cd /var/www/html
+
+• Create Directory<br>
+  mkdir custom
+
+• Switch to new directory<br>
+  cd custom
+
+• Create web page in the directory<br>
+  echo "Google Drive" > index.html
+
+• Now check the public IP/custom in the browser
+
+• Create Second Linux EC2 Machine
+
+• Add Bootstrap Script Code in the last for 2nd instance<br>
+#!/bin/bash <br>
+sudo su<br>
+yum update -y<br>
+yum install httpd -y<br>
+cd /var/www/html<br>
+echo "AmazonWebservices" > index.html<br>
+service httpd start<br>
+chkconfig httpd on<br>
+
+• Connect machine using putty
+
+• Switch User<br>
+  sudo su
+
+• Switch to html folder<br>
+  cd /var/www/html
+
+• Create Directory<br>
+  mkdir image
+
+• Switch to new directory<br>
+  cd image
+
+• Create web page in the directory
+  echo "Google Image" > index.html
+
+• Now check the public IP/image in the browser
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
