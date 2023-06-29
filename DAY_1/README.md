@@ -34,7 +34,7 @@ Some of the leading cloud platform companies in the industry are:
 - **Security:** Cloud providers often offer robust security measures and compliance standards to protect data and ensure privacy.
 
 ## Types of Cloud Computing
-<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/Types_of_cloud_computing.PNG" width="700">
+<img src="https://storage.googleapis.com/shreya-images/github-image/Types_of_cloud_computing.PNG" width="700">
 
 ## :computer: Service Model of  Cloud Computing
 
