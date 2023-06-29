@@ -13,37 +13,37 @@ A Classic load balancer distributes equally incoming application traffic across 
 The load balancer also monitors the health of its registered targets and ensures that it routes traffic only to healthy targets. When the load balancer detects an unhealthy target, it stops routing traffic to that target. It then resumes routing traffic to that target when it detects that the target is healthy again.
 
 ## Classic Load Balancer Terms
-**• Response Timeout:** The amount of time to wait when receiving a response from the health check.
-**• Interval:** The amount of time between health checks of an individual instance.
-**• Unhealthy Threshold:** The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy.
-**• Healthy Threshold:** The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy.
+**• Response Timeout:** The amount of time to wait when receiving a response from the health check.<br>
+**• Interval:** The amount of time between health checks of an individual instance.<br>
+**• Unhealthy Threshold:** The number of consecutive failed health checks that must occur before declaring an EC2 instance unhealthy.<br>
+**• Healthy Threshold:** The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy.<br>
 
 ## Steps to create classic load balancer
 • Create Linux EC2 Machine
 
-• Add Bootstrap Script Code in the last for 1st instance
-   #!/bin/bash
-     sudo su
-    yum update -y
-    yum install httpd -y
-    cd /var/www/html
-    echo "LoadBalancer-1" > index.html
-    service httpd start
-    chkconfig httpd on
+• Add Bootstrap Script Code in the last for 1st instance<br>
+   #!/bin/bash<br>
+     sudo su<br>
+    yum update -y<br>
+    yum install httpd -y<br>
+    cd /var/www/html<br>
+    echo "LoadBalancer-1" > index.html<br>
+    service httpd start<br>
+    chkconfig httpd on<br>
 
 • Enable HTTP Port
 
 • Create Second Linux EC2 Machine
 
-• Bootstrap Script Code for 2nd instance
-   #!/bin/bash
-    sudo su
-    yum update -y
-    yum install httpd -y
-    cd /var/www/html
-    echo "LoadBalancer-2" > index.html
-    service httpd start
-    chkconfig httpd on
+• Bootstrap Script Code for 2nd instance<br>
+   #!/bin/bash<br>
+    sudo su<br>
+    yum update -y<br>
+    yum install httpd -y<br>
+    cd /var/www/html<br>
+    echo "LoadBalancer-2" > index.html<br>
+    service httpd start<br>
+    chkconfig httpd on<br>
 
 • Enable HTTP Port
 
