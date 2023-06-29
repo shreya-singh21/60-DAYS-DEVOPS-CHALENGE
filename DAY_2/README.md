@@ -118,15 +118,30 @@ File management commands allow you to create, delete, copy, move, and modify fil
 - **grep**: Searches for a specific pattern in one or more files.
   - Example: `grep "pattern" file.txt`
 
-- **chmod**: Changes file permissions (read, write, execute) for a file or directory.
-  - Example: `chmod 755 file.txt` (gives read, write, and execute permissions to the owner)
-
 - **chown**: Changes the ownership of a file or directory.
   - Example: `chown user:group file.txt` (changes the ownership to a specific user and group)
 
 - **find**: Searches for files and directories based on various criteria.
   - Example: `find /path/to/search -name "file.txt"` (searches for a file by name)
 
+- **chmod**: Changes file permissions (read, write, execute) for a file or directory.
+  - Example: `chmod 755 file.txt` (gives read, write, and execute permissions to the owner)
+
+## There are two ways we can change permission of our files
+1. Absolute Mode (Numerical)
+2. Symbolic Mode (Alphabetical)
+
+## Absolute Mode (Numerical) 
+
+<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/absolute_mode.PNG" width="700">
+ 
+ Ex- chmod 764 <File_Name>
+
+## Symbolic Mode (Alphabetical)
+
+<img src="https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/blob/master/Images/symbolic_mode.PNG" width="700">
+
+Ex- chmod u+r,g+w,o+x <file_name>
 ## Process Management Commands
 
 Process management commands help you manage processes running on the system. You can start, stop, monitor, and control processes using these commands. Here are a few examples:
@@ -316,17 +331,51 @@ To kickstart our Linux learning journey, here are some recommended resources:
 - :white_check_mark: [Linux Journey](https://linuxjourney.com/) - A comprehensive tutorial that covers various aspects of Linux, from basic commands to system administration.
 - :white_check_mark: [The Linux Documentation Project](https://www.tldp.org/guides.html) - A collection of guides and how-tos on different Linux topics.
 
-Let's embrace the power of Linux and dive deeper into the world of DevOps!
+# File and Folder Transfer between Local Machine and EC2 using SCP
 
-## :rocket: Next Steps
+This guide provides instructions on how to transfer files and folders between your local machine and an EC2 instance  and vice versa using the `scp` command. `scp` stands for Secure Copy and utilizes the SSH protocol for secure file transfers.
 
-In the upcoming days, we will explore various DevOps tools, practices, and methodologies. Stay tuned for Day 3, where we will delve into the world of version control with Git and GitHub.
+## Transfer from Local Machine to EC2
 
-Remember, consistency and continuous learning are key to mastering DevOps. Let's keep pushing ourselves to grow and collaborate along this exciting journey!
+To transfer a file or folder from your local machine to an EC2 instance, follow these steps:
 
-Feel free to share your thoughts, ask questions, and provide feedback in the comments section below. Let's learn and grow together! :muscle:
+1. Open a terminal on your local machine.
 
-Keep Learning, Keep Growing! :seedling: 
+2. Use the `scp` command in the following format:
 
-Best Regards,
-[Your Name]
+   ```shell
+   scp -i <path_to_private_key> <local_file_or_folder> <username>@<ec2_instance_public_dns_or_ip>:<destination_path>
+
+   EXAMPLE
+   command to transfer a file:
+   scp -i my-key-pair.pem file.txt ec2-user@ec2-xx-xx-xx-xx.compute-1.amazonaws.com:/home/ec2-user/
+   
+   command to transfer a folder:
+   scp -i ~/.ssh/my-key-pair.pem -r folder/ ec2-user@ec2-xx-xx-xx-xx.compute-1.amazonaws.com:/home/ec2-user/
+
+
+# File Transfer from EC2 to Local Machine
+## Steps
+
+1. Open a terminal on your local machine.
+
+2. Use the following `scp` command to transfer a file from the EC2 instance to your local machine:
+
+   ```shell
+   scp -i <path_to_private_key> <user>@<EC2_instance_ip>:<path_to_file_on_EC2> <path_to_destination_on_local_machine>
+   Example:
+   scp -i mykey.pem ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/file.txt ~/Desktop/
+
+   1. Enter the password or passphrase when prompted.
+
+   2. Wait for the file to be transferred to your local machine. Once the transfer is complete, you should see the file in the specified destination on your local 
+   machine.
+   Transfer Folders
+   To transfer folders from the EC2 instance to your local machine, use the -r option with scp:
+   scp -i <path_to_private_key> -r <user>@<EC2_instance_ip>:<path_to_folder_on_EC2> <path_to_destination_on_local_machine>
+
+   Example:
+   scp -i mykey.pem -r ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/folder ~/Desktop/
+
+
+
