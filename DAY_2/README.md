@@ -29,7 +29,7 @@ Here are some examples of popular Linux operating systems:
 
 Linux commands are the building blocks of executing tasks and managing the Linux operating system. They allow us to perform a wide range of operations, such as navigating the file system, managing processes, installing software, and configuring system settings.
 
-## :notebook_with_decorative_cover: Why Learn Linux and Linux Commands?
+## :notebook_with_decorative_cover: Why to Learn Linux and Linux Commands?
 
 Understanding Linux and mastering Linux commands are crucial for DevOps practitioners. Here's why:
 
@@ -312,9 +312,6 @@ User management commands allow you to create, modify, and manage user accounts o
 - **root**: Superuser account.
   - Example: `root` (refers to the superuser account with administrative privileges)
 
-- **su**: Switch to root user.
-  - Example: `su -` (switches to the root user account with full privileges)
-
 - **chown**: Change file ownership.
   - Example: `chown john:users file.txt` (changes the owner and group of "file.txt" to "john" and "users")
 
@@ -335,7 +332,7 @@ To kickstart our Linux learning journey, here are some recommended resources:
 
 This guide provides instructions on how to transfer files and folders between your local machine and an EC2 instance  and vice versa using the `scp` command. `scp` stands for Secure Copy and utilizes the SSH protocol for secure file transfers.
 
-## Transfer from Local Machine to EC2
+## Transfer file from Local Machine to EC2
 
 To transfer a file or folder from your local machine to an EC2 instance, follow these steps:
 
@@ -352,7 +349,9 @@ To transfer a file or folder from your local machine to an EC2 instance, follow 
    
    command to transfer a folder:
    scp -i ~/.ssh/my-key-pair.pem -r folder/ ec2-user@ec2-xx-xx-xx-xx.compute-1.amazonaws.com:/home/ec2-user/
-
+   
+   With IP address
+   scp -i FunKey.pem 1.txt ubuntu@3.7.55.163:/home/ubuntu
 
 # File Transfer from EC2 to Local Machine
 ## Steps
@@ -362,9 +361,9 @@ To transfer a file or folder from your local machine to an EC2 instance, follow 
 2. Use the following `scp` command to transfer a file from the EC2 instance to your local machine:
 
    ```shell
-   scp -i <path_to_private_key> <user>@<EC2_instance_ip>:<path_to_file_on_EC2> <path_to_destination_on_local_machine>
+   scp -i <path_to_private_key> <user>@<EC2_instance_ip>:<path_to_file_on_EC2>
    Example:
-   scp -i mykey.pem ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/file.txt ~/Desktop/
+   scp -i mykey.pem ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/file.txt 
 
    1. Enter the password or passphrase when prompted.
 
@@ -372,10 +371,15 @@ To transfer a file or folder from your local machine to an EC2 instance, follow 
    machine.
    Transfer Folders
    To transfer folders from the EC2 instance to your local machine, use the -r option with scp:
-   scp -i <path_to_private_key> -r <user>@<EC2_instance_ip>:<path_to_folder_on_EC2> <path_to_destination_on_local_machine>
+   scp -i <path_to_private_key> -r <user>@<EC2_instance_ip>:<path_to_folder_on_EC2> 
 
    Example:
-   scp -i mykey.pem -r ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/folder ~/Desktop/
+   scp -i mykey.pem -r ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:/home/ec2-user/folder 
+
+    **Note:** If you face any issues during the Transfer file from Local Machine to EC2 and File Transfer from EC2 to Local Machine process, you can search for tutorials and guides on platforms like YouTube. Here's a helpful video tutorial:
+
+    ## :movie_camera: Helpful Video Tutorials
+1. [Transfer file from Local Machine to EC2 and File Transfer from EC2 to Local Machine process Tutorial on YouTube](https://www.youtube.com/watch?v=8r-s3HADFQ4&ab_channel=SrceCde)
 
 
 
