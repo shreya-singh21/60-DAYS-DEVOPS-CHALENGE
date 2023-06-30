@@ -53,7 +53,7 @@ The types of Linux commands we will cover include:
 - Text Processing Commands
 - User Management Commands
 
-# File and Folder Transfer between Local Machine and EC2 using SCP
+* File and Folder Transfer between Local Machine and EC2 using SCP 
 Make sure to explore each command type and learn how they can be used in different scenarios.
 
 As you progress through Day 2, remember to apply your knowledge from Day 1, as Linux commands and understanding Linux will be essential in infrastructure automation and DevOps practices.
