@@ -47,14 +47,14 @@ It is most almost like the prevailing IT resources with which many IT department
 
 Examples of IaaS: Virtual Machines or AWS EC2, Storage or Networking
 
-Benefits of IaaS
-aaS is an efficient and cost-effective way to deploy, operate, and scale your IT infrastructure. It’s easy to set up and configure, so you can start using it quickly. And because it’s available as a service from an external provider, you don’t have to worry about building and maintaining your own infrastructure. IaaS offers the following benefits:
+## Benefits of IaaS <br>
+IaaS is an efficient and cost-effective way to deploy, operate, and scale your IT infrastructure. It’s easy to set up and configure, so you can start using it quickly. And because it’s available as a service from an external provider, you don’t have to worry about building and maintaining your own infrastructure. IaaS offers the following benefits:
 
-Cost savings: IaaS is more cost-effective than building your own data center. You pay only for what you need — storage space, CPU power, bandwidth, and other resources. This makes it easier to scale up or down as needed.
+**Cost savings:** IaaS is more cost-effective than building your own data center. You pay only for what you need — storage space, CPU power, bandwidth, and other resources. This makes it easier to scale up or down as needed.
 
-On-demand access: You can instantly provision new resources whenever they’re needed without having to invest in new hardware and software or hire additional IT staff members. The cloud provider takes care of all the maintenance and upgrades required to keep your servers online 24/7 with 99 percent uptime guarantees (or better).
+**On-demand access:** You can instantly provision new resources whenever they’re needed without having to invest in new hardware and software or hire additional IT staff members. The cloud provider takes care of all the maintenance and upgrades required to keep your servers online 24/7 with 99 percent uptime guarantees (or better).
 
-Flexibility: With cloud computing, you can easily add more resources when demand increases without having to upgrade equipment or hire more IT professionals
+**Flexibility:** With cloud computing, you can easily add more resources when demand increases without having to upgrade equipment or hire more IT professionals
 
 2. **Platform as a Service (PaaS):** 
 PaaS is a cloud service model that gives a ready-to-use development environment where developers can specialize in writing and executing high-quality code to make customized applications.
