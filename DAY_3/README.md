@@ -1,6 +1,6 @@
 # DAY 3 OF DEVOPS LEARNING
 
-Building upon our previous knowledge of cloud computing from Day 1 and exploring the benefits of Linux in DevOps on Day 2, we are now ready to delve into more concepts related to EC2 instances. ** In Day 3 **, we will focus on learning about Elastic IP, understanding the significance of webservers, and leveraging Bootstrap for EC2. These topics will further enhance our understanding and skills in the DevOps domain. Let's continue our 60 Days DevOps Challenge journey and expand our expertise together!
+Building upon our previous knowledge of cloud computing from Day 1 and exploring the benefits of Linux in DevOps on Day 2, we are now ready to delve into more concepts related to EC2 instances.  In Day 3, we will focus on learning about Elastic IP, understanding the significance of webservers, and leveraging Bootstrap for EC2. These topics will further enhance our understanding and skills in the DevOps domain. Let's continue our 60 Days DevOps Challenge journey and expand our expertise together!
 
 ## What is AWS Elastic IP?
 
