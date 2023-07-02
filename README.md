@@ -58,6 +58,42 @@ Make sure to explore each command type and learn how they can be used in differe
 
 As you progress through Day 2, remember to apply your knowledge from Day 1, as Linux commands and understanding Linux will be essential in infrastructure automation and DevOps practices.
 
+# DAY 3 OF DEVOPS LEARNING
+
+On Day 3 of our DevOps learning journey, we will focus on EC2 instances and explore the concept of Elastic IP, the significance of webservers, and leveraging Bootstrap for EC2.
+
+## What is AWS Elastic IP?
+
+Elastic IP is a static public IP address provided by AWS that you can allocate to your AWS resources. It offers persistence, accessibility, and mapping advantages over dynamic IP addresses.
+
+## Why Create Elastic IP?
+
+In this section, we'll discuss the need for Elastic IP, especially in scenarios where you want to maintain a fixed public IP address for your EC2 instances.
+
+## How to Create an Elastic IP
+
+Learn the step-by-step process to create an Elastic IP address in the AWS EC2 Management Console and associate it with your desired EC2 instance.
+
+## Associating and Disassociating Elastic IP with EC2 Instance
+
+Discover how to associate an Elastic IP with an EC2 instance and disassociate it when necessary. These actions allow you to control the IP address mapping for your instances.
+
+## Releasing Elastic IP with EC2 Instance
+
+Understand the steps involved in releasing an Elastic IP address and when it is recommended to do so to avoid unnecessary charges.
+
+## What is a Web Server?
+
+Learn about web servers and their role in serving web content to users. We'll explore the difference between regular servers and web servers, as well as the process of converting an EC2 instance into a web server.
+
+## Creating a Web Server Using Bootstrap Script
+
+Discover the concept of a Bootstrap script and how it automates the setup and configuration of a web server. We'll provide an example of creating a Linux EC2 machine on AWS using a Bootstrap script.
+
+By exploring these topics, we will further enhance our understanding and skills in the DevOps domain, bringing us closer to becoming proficient DevOps practitioners.
+
+Let's continue our 60 Days DevOps Challenge journey and expand our expertise together!
+
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
