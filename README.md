@@ -8,8 +8,8 @@ Here is an overview of the 60-day roadmap:
 
 1. [Day 1: Cloud Computing](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1)
 2. [Day 2: Linux Commands and File and Folder Transfer between Local Machine and EC2 using SCP](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_2)
-
-
+3. [Day 3: AWS Elastic IP](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_3)
+4. [Day 4: Placement Groups,Elastic Load Balancer](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_4)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -58,7 +58,7 @@ Make sure to explore each command type and learn how they can be used in differe
 
 As you progress through Day 2, remember to apply your knowledge from Day 1, as Linux commands and understanding Linux will be essential in infrastructure automation and DevOps practices.
 
-# DAY 3 OF DEVOPS LEARNING
+## Day 3: EC2 Instances, Elastic IP, Web Servers, and Bootstrap for EC2
 
 On Day 3 of our DevOps learning journey, we will focus on EC2 instances and explore the concept of Elastic IP, the significance of webservers, and leveraging Bootstrap for EC2.
 
@@ -94,6 +94,10 @@ By exploring these topics, we will further enhance our understanding and skills 
 
 Let's continue our 60 Days DevOps Challenge journey and expand our expertise together!
 
+## Day 4: Placement Groups, Load Balancers, Target Groups, and Launch Templates
+On Day 4 of our DevOps learning journey, we will delve into important topics such as Placement Groups, Load Balancers, Target Groups, and Launch Templates. These concepts play a crucial role in optimizing infrastructure, enhancing scalability, and improving the overall performance of our applications.
+
+Make sure to check the Day 4 folder for detailed learnings and resources related to these topics.
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
