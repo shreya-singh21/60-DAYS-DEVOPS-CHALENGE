@@ -110,29 +110,29 @@ The load balancer also monitors the health of its registered targets and ensures
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
    ```bash
-      #!/bin/bash<br>
-        sudo su<br>
-        yum update -y<br>
-        yum install httpd -y<br>
-        cd /var/www/html<br>
-        echo "LoadBalancer-1" > index.html<br>
-        service httpd start<br>
-        chkconfig httpd on<br>
+  #!/bin/bash<br>
+  sudo su<br>
+  yum update -y<br>
+  yum install httpd -y<br>
+  cd /var/www/html<br>
+  echo "LoadBalancer-1" > index.html<br>
+  service httpd start<br>
+  chkconfig httpd on<br>
 
 • Enable HTTP Port
 
 • Create Second Linux EC2 Machine
 
 • Bootstrap Script Code for 2nd instance<br>
-   ```bash
+  ```bash
     #!/bin/bash<br>
-      sudo su<br>
-      yum update -y<br>
-      yum install httpd -y<br>
-      cd /var/www/html<br>
-      echo "LoadBalancer-2" > index.html<br>
-      service httpd start<br>
-      chkconfig httpd on<br>
+    sudo su<br>
+    yum update -y<br>
+    yum install httpd -y<br>
+    cd /var/www/html<br>
+    echo "LoadBalancer-2" > index.html<br>
+    service httpd start<br>
+    chkconfig httpd on<br>
 
 • Enable HTTP Port
 
@@ -186,14 +186,14 @@ Application Load Balancer routing traffic to targets based on the content of the
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
   ```bash
-      #!/bin/bash <br>
-      sudo su<br>
-      yum update -y<br>
-      yum install httpd -y<br>
-      cd /var/www/html<br>
-      echo "AmazonWebservices" > index.html<br>
-      service httpd start<br>
-      chkconfig httpd on<br>
+  #!/bin/bash <br>
+  sudo su<br>
+  yum update -y<br>
+  yum install httpd -y<br>
+  cd /var/www/html<br>
+  echo "AmazonWebservices" > index.html<br>
+  service httpd start<br>
+  chkconfig httpd on<br>
 
 • Connect to the machine using putty
 
@@ -218,14 +218,14 @@ Application Load Balancer routing traffic to targets based on the content of the
 
 • Add Bootstrap Script Code in the last for 2nd instance<br>
    ```bash 
-      #!/bin/bash <br>
-      sudo su<br>
-      yum update -y<br>
-      yum install httpd -y<br>
-      cd /var/www/html<br>
-      echo "AmazonWebservices" > index.html<br>
-      service httpd start<br>
-      chkconfig httpd on<br>
+    #!/bin/bash <br>
+    sudo su<br>
+    yum update -y<br>
+    yum install httpd -y<br>
+    cd /var/www/html<br>
+    echo "AmazonWebservices" > index.html<br>
+    service httpd start<br>
+    chkconfig httpd on<br>
 
 • Connect machine using putty
 
@@ -254,15 +254,15 @@ A Network Load Balancer routes traffic to targets based on the port number. It h
 
 1. Create the first Linux EC2 machine.
    - Bootstrap Script Code:
-   ```bash
-   #!/bin/bash
-   sudo su
-   yum update -y
-   yum install httpd -y
-   cd /var/www/html
-   echo "LoadBalancer-1" > index.html
-   service httpd start
-   chkconfig httpd on
+  ```bash
+  #!/bin/bash
+  sudo su
+  yum update -y
+  yum install httpd -y
+  cd /var/www/html
+  echo "LoadBalancer-1" > index.html
+  service httpd start
+  chkconfig httpd on
 
 Enable the type as HTTP.
 
