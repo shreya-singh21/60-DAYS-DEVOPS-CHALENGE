@@ -250,7 +250,6 @@ A Network Load Balancer routes traffic to targets based on the port number. It h
 
 1. Create the first Linux EC2 machine.
    - Bootstrap Script Code:
-  ```bash
   #!/bin/bash
   sudo su
   yum update -y
@@ -264,7 +263,6 @@ Enable the type as HTTP.
 
 2. Create the second Linux EC2 machine.
    - Bootstrap Script Code:
-   ```bash
    #!/bin/bash
    sudo su
    yum update -y
