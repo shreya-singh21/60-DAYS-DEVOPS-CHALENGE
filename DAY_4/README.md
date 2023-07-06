@@ -18,10 +18,10 @@ Now that we have established a strong foundation in cloud computing, Linux, and 
 Placement Groups are a powerful feature provided by AWS to control the placement of EC2 instances within the underlying infrastructure.
 When we launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize failures. No Charges to Create Placement Groups.
 
-Types of Placement Groups
+* Types of Placement Groups
 There are three types of Placement Groups in AWS:
 
-1. Cluster Placement Group
+# 1. Cluster Placement Group
 A Cluster Placement Group is a setting that instructs AWS to launch EC2 instances within the same "rack" in an Amazon Data Center. In this context, a rack refers to a physical grouping of servers. When you specify the 'Cluster' placement group, all the instances will be launched in the same rack within the same availability zone (AZ).
 
 To visualize, think of an Amazon Data Center with thousands of servers organized into different racks. When you use the 'Cluster' placement group, all the instances you launch will be placed within the same rack, ensuring they are physically close to each other. This proximity allows for excellent network performance, with minimal delays or latency
@@ -38,7 +38,7 @@ Great network performance with low latency: Instances in a Cluster Placement Gro
 4. Select the "Cluster" placement strategy.
 5. Click on "Create Group."
 
-2. Spread Placement Group
+# 2. Spread Placement Group
 A Spread Placement Group is designed to distribute your highly available application across multiple data centers. It ensures that instances are placed in different availability zones (AZs) and on different physical racks within the same AZ.
 
 To visualize, imagine you have a highly available application that needs to be resilient to failures. By using a Spread Placement Group, your instances will be distributed across multiple data centers, with each instance placed on different physical racks and in different AZs. This ensures that even if there is a failure in one data center or rack, your application will continue to run smoothly.
@@ -54,7 +54,7 @@ Use Cases: Spread Placement Groups are suitable for applications that require hi
 5. Select the desired spread level, such as "Rack."
 6. Click on "Create Group."
 
-3. Partition Placement Group
+# 3. Partition Placement Group
 A Partition Placement Group enables you to allocate instances to specific partitions, with each partition representing a rack in the AWS infrastructure. Each partition is isolated, so failures in one partition do not impact others.
 
 Use Cases: Partition Placement Groups are well-suited for applications that process massive amounts of data, such as Apache Hadoop clusters.
@@ -79,7 +79,7 @@ Note: It's important to be aware that while Placement Groups offer benefits in t
 
 
 
-## Elastic Load Balancer
+# Elastic Load Balancer
 An Elastic Load Balancer (ELB) is a service provided by Amazon Web Services (AWS) that acts as a traffic cop for your web applications. Imagine you have a popular website, and lots of users are trying to access it at the same time. Without a load balancer, all the requests from those users would go to a single server, which could potentially overwhelm it and make the website slow or even crash.
 
 The load balancer solves this problem by distributing the incoming traffic across multiple servers in a balanced way. It acts as a middleman between the users and the servers, receiving all the incoming requests and sending them to different servers based on their availability and capacity. This ensures that the workload is spread evenly, preventing any one server from becoming overloaded.
