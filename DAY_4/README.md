@@ -109,7 +109,6 @@ The load balancer also monitors the health of its registered targets and ensures
 • Create Linux EC2 Machine
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
-  ```bash
   #!/bin/bash<br>
   sudo su<br>
   yum update -y<br>
@@ -124,7 +123,6 @@ The load balancer also monitors the health of its registered targets and ensures
 • Create Second Linux EC2 Machine
 
 • Bootstrap Script Code for 2nd instance<br>
-```bash
     #!/bin/bash<br>
     sudo su<br>
     yum update -y<br>
@@ -185,7 +183,6 @@ Application Load Balancer routing traffic to targets based on the content of the
 • Create Linux EC2 Machine
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
-  ```bash
   #!/bin/bash <br>
   sudo su<br>
   yum update -y<br>
@@ -216,8 +213,7 @@ Application Load Balancer routing traffic to targets based on the content of the
 
 • Create Second Linux EC2 Machine
 
-• Add Bootstrap Script Code in the last for 2nd instance<br>
-   ```bash 
+• Add Bootstrap Script Code in the last for 2nd instance<br> 
     #!/bin/bash <br>
     sudo su<br>
     yum update -y<br>
