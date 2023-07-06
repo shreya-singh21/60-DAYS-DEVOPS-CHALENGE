@@ -246,7 +246,7 @@ Application Load Balancer routing traffic to targets based on the content of the
 
 A Network Load Balancer routes traffic to targets based on the port number. It has the capability to respond to millions of requests every second, making it suitable for high-performance applications.
 
-## Create EC2 Instances
+* Create EC2 Instances 
 
 1. Create the first Linux EC2 machine.
    - Bootstrap Script Code:
@@ -295,7 +295,7 @@ Enable the type as HTTP.
 
 12. Restart the server using the command `service httpd restart`.
 
-## Create Target Group
+* Create Target Group
 
 1. Click on "Create target group".
 2. Enter the name of the target group.
@@ -305,7 +305,7 @@ Enable the type as HTTP.
 6. Click on "Create target group".
 7. Create a target group for the second machine and enter the port number as 8080.
 
-## Create Network Load Balancer
+* Create Network Load Balancer
 
 1. Click on "Create" for Network Load Balancer.
 2. Enter the name of the load balancer.
@@ -313,7 +313,7 @@ Enable the type as HTTP.
 4. Select the listener and target group.
 5. Click on "Create load balancer".
 
-## Configure Load Balancer
+* Configure Load Balancer
 
 1. Go to the Listeners tab.
 2. Click on "Add Listener".
@@ -321,7 +321,7 @@ Enable the type as HTTP.
 4. Add an action to forward to the second machine.
 5. Click on "Add Listener".
 
-## Access Load Balancer
+* Access Load Balancer
 
 Copy the DNS Name of the load balancer and use it to access your application. The load balancer will distribute traffic based on the configured rules.
 
