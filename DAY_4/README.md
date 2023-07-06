@@ -109,28 +109,30 @@ The load balancer also monitors the health of its registered targets and ensures
 • Create Linux EC2 Machine
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
-   #!/bin/bash<br>
-     sudo su<br>
-    yum update -y<br>
-    yum install httpd -y<br>
-    cd /var/www/html<br>
-    echo "LoadBalancer-1" > index.html<br>
-    service httpd start<br>
-    chkconfig httpd on<br>
+   ```bash
+      #!/bin/bash<br>
+        sudo su<br>
+        yum update -y<br>
+        yum install httpd -y<br>
+        cd /var/www/html<br>
+        echo "LoadBalancer-1" > index.html<br>
+        service httpd start<br>
+        chkconfig httpd on<br>
 
 • Enable HTTP Port
 
 • Create Second Linux EC2 Machine
 
 • Bootstrap Script Code for 2nd instance<br>
-   #!/bin/bash<br>
-    sudo su<br>
-    yum update -y<br>
-    yum install httpd -y<br>
-    cd /var/www/html<br>
-    echo "LoadBalancer-2" > index.html<br>
-    service httpd start<br>
-    chkconfig httpd on<br>
+   ```bash
+    #!/bin/bash<br>
+      sudo su<br>
+      yum update -y<br>
+      yum install httpd -y<br>
+      cd /var/www/html<br>
+      echo "LoadBalancer-2" > index.html<br>
+      service httpd start<br>
+      chkconfig httpd on<br>
 
 • Enable HTTP Port
 
@@ -183,14 +185,15 @@ Application Load Balancer routing traffic to targets based on the content of the
 • Create Linux EC2 Machine
 
 • Add Bootstrap Script Code in the last for 1st instance<br>
-#!/bin/bash <br>
-sudo su<br>
-yum update -y<br>
-yum install httpd -y<br>
-cd /var/www/html<br>
-echo "AmazonWebservices" > index.html<br>
-service httpd start<br>
-chkconfig httpd on<br>
+  ```bash
+      #!/bin/bash <br>
+      sudo su<br>
+      yum update -y<br>
+      yum install httpd -y<br>
+      cd /var/www/html<br>
+      echo "AmazonWebservices" > index.html<br>
+      service httpd start<br>
+      chkconfig httpd on<br>
 
 • Connect to the machine using putty
 
@@ -214,14 +217,15 @@ chkconfig httpd on<br>
 • Create Second Linux EC2 Machine
 
 • Add Bootstrap Script Code in the last for 2nd instance<br>
-#!/bin/bash <br>
-sudo su<br>
-yum update -y<br>
-yum install httpd -y<br>
-cd /var/www/html<br>
-echo "AmazonWebservices" > index.html<br>
-service httpd start<br>
-chkconfig httpd on<br>
+   ```bash 
+      #!/bin/bash <br>
+      sudo su<br>
+      yum update -y<br>
+      yum install httpd -y<br>
+      cd /var/www/html<br>
+      echo "AmazonWebservices" > index.html<br>
+      service httpd start<br>
+      chkconfig httpd on<br>
 
 • Connect machine using putty
 
