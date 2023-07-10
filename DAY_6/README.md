@@ -86,8 +86,21 @@ By default, the DeleteOnTermination attribute is set to True for the root volume
 21. To mount the volume. I need the volume name . We will chcek from lsblk command<br/>
     Note down the volume name.
 
-22. Now Again I am going to create one directory
+22. Now Again I am going to create one another directory<br/>
     mkdir training
+
+23. With this particular folder, I am going to mount the volume<br/>
+    sudo mount /dev/xvdf training
+
+24. change directory to training<br/>
+    cd training
+
+25. list the files - ls<br/>
+    you will able to find all files which you have created in test volume.
+    
+**Note**- Previously we have created 3 files under test folder. Now we will check if we are able to see those files under training directory. You will get all those files because the files which we have created we were not created in test folder, wthe files was there in volume(harddisk). 
+
+
 
 
 
