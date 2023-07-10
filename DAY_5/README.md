@@ -1,6 +1,6 @@
 # AWS EC2 Auto Scaling: Creating an Auto Scaling Group with Load Balancer
 
-Auto Scaling in AWS EC2 allows you to automatically adjust the number of EC2 instances in a group based on the demand to ensure optimal performance and cost efficiency. In this tutorial, we will walk you through the steps to create an Auto Scaling group with a load balancer.
+Auto Scaling in AWS EC2 allows you to automatically adjust the number of EC2 instances in a group based on the demand to ensure optimal performance and cost efficiency. In this tutorial, I will walk you through the steps to create an Auto Scaling group with a load balancer.
 
 ## Step 1: Create Launch Configuration / Launch Template
 
