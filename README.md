@@ -10,6 +10,7 @@ Here is an overview of the 60-day roadmap:
 2. [Day 2: Linux Commands and File and Folder Transfer between Local Machine and EC2 using SCP](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_2)
 3. [Day 3: AWS Elastic IP](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_3)
 4. [Day 4: Placement Groups,Elastic Load Balancer](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_4)
+5. [Day 5: AWS EC2 Auto Scaling, AWS Status Check, Automatic Recovery](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_5)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -99,7 +100,19 @@ On Day 4 of our DevOps learning journey, we will delve into important topics suc
 
 Make sure to check the Day 4 folder for detailed learnings and resources related to these topics.
 
+
+## Day 5: AWS EC2 Auto Scaling, AWS Status Check, Automatic Recovery
+
+On Day 5 of our DevOps learning journey, we focused on the following topics:
+
+- AWS EC2 Auto Scaling: We learned how to create an Auto Scaling group with a load balancer in AWS EC2. This involves creating a launch configuration or launch template, setting up a topic in AWS Simple Notification Service (SNS), creating the Auto Scaling group, configuring an Application Load Balancer (ALB), creating a target group, setting up an alarm in CloudWatch, and adding a scaling policy to the Auto Scaling group.
+
+- AWS Status Check: We explored the AWS Status Check feature, which ensures the health and availability of EC2 instances. We learned about system status checks and instance status checks, and how they help monitor the overall system and instance health.
+
+- Automatic Recovery: We discussed automatic recovery in AWS, which is enabled when a system status check failure occurs. We explored how to enable auto recovery for an instance and how AWS automatically attempts to recover the instance in case of a failure.
+
+By understanding these concepts and practices, we gained valuable insights into scaling our EC2 instances, monitoring their health, and ensuring automatic recovery in case of failures.
+
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
 Happy learning and enjoy your DevOps journey!
-
