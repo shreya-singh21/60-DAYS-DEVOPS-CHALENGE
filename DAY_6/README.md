@@ -11,9 +11,11 @@ By default, the DeleteOnTermination attribute is set to True for the root volume
 **What is the Purpose of Elastic Block Storage**<br/>
   Amazon EBS allows you to create storage volumes and attach them to Amazon EC2 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use block storage. 
 
+**Let's create the Elastic Block Storage on Linux based Operating System**
+
 1. Create linux EC2 machine 
 
-2. Add 5GB extra volume from add storage
+2. Add 5GB extra volume from configure storage
 
 3. check delete on Termination
 
@@ -97,8 +99,64 @@ By default, the DeleteOnTermination attribute is set to True for the root volume
 
 25. list the files - ls<br/>
     you will able to find all files which you have created in test volume.
-    
-**Note**- Previously we have created 3 files under test folder. Now we will check if we are able to see those files under training directory. You will get all those files because the files which we have created we were not created in test folder, wthe files was there in volume(harddisk). 
+
+**Note**- Previously we have created 3 files under test folder. Now we will check if we are able to see those files under training directory. You will get all those files because the files which we have created, we were not created in test folder, the files was there in volume(harddisk). 
+
+
+**Let's create the Elastic Block Storage on Windows based Operating System**
+
+In this we will do the same example which we have done above with Linus based OS. Here we will first add additional volume with the EC2 machine then in next step we will detach the existing volume and attach the volume to new EC2 machine.
+
+1. Go to EC2 and create windows based EC2 machine.
+
+2. Add 5GB extra volume from configure storage and launch instances.
+
+3. Now create second machine without additional volume.
+
+4. Now connect to first windows machine
+
+5. After connecting to first windows machine. Go to this PC. There you will not able to see 5GB additional volume beacuse the volume we have just added not mounted.
+
+6. To mounting the volume to windows EC2 machine we have to go to "server manager". Click on window button and type server manager.
+
+7. In server manager you will see role " File and Storage". With the help of file and storage we will mount the volume.
+
+8. click on File and Storage. Click on "Disk". You will find your 5GB additional volume with "offline" stataus. We have to bring it "online".
+
+9. Select this 5GB volume, right click and select " bring online"
+
+10. Right click on volume again and click on "Initialize".
+
+11. Again right click on volume select new volume. Now one prompt will open where you have to specify the size of volume, name of drive and create.
+
+12. Check in this PC you will find additional volume of 5GB.
+
+13. create one notepad file in 5GB volume.
+
+14. Now mount the same volume to second Windows EC2 machine.<br/>
+    Before that we have to unmount the volume from First EC2 machine.
+
+15. Go to " server manager", clisk on disk, clisk on 5GB volume and bring offline.You have umnounted it now
+
+16. Next we have to detach the volume<br/>
+    Go to console, go to volume, select volume, click on Action and detach volume.
+
+17. Now we have to attach this existing volume to second EC2 machine<br/>
+    Go to volume, click on Action, attach volume to second EC2 machine.
+
+18. Now connect to second EC2 machine.Go to Server Mananger. Select this 5GB volume, right click and select " bring online".
+
+19. Now check this PC you will get additional volume with same notepad file and with same content.
+
+**This is how we are creating EBS volume and attcahing the same volume to another EC2 machine**
+
+
+
+
+
+
+
+
 
 
 
