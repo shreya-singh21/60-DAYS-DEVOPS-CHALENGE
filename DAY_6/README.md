@@ -148,7 +148,98 @@ In this we will do the same example which we have done above with Linus based OS
 
 19. Now check this PC you will get additional volume with same notepad file and with same content.
 
-**This is how we are creating EBS volume and attcahing the same volume to another EC2 machine**
+**This is how we are creating EBS volume and attaching the same volume to another EC2 machine**
+
+# Elastic File System
+
+Elastic File System is simple, scalable and elastic file storage system for our EC2 instances. An EFS is a 
+Network File System (NFS) that organizes data in a logical file hierarchy. Data is stored in a path-based 
+system, where data files are organized in folders and sub-folders. It is Compatible with only Linux Based EC2 
+Machine. It work on Security group means whatever the machines you have need to have same security group and it need to attach with same EFS.
+
+**Features of EFS**
+
+1. EFS Works with EC2 Instances in multi availability Zone.
+
+2. EFS automatically scales its storage capacity as you add or remove files, so you don't need to worry about provisioning or managing storage limits. It can grow and shrink as per your application's needs.
+
+3. EFS offers a pay-as-you-go pricing model, where you only pay for the storage used by your file system. There are no upfront costs or minimum commitments.
+
+4. Uses Security group to control Access to EFS.
+
+**Let's create Elastic File system**
+
+1. Go to EFS
+
+2. Give the name of EFS
+
+3. Select standard storage class
+
+4. Click on customize button
+
+5. Select bursting under throughput and general purpose under performance mode.
+
+6. Now you can go with default security group or you can create your own security group.<br/>
+   In default security group by deafult it allow to all traffic .<br/>
+   Right now we are going with deafult security group.
+
+7. Launch the first EC2 machine.
+
+8. Now create Second Linux EC2 Machine.
+
+9. Select the Subnet (Make Sure we will select the different from the first machine).
+
+10. Select the existing security group (Same as First Machine). In our case we have selected default security group.
+
+11. Connect to first Linux machine and switch to root user
+    sudo su -
+
+12. Now install EFS Utils<br/>
+    sudo yum install -y amazon-efs-utils
+
+13. Create EFS directory with name mkdir efs (mendatory)
+
+14. I need to link EFS with my efs directory.<br/>
+    Go to console, click on efs, click on attach, copy using NFS Client and paste it in putty (Automatically with this EFS Folder system attched my EFS). 
+
+15.  Now create some files in efs directory.<br/>
+     cd efs<br/>
+     touch file1 file2 file3
+
+16. Now connect to second Linux machine.
+
+17. Switch to root user<br/>
+    sudo su -
+
+18. Now install EFS Utils<br/>
+    sudo yum install -y amazon-efs-utils
+
+19. Create EFS directory with name mkdir efs (mendatory)
+
+20. Run the NFS Command in Second Machine
+
+21. Switch to EFS folder<br/>
+    cd efs
+
+22. run the ls command<br/>
+    You will find the files which you have craeted in first linux EC2 machine will appear here in second linux machine.
+
+23. If you create files in second linux machine will appear in both EC2 machines.
+
+**Note** - In EBS you are creating files in common shared location and anyone can access it from anywhere .
+
+
+   
+
+
+
+    
+
+
+
+
+
+
 
 
 
