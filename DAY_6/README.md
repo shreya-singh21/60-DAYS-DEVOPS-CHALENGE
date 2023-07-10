@@ -43,6 +43,17 @@ By default, the DeleteOnTermination attribute is set to True for the root volume
 11. Now change directory
        cd test
 
-**Note** - Till now we have added extra volume, we mounted it, we created folder, attached the folder to volume 
-        As per AWS whatever we do with this folder it will reflect in the volume so we are actually accessing the volume.
+**Note** - Till now we have added extra volume, we mounted it, we created folder, attached the folder to volume.<BR/>
+           As per AWS whatever we do with this folder it will reflect in the volume so we are actually accessing the volume.
+
+12. Now I am creating files in test folder
+        sudo touch file1 file2 file3
+
+13. Now run the same command to check mount point - df -Th<BR/>
+    This time you will able to see the additional volume with path.
+
+**This is how we add the additional volume with EC2 machine**
+
+git
+ 
      
