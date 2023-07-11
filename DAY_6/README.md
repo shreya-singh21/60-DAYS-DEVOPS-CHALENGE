@@ -226,10 +226,8 @@ Machine. It work on Security group means whatever the machines you have need to 
 
 23. If you create files in second linux machine will appear in both EC2 machines.
 
-**Note** - In EBS you are creating files in common shared location and anyone can access it from anywhere .
+**Note** - In EFS you are creating files in common shared location and anyone can access it from anywhere .
 
-
-   
 
 
 
