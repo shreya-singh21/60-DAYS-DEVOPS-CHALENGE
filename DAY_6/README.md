@@ -1,262 +1,238 @@
-# Difference between Block Storage and Object level storage
-# Elastic Block Store
-Whenever we are creating EC2 machine, the volume we are getting with ec2 machine are called as root/boot volume also called as EBS volume.
+# AWS Storage Services Overview
 
-EBS volume are persistent volume mean whenever you stop or reboot your Ec2 instance, your data will not delete. Your data will only delete in case of termination of EC2 instance.
+In today's digital world, data storage is a critical aspect of any business or organization. Amazon Web Services (AWS) provides a wide range of storage solutions to meet diverse needs, from small-scale startups to large enterprises. This readme file provides a comprehensive overview of AWS storage services, including their types, features, advantages, and disadvantages.
 
-**DeleteOnTermination**- Delete on Termination means whenever you are deleting EC2 machine then that time do you want to delete your volume. 
+## Amazon EBS (Elastic Block Store)
 
-By default, the DeleteOnTermination attribute is set to True for the root volume. It is set to False for all other volume types.
+When you create an EC2 instance, it comes with a primary storage volume called the root volume. This volume contains the operating system and other essential files needed for the instance to function. The size of the root volume is determined when you launch the instance.
 
-**What is the Purpose of Elastic Block Storage**<br/>
-  Amazon EBS allows you to create storage volumes and attach them to Amazon EC2 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use block storage. 
+### Requirements for Additional Storage
 
-**Let's create the Elastic Block Storage on Linux based Operating System**
+As your needs grow, you might require more storage space for your data without affecting the root volume. In this case, you have two options:
 
-1. Create linux EC2 machine 
+1. Increase the size of the root volume: You can modify the instance settings to increase the storage capacity of the root volume. However, deleting this instance in the future will result in the permanent loss of all data on the root volume.
 
-2. Add 5GB extra volume from configure storage
+2. Create a separate EBS volume: Instead of increasing the size of the root volume, you can create a new EBS volume with the desired size. This volume can be attached to your EC2 instance as an additional drive, providing extra storage space for your data.
 
-3. check delete on Termination
+### Advantages of Using EBS Volumes
 
-4. Launch the instance
+Here's where the advantage of using EBS volumes comes in:
 
-5. Go to volumes and check attached extra volume. There you will find two volumes 1. The default 8GB volume 2. The additional 5GB volume.
+1. Persistence: Unlike the root volume, which is tied to the lifecycle of the EC2 instance, the separate EBS volume remains independent. If you delete the EC2 instance, the data on the EBS volume is not lost. You can attach the EBS volume to another EC2 instance and access your data seamlessly.
 
-6. Connect to linux EC2 machine with putty client.
+2. Flexibility: By having a separate EBS volume, you can manage your data separately from the operating system and applications. It allows you to store important files, databases, or application data without the risk of accidental deletion during instance termination.
 
-7. Use linux command to check whatever the harddisk is linked to this particular EC2 machine - df -Th
+3. Scalability: With EBS volumes, you can easily increase or decrease the size of the volume as per your needs. If you require more storage space, you can modify the volume size without affecting the root volume.
 
-**NOTE** - There you will not able to find your additional 5GB volume.Reason is we have attched the volume, we didn't mount it. You need to first mount it.
+### Use Case Example
 
-8. To check the attached volume - lsblk<br/>
-**Note** - There you will able to find your both volumes. 
+For example, let's say you have an EC2 instance running a web server. The root volume contains the operating system and web server software. However, the user-uploaded files, such as images or documents, need additional storage. Instead of increasing the size of the root volume, you can create a separate EBS volume and mount it as a data drive. This way, you can scale the storage capacity independently without modifying the root volume.
 
-8. We have to mount the volume. <br/>
-   1. Note down the additional volume name from above command. My case it is xvdb. It may change in your case.
-   2. To mount any volume we need to create file system and in cloud platform ext4 file system is supported.
-       sudo mkfs -t ext4 /dev/xvdf
+In summary, while you can increase the size of the root volume, creating a separate EBS volume provides benefits such as data persistence, flexibility, and scalability. It allows you to manage your data separately and retain it even if the EC2 instance is deleted or replaced.
 
-9. Now create on directory with any name
-       mkdir test 
+## Creating Elastic Block Storage on Linux
 
-10. Attach this particular folder with volume
-       sudo mount /dev/xvdf test
+1. Create a Linux EC2 machine with the desired specifications.
 
-11. Now change directory
-       cd test
+2. During the EC2 instance creation process, add an additional EBS volume (e.g., 6GB) from the "Configure Storage" section. Optionally, check the "Delete on Termination" box if you want to delete the volume when terminating the instance.
 
-**Note** - Till now we have added extra volume, we mounted it, we created folder, attached the folder to volume.<BR/>
-           As per AWS whatever we do with this folder it will reflect in the volume so we are actually accessing the volume.
+3. Launch the instance.
 
-12. Now I am creating files in test folder
-        sudo touch file1 file2 file3
+4. Go to the "Volumes" section in the AWS Management Console and check the attached extra volume. You will see two volumes: the default root volume (e.g., 8GB) and the additional volume (e.g., 6GB).
 
-13. Now run the same command to check mount point - df -Th<BR/>
-    This time you will able to see the additional volume with path.
+5. Connect to the Linux EC2 machine using a SSH client, such as Putty or Terminal.
 
-**This is how we added the additional volume with EC2 machine**
+6. Use the Linux command `df -Th` to check the currently linked hard disks to the EC2 machine. Note that you won't find the additional 6GB volume because it has been attached but not mounted.
 
-**Now if the requirement come where you have to detach the additional volume from one EC2 instance and attach it to another EC2 instance without losing the data in that volume**
+7. To check the attached volumes, use the command `lsblk`. Here, you will find both volumes.
 
-14. First I have to detach the volume from one EC2 machine
-        sudo umount test
+8. To mount the volume, create a file system on it. Use the command `sudo mkfs -t ext4 /dev/xvdf` to create an ext4 file system on the volume.
 
-15. Run df -Th, you will not find the mount volume because you have unmounted it.
+9. Create a directory of your choice, e.g., `mkdir test`.
 
-16. Now we need to detach the volume from our console<br/>
-     go to volumes.<br/>
-     select 5GB to detach volume<br/>
-     click on Action button on the top right then click on detach volume.
+10. Attach the newly created directory to the volume using the command `sudo mount /dev/xvdf test`.
 
-**Note** - Whenever you attach existing volume to new EC2 machine make sure EC2 machine and existing volume needs to be in same availability zone.If your existing volume in another avialability zone and your new EC2 instance is another avialability zone then it is imposible to attach volume .
+11. Change the current directory to the newly attached volume using the command `cd test`.
 
-17. Now I am creating EC2 machine in the same availability zone.<br/>
-    Create linux EC2 machine<br/>
-    go to network and settings, there you can select the availability zone . It is mandatory so that this machine will create in same avialability zone as my volume.<br/>
-    Now launch the EC2 machine<br/>
+12. Now, you can create files in the test folder, e.g., `sudo touch file1 file2 file3`.
 
-18. Now we have to attach the existing volume to new EC2 machine.
-     go to volumes.<br/>
-     select 5GB to attach volume<br/>
-     click on Action button on the top right then click on attach volume.
+13. Run the `df -Th` command again to check the mount point. This time, you will see the additional volume with its path.
 
-19. Now connect the new EC2 machine with putty client.
+## Detaching and Attaching Volumes to Another EC2 Instance
 
-20. Now again I am trying df -Th command, you will not able to see the 5GB additional volume. Again we need to mount the volume.
+To detach the volume from one EC2 instance and attach it to another without losing data, follow these steps:
 
-21. To mount the volume. I need the volume name . We will chcek from lsblk command<br/>
-    Note down the volume name.
+14. First, detach the volume from the current EC2 instance by unmounting it with the command `sudo umount test`.
 
-22. Now Again I am going to create one another directory<br/>
-    mkdir training
+15. Run `df -Th` to verify that the volume is no longer mounted.
 
-23. With this particular folder, I am going to mount the volume<br/>
-    sudo mount /dev/xvdf training
+16. In the AWS Management Console, navigate to the "Volumes" section, select the 6GB volume, click on the "Actions" button, and choose "Detach Volume".
 
-24. change directory to training<br/>
-    cd training
+17. Create a new EC2 instance in the same availability zone as the detached volume.
 
-25. list the files - ls<br/>
-    you will able to find all files which you have created in test volume.
+18. During the instance creation process, ensure that the new instance is in the same availability zone as the detached volume.
 
-**Note**- Previously we have created 3 files under test folder. Now we will check if we are able to see those files under training directory. You will get all those files because the files which we have created, we were not created in test folder, the files was there in volume(harddisk). 
+19. Launch the new EC2 instance.
 
+20. In the "Volumes" section, select the 6GB volume, click on the "Actions" button, and choose "Attach Volume".
 
-**Let's create the Elastic Block Storage on Windows based Operating System**
+21. Connect to the new EC2 instance using a SSH client.
 
-In this we will do the same example which we have done above with Linus based OS. Here we will first add additional volume with the EC2 machine then in next step we will detach the existing volume and attach the volume to new EC2 machine.
+22. Again, run the `df -Th` command to check the available volumes. You will not be able to see the 6GB additional volume until you mount it.
 
-1. Go to EC2 and create windows based EC2 machine.
+23. Note down the volume name from the `lsblk` command.
 
-2. Add 5GB extra volume from configure storage and launch instances.
+24. Create another directory, e.g., `mkdir training`.
 
-3. Now create second machine without additional volume.
+25. Mount the volume to the new directory using the command `sudo mount /dev/xvdf training`.
 
-4. Now connect to first windows machine
+26. Change the current directory to the newly attached volume using the command `cd training`.
 
-5. After connecting to first windows machine. Go to this PC. There you will not able to see 5GB additional volume beacuse the volume we have just added not mounted.
+27. List the files using `ls`. You will find all the files that were previously created in the test volume.
 
-6. To mounting the volume to windows EC2 machine we have to go to "server manager". Click on window button and type server manager.
+Now, you have successfully created and mounted an additional EBS volume on a Linux-based EC2 instance. You have also learned how to detach the volume from one instance and attach it to another without losing data.
 
-7. In server manager you will see role " File and Storage". With the help of file and storage we will mount the volume.
 
-8. click on File and Storage. Click on "Disk". You will find your 5GB additional volume with "offline" stataus. We have to bring it "online".
+## Let's create the Elastic Block Storage on Windows based Operating System
 
-9. Select this 5GB volume, right click and select " bring online"
+In this section, we will perform the same example that we did with a Linux-based OS. We will first add an additional volume to the EC2 machine, and then we will detach the existing volume and attach it to a new EC2 machine.
 
-10. Right click on volume again and click on "Initialize".
+1. Go to the EC2 console and create a Windows-based EC2 machine.
 
-11. Again right click on volume select new volume. Now one prompt will open where you have to specify the size of volume, name of drive and create.
+2. Add a 5GB extra volume from the "Configure Instance" storage section and launch the instance.
 
-12. Check in this PC you will find additional volume of 5GB.
+3. Now create a second machine without an additional volume.
 
-13. create one notepad file in 5GB volume.
+4. Connect to the first Windows machine using a remote desktop connection.
 
-14. Now mount the same volume to second Windows EC2 machine.<br/>
-    Before that we have to unmount the volume from First EC2 machine.
+5. After connecting to the first Windows machine, go to "This PC." There, you will not be able to see the 5GB additional volume because the volume we just added is not mounted.
 
-15. Go to " server manager", clisk on disk, clisk on 5GB volume and bring offline.You have umnounted it now
+6. To mount the volume to the Windows EC2 machine, we need to use the "Server Manager" tool. Click on the Windows button and type "Server Manager" to open it.
 
-16. Next we have to detach the volume<br/>
-    Go to console, go to volume, select volume, click on Action and detach volume.
+7. In Server Manager, click on "File and Storage Services." This is where we will mount the volume.
 
-17. Now we have to attach this existing volume to second EC2 machine<br/>
-    Go to volume, click on Action, attach volume to second EC2 machine.
+8. Click on "Disks" in the left-hand pane. You will find your 5GB additional volume with an "Offline" status. We need to bring it "Online."
 
-18. Now connect to second EC2 machine.Go to Server Mananger. Select this 5GB volume, right click and select " bring online".
+9. Select the 5GB volume, right-click on it, and choose "Bring Online."
 
-19. Now check this PC you will get additional volume with same notepad file and with same content.
+10. Right-click on the volume again and click on "Initialize."
 
-**This is how we are creating EBS volume and attaching the same volume to another EC2 machine**
+11. Once again, right-click on the volume and select "New Volume." A prompt will open where you need to specify the size of the volume, name of the drive, and create it.
 
-# Elastic File System
+12. Check "This PC," and you will find the additional 5GB volume listed.
 
-Elastic File System is simple, scalable and elastic file storage system for our EC2 instances. An EFS is a 
-Network File System (NFS) that organizes data in a logical file hierarchy. Data is stored in a path-based 
-system, where data files are organized in folders and sub-folders. It is Compatible with only Linux Based EC2 
-Machine. It work on Security group means whatever the machines you have need to have same security group and it need to attach with same EFS.
+13. Create a new Notepad file in the 5GB volume.
 
-**Features of EFS**
+14. Now, let's mount the same volume to the second Windows EC2 machine. But before that, we need to unmount the volume from the first EC2 machine.
 
-1. EFS Works with EC2 Instances in multi availability Zone.
+15. Go to "Server Manager," click on "Disks," click on the 5GB volume, and choose "Bring Offline." This will unmount the volume.
 
-2. EFS automatically scales its storage capacity as you add or remove files, so you don't need to worry about provisioning or managing storage limits. It can grow and shrink as per your application's needs.
+16. Next, we need to detach the volume. Go to the EC2 console, navigate to the "Volumes" section, select the volume, click on "Actions," and choose "Detach Volume."
 
-3. EFS offers a pay-as-you-go pricing model, where you only pay for the storage used by your file system. There are no upfront costs or minimum commitments.
+17. Now, we can attach this existing volume to the second EC2 machine. Go to the "Volumes" section, click on "Actions," and select "Attach Volume" for the second EC2 machine.
 
-4. Uses Security group to control Access to EFS.
+18. Connect to the second EC2 machine using a remote desktop connection. Open "Server Manager." Select the 5GB volume, right-click on it, and choose "Bring Online."
 
-**Let's create Elastic File system**
+19. Check "This PC" on the second EC2 machine, and you will see the additional volume with the same Notepad file and its contents.
 
-1. Go to EFS
+**This is how we create an EBS volume and attach the same volume to another EC2 machine on a Windows-based Operating System.**
 
-2. Give the name of EFS
 
-3. Select standard storage class
+# Amazon EFS (Elastic File System)
 
-4. Click on customize button
+When working with Amazon EC2 instances, there may be requirements for shared file storage that can be accessed across multiple instances. This is where Amazon EFS (Elastic File System) comes into play. Amazon EFS provides a scalable and fully managed file storage service that can be easily shared across multiple EC2 instances.
 
-5. Select bursting under throughput and general purpose under performance mode.
+## Overview
 
-6. Now you can go with default security group or you can create your own security group.<br/>
-   In default security group by deafult it allow to all traffic .<br/>
-   Right now we are going with deafult security group.
+While Amazon EBS (Elastic Block Store) provides storage for individual EC2 instances, Amazon EFS serves a different purpose. EFS is designed to provide shared file storage that can be accessed by multiple EC2 instances simultaneously.
 
-7. Launch the first EC2 machine.
+Think of it this way: Amazon EBS is like having your own personal hard drive attached to your computer. You can store and access your files whenever you need. But what if you want to share those files with other people? You would need a shared network drive that can be accessed by multiple computers at the same time. This is where Amazon EFS comes in.
 
-8. Now create Second Linux EC2 Machine.
+With Amazon EFS, you can create a shared file system that acts as a network drive for your EC2 instances. It allows multiple instances to access and share the same set of files, making collaboration easier. This is particularly useful in scenarios where you have multiple instances serving a web application, running data analytics, or managing content.
 
-9. Select the Subnet (Make Sure we will select the different from the first machine).
+## Shared File Storage Requirements
 
-10. Select the existing security group (Same as First Machine). In our case we have selected default security group.
+When multiple EC2 instances need access to shared file storage, you have a few options:
 
-11. Connect to first Linux machine and switch to root user
-    sudo su -
+1. Set up a centralized file server: You can create a standalone EC2 instance and configure it as a file server using technologies like NFS (Network File System) or Samba. This approach requires manual setup and maintenance of the file server instance.
 
-12. Now install EFS Utils<br/>
-    sudo yum install -y amazon-efs-utils
+2. Utilize Amazon EFS: Amazon EFS provides a fully managed, scalable, and shared file storage solution. With Amazon EFS, you can create a file system that can be mounted across multiple EC2 instances simultaneously, enabling easy file sharing and collaboration.
 
-13. Create EFS directory with name mkdir efs (mendatory)
+## Advantages of Using Amazon EFS
 
-14. I need to link EFS with my efs directory.<br/>
-    Go to console, click on efs, click on attach, copy using NFS Client and paste it in putty (Automatically with this EFS Folder system attched my EFS). 
+Here are some key advantages of utilizing Amazon EFS for shared file storage:
 
-15.  Now create some files in efs directory.<br/>
-     cd efs<br/>
-     touch file1 file2 file3
+- Scalability: Amazon EFS automatically scales its storage capacity to accommodate growing data needs. As you add more files and data to the file system, Amazon EFS expands to handle the increased demand seamlessly.
 
-16. Now connect to second Linux machine.
+- Elasticity: With Amazon EFS, you don't need to worry about pre-provisioning storage capacity. The file system automatically scales up and down based on your actual usage, ensuring that you have the right amount of storage at all times.
 
-17. Switch to root user<br/>
-    sudo su -
+- Shared Access: Multiple EC2 instances within the same AWS region and security group can concurrently access and share the same file system. This allows for collaboration and coordination across instances, making it suitable for various use cases such as web hosting, content management systems, and data analytics.
 
-18. Now install EFS Utils<br/>
-    sudo yum install -y amazon-efs-utils
+- Durability and Availability: Amazon EFS is designed for high durability and availability. It stores data across multiple availability zones within a region, ensuring that your data remains accessible even if an availability zone experiences an outage.
 
-19. Create EFS directory with name mkdir efs (mendatory)
+## Use Case Example
 
-20. Run the NFS Command in Second Machine
+Consider a scenario where you have multiple EC2 instances serving a web application that requires access to a shared set of static files, such as images, CSS, or JavaScript files. Instead of manually managing file synchronization across instances, you can create an Amazon EFS file system and mount it on each EC2 instance. This allows all instances to access the same set of files, ensuring consistency and simplifying the management of shared content.
 
-21. Switch to EFS folder<br/>
-    cd efs
+## Let's Create Elastic File System
 
-22. run the ls command<br/>
-    You will find the files which you have craeted in first linux EC2 machine will appear here in second linux machine.
+1. Go to the EFS (Elastic File System) console.
 
-23. If you create files in second linux machine will appear in both EC2 machines.
+2. Provide a name for your EFS file system.
 
-**Note** - In EBS you are creating files in common shared location and anyone can access it from anywhere .
+3. Select the standard storage class.
 
+4. Click on the "Customize" button.
 
-   
+5. Choose "Bursting" under throughput mode and "General Purpose" under performance mode.
 
+6. You can go with the default security group or create your own security group. For now, we will use the default security group.
 
+7. Launch the first Linux EC2 machine.
 
-    
+8. Create a second Linux EC2 machine, making sure to select a different subnet from the first machine.
 
+9. Select the existing security group (same as the first machine), or create a new security group if desired. In our case, we selected the default security group.
 
+10. Connect to the first Linux machine and switch to the root user:
+    `sudo su -`
 
+11. Install EFS Utils:
+    `sudo yum install -y amazon-efs-utils`
 
+12. Create an EFS directory:
+    `mkdir efs` (mandatory)
 
+13. Link the EFS with the `efs` directory:
+    - Go to the EFS console.
+    - Click on the EFS file system.
+    - Click on "Attach," copy the NFS Client command, and paste it into the Putty terminal. This will automatically attach the EFS file system to the `efs` directory.
 
+14. Create some files in the `efs` directory:
+    - Change directory to `efs`: `cd efs`
+    - Create files: `touch file1 file2 file3`
 
+15. Connect to the second Linux machine.
 
+16. Switch to the root user:
+    `sudo su -`
 
+17. Install EFS Utils:
+    `sudo yum install -y amazon-efs-utils`
 
+18. Create an EFS directory:
+    `mkdir efs` (mandatory)
 
+19. Run the NFS command for the second machine.
 
+20. Switch to the `efs` folder:
+    `cd efs`
 
+21. Run the `ls` command.
+    - You will find the files created in the first Linux EC2 machine appearing in the second Linux machine.
 
+22. If you create files in the second Linux machine, they will also appear in both EC2 machines.
 
+**Note**: In Amazon EFS, you are creating files in a common shared location, and anyone can access them from anywhere.
 
 
-
-
-    
-
-
-
-
- 
-     
