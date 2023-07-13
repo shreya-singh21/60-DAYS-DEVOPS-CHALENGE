@@ -200,19 +200,8 @@ Consider a scenario where you have multiple EC2 instances serving a web applicat
 11. Install EFS Utils:
     `sudo yum install -y amazon-efs-utils`
 
-12. Create an EFS directory:
-    `mkdir efs` (mandatory)
+**Note** - In EFS you are creating files in common shared location and anyone can access it from anywhere .
 
-13. Link the EFS with the `efs` directory:
-    - Go to the EFS console.
-    - Click on the EFS file system.
-    - Click on "Attach," copy the NFS Client command, and paste it into the Putty terminal. This will automatically attach the EFS file system to the `efs` directory.
-
-14. Create some files in the `efs` directory:
-    - Change directory to `efs`: `cd efs`
-    - Create files: `touch file1 file2 file3`
-
-15. Connect to the second Linux machine.
 
 16. Switch to the root user:
     `sudo su -`
