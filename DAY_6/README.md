@@ -1,4 +1,4 @@
-# DAY 4 OF DEVOPS LEARNING
+# DAY 6 OF DEVOPS LEARNING
 Building upon our previous knowledge gained during the first five days of our 60 Days DevOps Challenge, where we explored cloud computing, the benefits of Linux in DevOps, concepts related to EC2 instances, and the fundamentals of Amazon EBS and EFS, we are now ready to delve deeper into AWS storage services. In Day 6, we will focus on important topics such as Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin. These storage features will enhance our data protection, backup management, automation capabilities, and overall efficiency in managing our AWS infrastructure. Let's continue our journey of becoming proficient in DevOps practices and AWS services.
 
 # AWS Storage Services Overview
