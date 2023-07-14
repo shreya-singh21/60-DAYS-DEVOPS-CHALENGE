@@ -343,7 +343,7 @@ Replication is used when you are uploading object in source bucket and it is aut
 
 2. Same region Replication - In this source and destination will be in same region.
 
-**REplication - Same Region**
+**Replication - Same Region**
 
 1. Create two buckets in same region.
 
@@ -368,6 +368,71 @@ Replication is used when you are uploading object in source bucket and it is aut
 10. Upload one object in source bucket.
 
 11. After few minutues you will see the same object get reflected in the destination bucket.
+
+**Note**- In the same region your source bucket got replicated.
+
+
+**Replication - Cross Region**
+
+1. Create two buckets in different region.
+
+2. Enable ACL in both buckets.
+
+3. Give public access.
+
+4. Enable Bucket Versioning in both the buckets. It is the manadatory step for replication.
+
+5. Create both buckets.
+
+6. Click on First Bucket. Go to Management tab. 
+
+7. In the replication section create replication rules.
+
+8. Select Destination bucket<br/>
+   In destination you can choose a bucket in the same account or you can choose bucket in another account.<br/>
+   If you are choosing another account then you have to provide Account ID of that person's account.
+
+9. create replication.
+
+10. Upload one object in source bucket.
+
+11. After few minutues you will see the same object get reflected in the destination bucket.
+
+**Note**- In the different region your source bucket got replicated.
+
+
+**TRANSFER ACCELERATION**
+
+Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration is designed to optimize transfer speeds from across the world into S3 buckets. Transfer Acceleration takes advantage of the globally distributed edge locations in Amazon CloudFront. 
+
+For Ex- : If our end user is in the India & Bucket is in the USA region it is very far distance & if end user is trying to upload the heavy object & there is network fluctuation again end user need to start again. For this we can use this feature.
+
+**To enable edge location**
+
+1. Craete  S3 bucket.
+
+2. Give name to the bucket.
+
+3. Eanble ACL
+
+4. Give public access
+
+5. Create bucket
+
+6. Click on bucket name.
+
+7. Go to properties tab
+
+8. Click on transfer acceleration button and enable it.
+
+9. save changes.
+
+**Note**- If anyone will upload the object in the bucket then first it will go to nearest edge location then it will transfer to region bucket and all the process will happen within friction of second.
+
+
+
+
+
 
 
 
