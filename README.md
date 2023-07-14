@@ -113,6 +113,24 @@ On Day 5 of our DevOps learning journey, we focused on the following topics:
 
 By understanding these concepts and practices, we gained valuable insights into scaling our EC2 instances, monitoring their health, and ensuring automatic recovery in case of failures.
 
+## Day 6: Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin
+
+On Day 6 of our DevOps learning journey, we will continue exploring AWS storage services. We will focus on important topics such as Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin. These storage features will enhance our data protection, backup management, automation capabilities, and overall efficiency in managing our AWS infrastructure.
+
+In the Day 6 folder, you will discover:
+
+- Snapshots: Learn how to create point-in-time copies of your block storage data, such as EBS volumes, to protect against accidental deletion and enable data recovery.
+
+- Amazon Machine Images (AMIs): Explore pre-configured templates that contain the necessary software and configurations to launch instances in Amazon EC2. Learn how to create custom AMIs and utilize them for consistent instance deployments.
+
+- Scheduled Snapshots: Discover how to automate the creation of EBS snapshots based on defined schedules using AWS Event Bridge. This ensures regular and consistent backups of your EC2 instance's volumes.
+
+- Data Lifecycle Manager: Simplify the process of managing your data backups with Data Lifecycle Manager. Learn how to automatically create, retain, and delete EBS snapshots based on predefined policies.
+
+- The Recycle Bin: Utilize the Recycle Bin feature in AWS to store and manage deleted EBS snapshots, providing a safety net against accidental data loss and allowing for easy recovery if needed.
+
+Feel free to explore the Day 6 folder to dive deeper into these topics and access additional resources related to AWS storage services.
+
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
 Happy learning and enjoy your DevOps journey!
