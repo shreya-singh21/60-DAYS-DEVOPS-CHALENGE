@@ -430,6 +430,199 @@ For Ex- : If our end user is in the India & Bucket is in the USA region it is ve
 **Note**- If anyone will upload the object in the bucket then first it will go to nearest edge location then it will transfer to region bucket and all the process will happen within friction of second.
 
 
+**ACCESS CONTROL LIST**
+
+Access control list is used whenever we want to proide object access or bucket access to some other person who is having other AWS account.
+
+Each bucket and object has an access control list associated with it.
+
+**We can apply ACL at two level
+
+Object Level<br/>
+Bucket Level
+
+**Cronical User ID**<br/>
+Click on your username <br/> 
+security credentials <br/>
+In account details you will find cronical user ID
+
+**ACL at object level**
+
+1. Create s3 bucket
+
+2. Give bucket name
+
+3. Enable ACL
+
+4. Give public access
+
+5. Create bucket
+
+6. Upload object in bucket and give public access to object
+
+7. Click on object. Go to Permission tab
+
+8. Edit ACL. Give cronical ID of other AWS account person for which you want to provide access of your bucket.
+
+**ACL at bucket level**
+
+In this you can give bucket access to other AWS account person.
+
+1. Create s3 bucket
+
+2. Give bucket name
+
+3. Enable ACL
+
+4. Give public access
+
+5. Create bucket
+
+6. Upload object in bucket and give public access to object.
+
+7. click on bucket. Go to Permission tab. 
+
+8. Go to Access control list. Give cronical ID.
+
+9. save changes.
+
+
+**BUCKET POLICY**
+
+Bucket policy in AWS refers to an access policy that you can configure for an Amazon S3 bucket. It allows you to control access to the objects stored within the bucket by defining rules and permissions.
+
+With this even if you have shared URL of bucket and suppose you have denied the access then that person will not able to access the bucket with url itself.
+
+**Key Elements of Bucket Policy:**
+
+ A bucket policy consists of the following key elements:
+
+Principal: Specifies the user or AWS account that the policy applies to. It can be an IAM user, IAM role, AWS account, or predefined AWS service.
+
+Actions: Defines the specific actions or operations that are allowed or denied on the bucket and its objects, such as "s3:GetObject" or "s3:PutObject".
+
+Resources: Specifies the Amazon Resource Names (ARNs) of the bucket and its objects that the policy applies to.
+Effect: Specifies whether the policy allows or denies the specified actions.
+
+Conditions: Optional conditions that further refine the policy based on factors like the requester's IP address or request headers.
+
+
+**Example Use Cases**: Bucket policies can be used for various purposes, such as:
+
+Granting public access to read-only files in a bucket for static website hosting.
+
+Restricting access to specific IP addresses or VPCs.
+
+Defining access permissions for specific IAM users, groups, or roles.
+
+Enabling cross-account access for sharing resources between AWS accounts.
+
+**Create bucket policy**
+
+1. Create the Bucket
+
+2. Select ACLs Enabled
+
+3. Give Public Access
+
+4. Upload the Object
+
+5. Upload the object and do not give public access to object.
+
+6. Try to access the object. This time you are not able to acces the object.
+
+7. Open our bucket & go to permission tab.
+
+8. Go to bucket policY. You have to enter code to give bucket policy
+
+9. Click on edit bucket policy
+
+10. Copy the Bucket ARN (Amazon Resource Names)
+
+11. Click on Policy generator
+
+12. Select type of policy is S3 Bucket Policy
+
+13. Select effect as Allow
+
+14. Enter principal as * (It means to all the objects)
+
+15. Select actions as All Actions
+
+16. Enter the bucket ARN with forward slash & star<br/>
+    Example : arn:aws:s3:::<policy_name>/*
+
+17. Click on add statement and generate policy
+
+18. Now copy the JSON code and paste it in bucket policy section.
+
+19. save changes
+
+20. Now you have given public access to your bucket so you can able to access the object.
+
+
+**LIFE CYCLE MANAGEMENT**
+
+ We have seen different storage class of s3. Different storage classes help us to save the cost.<br/>
+ earlier have seen how we can change the storage class of our object manually but in real time thousands of objects we have so it will not possible to change storage for each objects manually. Their is an automatic way to change the storage class and that is called Life Cycle Management.
+
+Amazon S3 Life cycle allows to configure a lifecycle for stored objects on S3, to optimize the cost. A Lifecycle configuration is a set of rules that define actions applied to a group of objects.
+
+ In Life Cycle Management based on rules whatever we set our object will automatically move to different storage class.
+
+ **Example of S3 lifecycle**
+
+ Application server, database logs are stored in s3 but logs may not require after a few weeks or months, in this case, you can delete the objects automatically by applying an expiration action.
+
+ Frequency of access requirement of an organization’s documents (financial, media, employee data) Some documents are frequently accessed, but after a few days or months, they are infrequently accessed. After some time, organization may need to archive them as documents are not used anymore but must be retained for regulatory compliance, in this case, you can use transition action.
+
+ **Creation of Life Cycle rule**
+
+ 1. Create the Bucket
+
+2. Select ACLs Enabled
+
+3. Give Public Access
+
+4. Upload the Object
+
+5. Upload the object and give public access to object.
+
+6. Open our bucket & go to management tab.
+
+7. Click on create life cycle rules.
+
+8. In the life cycle rule wizard, type a name for your rule.
+
+**Note**- Life cycle policy you can apply to all object or to only one object.
+
+9. here choose apply to all object.
+
+10. Select the life cycle rule according to your requiremenet.
+
+11. Choose the storage class and give the number of days you want your object to be there in that particular storage class<br/>
+    For ex- Standard IA   and 60 day <br/>
+    After creation of object your objet will stay there for 60 days and after 60 days it will move to another storage class.
+
+12. create rule.
+
+With this particular option system will automatically move our object to different storage class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
