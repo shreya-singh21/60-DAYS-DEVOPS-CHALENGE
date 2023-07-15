@@ -742,7 +742,7 @@ SQS stands for Simple Queue Service, and it is a fully managed message queuing s
 
 34. Click on Poll for messages
 
-Now you will see messages at queue.
+Now you will able to see messages at queue.
 
 
 
