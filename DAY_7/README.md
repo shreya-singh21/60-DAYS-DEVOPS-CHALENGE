@@ -578,7 +578,7 @@ Amazon S3 Life cycle allows to configure a lifecycle for stored objects on S3, t
 
  **Creation of Life Cycle rule**
 
- 1. Create the Bucket
+ 1. Create S3 Bucket
 
 2. Select ACLs Enabled
 
@@ -607,6 +607,65 @@ Amazon S3 Life cycle allows to configure a lifecycle for stored objects on S3, t
 12. create rule.
 
 With this particular option system will automatically move your object to different storage class.
+
+
+# Event Notification with SNS Service
+
+SNS stands for Simple Notification Service, and it is a fully managed messaging service provided by Amazon Web Services (AWS). It enables you to send messages or notifications to a variety of endpoint types, such as email, SMS (text messages), mobile push notifications, and even HTTP endpoints.
+
+**Let's see how SNS service you can use**
+
+1. Create S3 Bucket
+
+2. Select ACLs Enabled
+
+3. Give Public Access
+
+4. Create bucket.
+
+5. Go to SNS service.
+
+6. Create SNS topic. Give the name of topic.
+
+7. Select standard .
+
+8. Create topic.
+
+9. Give the policy to SNS topic. For that copy the ARN.
+
+10. Click on edit the ARN and go to access policy and paste the ARN.
+
+11. Save changes.
+
+12. Now add the subscription where you want notification for bucket.
+
+13. Click on SNS subscription 
+
+14. Select email protocol and link the email address on which you want notification.
+
+15. Now you confirm first from you Email id then you will start receiving notifications.
+
+16. Go to your email id and confirm subscription.
+
+17. Now you have to craete an event based on which you will get notification
+
+18. Go to object. Go to event notification.
+
+19. You can select event type like whenever someone create object you want notification or whenever someone delete object you want notification.
+
+20. Select SNS Destination and select SNS topic
+
+21. save changes
+
+22. Now upload our objects and you will get notification onto your email.
+
+
+# Event Notification with SQS Service
+
+
+
+
+
 
 
 
