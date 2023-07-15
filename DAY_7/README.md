@@ -662,6 +662,98 @@ SNS stands for Simple Notification Service, and it is a fully managed messaging 
 
 # Event Notification with SQS Service
 
+SQS stands for Simple Queue Service, and it is a fully managed message queuing service provided by Amazon Web Services (AWS). SQS enables decoupling of components in distributed systems by allowing one component to send a message to a queue, and another component to retrieve and process that message from the queue.
+
+**Let's see how SQS service can use**
+
+1. Create S3 Bucket
+
+2. Select ACLs Enabled
+
+3. Give Public Access
+
+4. Create bucket.
+
+5. Go to SQS service.
+
+6. Click on craete queue.
+
+7. Select standard and give the name of my queue.
+
+8. In the configuration section you can set:
+
+   **Visisbility Timeout**- When a consumer component retrieves a message from a queue, SQS sets a visibility timeout for that message. During this timeout period, the message is temporarily invisible to other consumers. If the consumer successfully processes the message within the timeout, it deletes the message from the queue. Otherwise, if the consumer fails to process the message within the timeout, the message becomes visible again for other consumers to retrieve and process.
+
+   **Message Retention**: SQS retains messages in the queue until they are processed or explicitly deleted by consumers. This allows for reliable and durable message storage, ensuring that messages are not lost even if consumers are temporarily offline or unavailable.
+
+   Minimum- 1min   Maximum- 14 days
+
+   **Dilevery Delay**- It is the amount of time to delay the first delivery of eaach messages added to queue.
+
+9. Create queue.
+
+10. Click on edit the ARN and go to access policy and paste the ARN.
+
+11. Click on policy generator.
+
+12. Select type as SQS Queue Policy
+
+13. Enter * in principal
+
+14. Select All Actions or Send Messages
+
+15. Enter ARN
+
+16. Click on Add Statement
+
+17. Click on Generate Policy
+
+18. Copy the code & paste the code in the Access policy
+
+19. Click on Save
+
+20. Create S3 Event Notification
+
+21. Go to our bucket
+
+22. Go to Properties tab
+
+23. Go to Event Notification
+
+24. Click on Create Event Notification
+
+25. Enter event name
+
+26. Go to Destination
+
+27. Select SQS Queue
+
+28. Select our SQS Queue
+
+29. Click on Save Changes
+
+30. Upload the object, give public access & open the Object
+
+31. To see the queue messages. Go to SQS
+
+32. Open our SQS
+
+33. Click on Send and receive messages
+
+34. Click on Poll for messages
+
+Now you will see messages at queue.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
