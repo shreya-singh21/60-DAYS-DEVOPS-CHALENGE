@@ -606,7 +606,7 @@ Amazon S3 Life cycle allows to configure a lifecycle for stored objects on S3, t
 
 12. create rule.
 
-With this particular option system will automatically move our object to different storage class.
+With this particular option system will automatically move your object to different storage class.
 
 
 
