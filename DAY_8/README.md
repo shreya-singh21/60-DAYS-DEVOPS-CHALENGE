@@ -53,5 +53,10 @@ IAM user starts with no permissions and is not authorized to perform any AWS act
 
 Each IAM user is associated with one and only one AWS account.
 
+Number of ways we can login to AWS account<br/>
+Console/Graphical User Interface (GUI)
+Command Line Interface
+
+
 
 
