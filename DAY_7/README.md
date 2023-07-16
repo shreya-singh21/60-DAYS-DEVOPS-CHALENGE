@@ -211,7 +211,7 @@ Congratulations! You have successfully hosted your static website on Amazon S3.
 
 Enjoy your scalable and cost-effective static website hosting with Amazon S3!
 
-**3. STORAGE CLASSES**
+# STORAGE CLASSES
 
 Amazon S3 offers a range of storage classes designed for different use cases. When we upload our data into the bucket then we can select different classes as per our requirement.
 
@@ -219,7 +219,7 @@ Whenever you are uploading objects by default we are alaways selecting storage c
 
 With the help of storage class we can save the cost like if we have object which is not our use of so we can move the object to different storage class and we can save money.
 
-**Different Types of Storage Classes in S3**
+## Different Types of Storage Classes in S3
 
 • S3 Standard
 
@@ -245,7 +245,7 @@ There are two ways by which AWS is charging cost for Storage.
 2. For Accessing the particular object.
 
 
-**Storage Classes - S3 Standard**
+### Storage Classes - S3 Standard
 S3 Standard storage class is used when you have to access object frequently. It offers high durability, availability, and performance object storage for frequently accessed data.
 
 **Key Features:**
@@ -261,7 +261,7 @@ S3 Standard storage class is used when you have to access object frequently. It 
 • Use Cases: S3 Standard is appropriate for a wide variety of use cases, including cloud applications, dynamic websites, content distribution, mobile and gaming applications, and big data analytics
 
 
-**Storage Classes - S3 Intelligent-Tiering**
+### Storage Classes - S3 Intelligent-Tiering
 
 S3 Intelligent-Tiering is the only cloud storage class that delivers automatic storage cost savings when data access patterns change, without performance impact or operational overhead. S3 Intelligent-Tiering works by storing objects in access tiers: two low latency access tiers optimized for frequent and infrequent access.
 
@@ -285,7 +285,7 @@ S3 Intelligent-Tiering is the only cloud storage class that delivers automatic s
 to the Frequent Access tier.
 
 
-**Storage Classes - Standard- Infrequent Access**
+### Storage Classes - Standard- Infrequent Access
 
 S3 Standard-IA is for data that is accessed less frequently,but requires rapid access when needed.
 
@@ -304,7 +304,7 @@ S3 Standard-IA is for data that is accessed less frequently,but requires rapid a
 • Use Cases: As a Store for Disaster recovery, backup …
 
 
-**Storage Classes - One Zone- Infrequent Access**
+### Storage Classes - One Zone- Infrequent Access
 
 S3 One Zone-IA is for data that is accessed less frequently, but requires rapid access when needed. Unlike other S3 Storage Classes which store data in a minimum of three Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA.
 
@@ -326,7 +326,7 @@ Use Cases: Storing Secondary backup copies of on premise data or storing data yo
 can recreate.
 
 
-**Storage Classes - S3 Glacier**
+### Storage Classes - S3 Glacier
 
 S3 Glacier is a secure, durable, and low-cost storage class for data archiving.
 
@@ -345,7 +345,7 @@ S3 Glacier is a secure, durable, and low-cost storage class for data archiving.
 • Data is tored in Multi- Availability Zone.
 
 
-**Storage Classes - S3 Glacier Deep Archive**
+### Storage Classes - S3 Glacier Deep Archive
 
 Glacier Deep Archive storage class provides the lowest-cost data 
 archiving where data access is infrequent and retrieval time of hours is acceptable.
@@ -365,7 +365,7 @@ archiving where data access is infrequent and retrieval time of hours is accepta
 Use Cases: Financial Services, Healthcare, and Public Sectors.
 
 
-**How we can enable storage classes on object**
+### How we can enable storage classes on object
 
 1. Go to S3. Create bucket.
 
@@ -390,7 +390,7 @@ This is How manually we can change the storage classes of object.<br/>
 But in Real time we use an automatic way to change storage classes with the help of Life Cycle Management.
 
 
-**REPLICATION**
+# REPLICATION
 
 In AWS, replication refers to the automatic copying of objects from a source bucket to a destination bucket. When we enable replication for a bucket, any object we upload to the source bucket will be automatically replicated and stored in the destination bucket.
 
@@ -402,13 +402,13 @@ Replication in AWS ensures data durability and availability by maintaining consi
 
 By leveraging replication, you can enhance the resilience and availability of your data, improve disaster recovery capabilities, and ensure business continuity. AWS offers various replication options, allowing you to customize the replication settings based on your specific requirements and use cases.
 
-**There are two types of Replication**
+## There are two types of Replication
 
 1. Cross Region Replication - In this source and destination will be in different region.
 
 2. Same region Replication - In this source and destination will be in same region.
 
-**Replication - Same Region**
+## Replication - Same Region
 
 1. Create two buckets in same region.
 
@@ -437,7 +437,7 @@ By leveraging replication, you can enhance the resilience and availability of yo
 **Note**- In the same region your source bucket got replicated.
 
 
-**Replication - Cross Region**
+## Replication - Cross Region
 
 1. Create two buckets in different region.
 
@@ -466,7 +466,7 @@ By leveraging replication, you can enhance the resilience and availability of yo
 **Note**- In the different region your source bucket got replicated.
 
 
-**TRANSFER ACCELERATION**
+# TRANSFER ACCELERATION
 
 Transfer Acceleration is a feature in Amazon S3 that makes file transfers between your client and an S3 bucket faster, easier, and more secure. It is especially useful when you need to transfer files over long distances. Transfer Acceleration leverages Amazon CloudFront's globally distributed edge locations to optimize transfer speeds.
 
@@ -478,7 +478,7 @@ By using Transfer Acceleration, the file transfer speed is significantly improve
 
 In summary, Transfer Acceleration is a valuable feature that enhances file transfer speeds over long distances. It leverages Amazon CloudFront's global edge locations to optimize transfers between clients and S3 buckets. By enabling Transfer Acceleration, you can save time, improve efficiency, and provide a better user experience, especially when transferring large files across regions.
 
-**To enable edge location**
+### To enable edge location
 
 1. Craete  S3 bucket.
 
@@ -605,7 +605,7 @@ In this you can give bucket access to other AWS account person.
 9. save changes.
 
 
-## BUCKET POLICY
+# BUCKET POLICY
 
 Bucket policy in AWS refers to an access policy that you can configure for an Amazon S3 bucket. It allows you to control access to the objects stored within the bucket by defining rules and permissions.
 
@@ -715,7 +715,7 @@ Here are some common use cases for ACL and Bucket Policy:
 
 Understanding the differences between ACL and Bucket Policy helps in choosing the appropriate method based on your specific access control requirements.
 
-## LIFE CYCLE MANAGEMENT
+# LIFE CYCLE MANAGEMENT
 
  We have seen different storage class of s3. Different storage classes help us to save the cost.<br/>
  earlier have seen how we can change the storage class of our object manually but in real time thousands of objects we have so it will not possible to change storage for each objects manually. Their is an automatic way to change the storage class and that is called Life Cycle Management.
@@ -724,13 +724,13 @@ Amazon S3 Life cycle allows to configure a lifecycle for stored objects on S3, t
 
  In Life Cycle Management based on rules whatever we set our object will automatically move to different storage class.
 
- **Example of S3 lifecycle**
+ ## Example of S3 lifecycle
 
  Application server, database logs are stored in s3 but logs may not require after a few weeks or months, in this case, you can delete the objects automatically by applying an expiration action.
 
  Frequency of access requirement of an organization’s documents (financial, media, employee data) Some documents are frequently accessed, but after a few days or months, they are infrequently accessed. After some time, organization may need to archive them as documents are not used anymore but must be retained for regulatory compliance, in this case, you can use transition action.
 
- **Creation of Life Cycle rule**
+ ## Creation of Life Cycle rule
 
  1. Create S3 Bucket
 
