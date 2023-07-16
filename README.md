@@ -11,8 +11,8 @@ Here is an overview of the 60-day roadmap:
 3. [Day 3: AWS Elastic IP](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_3)
 4. [Day 4: Placement Groups,Elastic Load Balancer](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_4)
 5. [Day 5: AWS EC2 Auto Scaling, AWS Status Check, Automatic Recovery](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_5)
-6. [Day 6: AWS Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin](Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin)
-
+6. [Day 6: AWS Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_6)
+7. [Day 7: Simple Storage Service (S3)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_7)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -132,6 +132,12 @@ In the Day 6 folder, you will discover:
 - The Recycle Bin: Utilize the Recycle Bin feature in AWS to store and manage deleted EBS snapshots, providing a safety net against accidental data loss and allowing for easy recovery if needed.
 
 Feel free to explore the Day 6 folder to dive deeper into these topics and access additional resources related to AWS storage services.
+
+## Day 7: Simple Storage Service (S3)
+
+Building upon the knowledge gained during the first six days of our 60 Days DevOps Challenge, where we explored AWS storage services like Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin, we are now ready to dive into the powerful world of Simple Storage Service (S3). In Day 7, we will focus on understanding how S3 differs from other AWS storage types, its key features, restrictions, and limitations. We'll then take a comprehensive overview of S3 buckets, including creating, uploading objects, accessing them, and managing bucket deletion. Additionally, we'll explore the intricacies of S3 pricing, versioning advantages, and recovering deleted files through versioning. Furthermore, we'll delve into static website hosting with Amazon S3, its setup, testing, and additional considerations. Additionally, we will explore different types of storage classes in S3, including their key features and how AWS charges costs for storage. Moreover, we'll understand the concept of replication and two types of replication options available in S3. Access control will be covered through topics such as Access Control List (ACL) and Bucket Policy, and we'll explore how to create, manage, and enable storage classes on objects. Lastly, we'll learn about Life Cycle Management and how to implement it in S3. We'll conclude our day by exploring Event Notification with SNS Service and SQS Service, gaining insights into their applications in real-world scenarios. Excited to expand our expertise even further with S3 services in DevOps! Let's keep up the momentum and continue our journey of becoming proficient in DevOps practices and mastering AWS services.
+
+Feel free to explore the Day 7 folder to dive deeper into these topics and access additional resources related to AWS storage services.
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
