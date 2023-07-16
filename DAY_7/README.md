@@ -1,4 +1,4 @@
-# Simple Storage Service (S3)
+# Day 7:  Simple Storage Service (S3)
 
 Amazon S3 (Simple Storage Service) is a highly scalable and durable cloud storage service provided by Amazon Web Services (AWS). It offers a versatile solution for storing and retrieving large amounts of data from anywhere on the web. Unlike other AWS storage types, such as EBS and EFS, S3 is specifically designed for object-based storage, making it suitable for a wide range of use cases. It stands out from other AWS storage types due to its unique characteristics and use cases.
 
@@ -541,7 +541,7 @@ Tags are useful for organizing and managing objects, especially when dealing wit
 By utilizing metadata and tags in Amazon S3, you can enhance the organization, classification, and management of your objects, making it easier to search, track, and understand your data.
 
 
-**ACCESS CONTROL LIST**
+## ACCESS CONTROL LIST
 
 Access Control List is a feature used to control and manage access to objects and buckets in Amazon S3. It allows you to specify who can access your resources and what level of access they have.
 
@@ -605,7 +605,7 @@ In this you can give bucket access to other AWS account person.
 9. save changes.
 
 
-**BUCKET POLICY**
+## BUCKET POLICY
 
 Bucket policy in AWS refers to an access policy that you can configure for an Amazon S3 bucket. It allows you to control access to the objects stored within the bucket by defining rules and permissions.
 
@@ -679,7 +679,7 @@ Enabling cross-account access for sharing resources between AWS accounts.
 20. Now you have given public access to your bucket so you can able to access the object.
 
 
-# Access Control List (ACL) vs. Bucket Policy
+## Access Control List (ACL) vs. Bucket Policy
 
 Access Control List (ACL) and Bucket Policy are two mechanisms provided by Amazon S3 to control access to buckets and objects. While they serve similar purposes, there are key differences between them.
 
@@ -715,7 +715,7 @@ Here are some common use cases for ACL and Bucket Policy:
 
 Understanding the differences between ACL and Bucket Policy helps in choosing the appropriate method based on your specific access control requirements.
 
-**LIFE CYCLE MANAGEMENT**
+## LIFE CYCLE MANAGEMENT
 
  We have seen different storage class of s3. Different storage classes help us to save the cost.<br/>
  earlier have seen how we can change the storage class of our object manually but in real time thousands of objects we have so it will not possible to change storage for each objects manually. Their is an automatic way to change the storage class and that is called Life Cycle Management.
