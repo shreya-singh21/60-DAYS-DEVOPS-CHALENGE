@@ -9,18 +9,18 @@ IAM allows you to implement the principle of least privilege, where users are gr
 
 **Here are some key points about IAM:**
 
-**Users**: IAM allows you to create individual IAM users within your AWS account. Each user is assigned unique credentials (username and password or access keys) and can have specific permissions and policies associated with them.
+**1.Users**: IAM allows you to create individual IAM users within your AWS account. Each user is assigned unique credentials (username and password or access keys) and can have specific permissions and policies associated with them.
 
-**Groups**: IAM lets you organize users into logical groups. By creating groups, you can assign common permissions and policies to a set of users, making it easier to manage their access.
+**2.Groups**: IAM lets you organize users into logical groups. By creating groups, you can assign common permissions and policies to a set of users, making it easier to manage their access.
 
-**Roles**: IAM roles are similar to users, but they are not associated with a specific person or identity. Instead, roles are assumed by trusted entities, such as AWS services or applications running on EC2 instances.
+**3.Roles**: IAM roles are similar to users, but they are not associated with a specific person or identity. Instead, roles are assumed by trusted entities, such as AWS services or applications running on EC2 instances.
 
-**Policies**: IAM policies are JSON documents that define the permissions for users, groups, and roles. Policies specify the actions that are allowed or denied on specific resources and can be fine-tuned to provide granular control over access. Policies can be attached at the user, group, or role level.
+**4.Policies**: IAM policies are JSON documents that define the permissions for users, groups, and roles. Policies specify the actions that are allowed or denied on specific resources and can be fine-tuned to provide granular control over access. Policies can be attached at the user, group, or role level.
 
-**Access Keys**: IAM provides access keys, consisting of an access key ID and a secret access key, which are used for programmatic access to AWS resources via the AWS API.
+**5.Access Keys**: IAM provides access keys, consisting of an access key ID and a secret access key, which are used for programmatic access to AWS resources via the AWS API.
 
 
-**IAM - Features**
+**IAM - FEATURES**
 
 **• Shared access to the AWS account**: The main feature of IAM is that it allows you to create separate usernames and passwords for individual users or resources and delegate access.
 
@@ -35,17 +35,17 @@ IAM allows you to implement the principle of least privilege, where users are gr
 **• Granular permissions**: Each user can be granted with different set granular permissions as required to perform their job.
 
 
-**Types of Account in AWS**
+**TYPES OF ACCOUNT IN AWS**
 
 1. Root User<br/>
 2. IAM User<br/>
 
 
-**Root User**
+**ROOT USER**
 
 The root account is created when you first sign up for AWS. It has complete administrative access to all AWS services and resources in the account. The root account has full control over billing, access management, and all aspects of the AWS environment. 
 
-**IAM User**
+**IAM USER**
 
 IAM user represents the person or service who uses the access to interact with AWS.
 
@@ -69,9 +69,9 @@ Command Line Interface
 
 5. Give the user name.
 
-6. 
-
-7. You have select password format type<br/>
+6. Click on enable console access<br/>
+  
+7. You will get two option<br/>
    auto generated password<br/>
    custom password
 
@@ -123,7 +123,7 @@ Command Line Interface
           2. In IAM account if the person is trying to access the service which they don't have permission will get the error message.
 
 
-**Groups & Attach Policies**
+**GROUPS & ATTACH POLICIES**
 
 IAM Group is a collection of users. In IAM group we can add user and attach policies. Whatever policies atatched to group will apply the same policies on users and whenever the user is going to remove automatically permission is going to remove from user.
 
@@ -155,7 +155,7 @@ IAM Group is a collection of users. In IAM group we can add user and attach poli
 8. If you create user2 and add in same group then user2 will have same  access as the group.
 
 
-**Custom Policies**
+**CUSTOM POLICIES**
 
 Custom policies means we acn create our own policies based on requirement.
 
@@ -185,7 +185,7 @@ Custom policies means we acn create our own policies based on requirement.
 12. Now login to particular user and you will find that the user have access to list and read whetever have in the IAM service.
 
 
-**Password Policy**
+**PASSWORD POLICIES**
 
 We can set a custom password policy on our AWS account to specify complexity requirements and mandatory rotation periods for your IAM users' passwords. The IAM password policy does not apply to the AWS account root user password.
 
@@ -223,7 +223,7 @@ When we configure a custom password policy for your account, we can specify the 
 6. Save changes.
 
 
-**Multi-Factor Authentication**
+**MULTI-FACTOR AUTHENTICATION**
 
 MFA, or Multi-Factor Authentication, is a security feature provided by AWS IAM (Identity and Access Management). It adds an extra layer of protection to user accounts by requiring users to provide additional authentication factors, in addition to their username and password, when signing in to AWS services.
 
@@ -240,18 +240,18 @@ MFA, or Multi-Factor Authentication, is a security feature provided by AWS IAM (
 **4.MFA for Privileged Actions**: In AWS, you can also enforce MFA for specific actions that require elevated privileges, such as modifying security settings or accessing sensitive data. This ensures that these actions are further protected by the MFA authentication process, adding an extra layer of security to critical operations.
 
 
-**MFA - Devices options**
+**MFA - DEVICES OPTIONS**
 
 AWS provides two options for MFA devices:
 
-**Virtual MFA Device**: A virtual MFA device is a software application that runs on your smartphone, tablet, or other mobile devices. It generates the authentication codes needed for MFA. You can use various authenticator apps, such as Google Authenticator, Microsoft Authenticator, or Authy, to set up a virtual MFA device.
+**1.Virtual MFA Device**: A virtual MFA device is a software application that runs on your smartphone, tablet, or other mobile devices. It generates the authentication codes needed for MFA. You can use various authenticator apps, such as Google Authenticator, Microsoft Authenticator, or Authy, to set up a virtual MFA device.
 
-**Hardware MFA Device**: A hardware MFA device is a physical device that generates MFA authentication codes. It is a separate device, often in the form of a keychain or small token, that you carry with you. The device typically has a button that you press to generate the authentication code. Examples of hardware MFA devices include YubiKey and RSA SecurID.
+**2.Hardware MFA Device**: A hardware MFA device is a physical device that generates MFA authentication codes. It is a separate device, often in the form of a keychain or small token, that you carry with you. The device typically has a button that you press to generate the authentication code. Examples of hardware MFA devices include YubiKey and RSA SecurID.
 
 
 **To use Multi-Factor Authentication (MFA) in AWS, you can follow these steps:**
 
-**MFA – Root User**
+**MFA – ROOT USER**
 
 1. Download the mobile App (Authy)
 
@@ -303,7 +303,7 @@ AWS provides two options for MFA devices:
 24. When you enter password it will ask MFA code.
 
 
-**MFA – IAM User**
+**MFA – IAM USER**
 
 1. Create IAM User
 
@@ -332,12 +332,12 @@ AWS provides two options for MFA devices:
 13. Try to login IAM user
 
 
-**Command Line Interface**
+**COMMAND LINE INTERFACE**
 
 AWS CLI (Command Line Interface) is a unified tool provided by Amazon Web Services (AWS) that allows you to interact with various AWS services through a command-line interface. It enables you to manage and automate your AWS resources using scripts or commands from your local machine.
 
 
-**CLI - Windows**
+**CLI - WINDOWS**
 
 1. Enable Access Key
 
@@ -380,6 +380,260 @@ AWS CLI (Command Line Interface) is a unified tool provided by Amazon Web Servic
     aws s3 cp <Object_name with extension> s3://<Bucket_name>/<Object_name with extension>
 
 **Note**- Whenever we are uploading object with CLI by default object are getting Public Access.
+
+
+**CLI - LINUX**
+
+1. For Linux Machine we need to create one Linux EC2 Machine.Whenever we are creating Linux machine by default it is installed with CLI.
+
+2. Connect linux EC2 machine
+
+3. Switch User<br/>
+   sudo su -
+
+4. Update repository<br/>
+   yum update -y
+
+5. Generate access key and secret key from GUI
+
+6. From CLI connect aws
+   
+7. Configure AWS<br/>
+   aws configure
+
+8. Enter Access Key<br/>
+
+9. Enter Secret Access Key<br/>
+
+10. Enter default region name- ap-south-1<br/>
+
+11. Enter default output format- text<br/>
+
+12. Create IAM user using CLI<br/>
+    aws iam create-user --user-name <User_Name><br/>
+    for ex- aws iam create-user --user-name user6
+
+13. Now check in AWS GUI.
+
+14. Create IAM Group<br/>
+    aws iam create-group --group-name <group_name>
+
+15. Check in AWS GUI.
+
+
+**CLI – WINDOWS (IAM USER)**
+
+Creating IAM user with CLI
+
+1. Create IAM user
+
+2. Go to IAM
+
+3. Give user name
+
+4. Click on enable console access<br/>
+  
+5. You will get two option<br/>
+   auto generated password<br/>
+   custom password
+
+6. Click on autogenerated password
+
+7. Click on Next: Permissions
+
+8. You will find 3 ways to attach permission<br/>
+    Add user to group<br/>
+    copy permission from existing user<br/>
+    Attach existing policies directly
+  
+9. Click on Attach existing policies directly
+
+10. Search AmazonEC2FullAccess
+
+11. Craete user
+
+12. Generate Access key
+
+13. Go to User. Go to security credentials
+
+14. Create access key
+
+15. Select comamnd Line Interface(CLI)
+
+16. Open command prompt
+
+17. Use aws configure
+
+18. Enter Access Key<br/>
+
+19. Enter Secret Access Key<br/>
+
+20. Enter default region name- ap-south-1<br/>
+
+21. Enter default output format- text<br/>
+
+**Note** - Previously we have seen CLI commands for IAM, S3. Now this time will see for EC2.
+
+22. To Create EC2 machine we need some details
+
+23. Note down AMI Number<br/>
+    Go to EC2 Service<br/>
+    Go to AMI catalog<br/>
+    Search "Microsoft Windows Server 2022 Core Base"<br/>
+    Note down the AMI ID
+
+24. Note down Key Pair Name
+
+25. Note Down Security Group ID
+
+26. Create EC2 Machine<br/>
+    aws ec2 run-instances --image-id <enterAmiID> --count 1 --instance-type t2.micro --key-name <MyKeyPair> --securitygroup-ids <enterSecurityGroupId>
+
+27. Check in AWS console.
+
+28. Describe Instance to get all details<br/>
+    aws ec2 describe-instances --instance-ids <Instance_Id>
+
+29. Terminate the instance <br/>
+    aws ec2 terminate-instances --instance-ids <Instance_Id>
+
+
+**IAM- ROLES**
+
+In AWS IAM (Identity and Access Management), a role is an entity that defines a set of permissions and policies. Roles are used to grant temporary access to AWS resources to entities such as IAM users, AWS services, or external identities (e.g., federated users).
+
+Here are some key points about roles in IAM:
+
+**1.Purpose**: Roles are designed to delegate permissions and access to AWS resources securely. Instead of attaching policies directly to individual IAM users, roles provide a way to assign permissions to different entities based on specific use cases or requirements.
+
+**2.Cross-account Access**: Roles can be used to grant access across AWS accounts. For example, a parent AWS account can create a role with specific permissions and allow another AWS account (child account) to assume that role and access resources in the parent account.
+
+**3.Service Roles**: Roles are also used to enable AWS services to access other AWS resources securely. These are called service roles or service-linked roles. AWS services, such as AWS Lambda or Amazon EC2, assume these roles to perform specific actions on your behalf.
+
+**4.Temporary Credentials**: Roles can provide temporary security credentials that can be assumed by trusted entities. This is useful for scenarios where access needs to be granted for a limited time, such as when using AWS STS (Security Token Service) to assume a role with time-limited credentials.
+
+1. In IAM, got to roles
+
+2. Create Roles
+
+3. Choose AWS Service
+
+4. Select EC2 Use Case
+
+5. Click on Next
+
+6. select policy which you need to select to EC2 Service.
+
+7. Give role name
+
+8. Create role
+
+9. Create Linux EC2 Machine 
+
+10. Attach Role to the EC2 Machine
+
+11. Go to Action -> Security-> IAM role
+
+12. Modify IAM Role
+
+13. Update IAM role
+
+14. We have created the role and linked that particular role.
+
+15. Now we have to use it
+
+16. Connect to linux EC2 machine using putty
+
+17. Create IAM user
+    aws iam create-user --user-name <User_Name><br/>
+    AS we have nota ttached the IAM role. We will get an error.
+
+18. Create the S3 Bucket
+    aws s3 mb s3://<Bucket_Name>
+
+
+**CONNECT S3 BUCKET USING WINSCP**
+
+1. Create S3 Bucket
+
+2. Create IAM user
+
+3. Give the Full permission of S3
+
+4. Note down the Access Key ID & Secret access key
+
+5. Open WINSCP
+
+6. Change File Protocol to Amazon S3
+
+7. Enter access key ID and secret key
+
+8. Click on Login
+
+9. Open the bucket
+
+10. Transfer file to the bucket
+
+11. Check Console
+
+
+**ENABLE S3 MFA**
+
+1. Enable MFA for our account<br/>
+   Go to security credentials <br/>
+   Assign MFA<br/>
+   Click on OQ Code<br/>
+   Give MFA code1 and MFA code2
+
+2. Logout user and login again
+
+3. Go to S3 service
+
+4. Create S3 Bucket
+
+5. Enable Versioning
+
+6. Open Comamnd prompt
+
+7. connect to aws by aws configure command
+
+8. Generate the access key & secret key id
+
+9. Enter Access Key<br/>
+
+10. Enter Secret Access Key<br/>
+
+11. Enter default region name- ap-south-1<br/>
+
+12. Enter default output format- text<br/>
+
+13. Enable MFA for S3<br/>
+aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa "<MFA_Serial_Number> <MFA_Code>
+
+14. Now check the s3 bucket
+
+15. Upload object in S3 bucket
+
+16. Click on show versions
+
+17. Select the object & click on delete
+
+18. Delete the object using CLI
+aws s3api delete-object --bucket s3bucketmfa --key <Object_Key_Name> --mfa "<MFA_Serial_Number><MFA_Code>
+
+19. Now check the bucket
+
+20. Disable S3 MFA
+aws s3api put-bucket-versioning --bucket <Bucket_Name> --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "<MFA_Serial_Number> <MFA_Code>“
+
+21. Check the S3 Bucket
+
+
+
+
+
+
+
 
 
     
