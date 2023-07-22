@@ -13,6 +13,7 @@ Here is an overview of the 60-day roadmap:
 5. [Day 5: AWS EC2 Auto Scaling, AWS Status Check, Automatic Recovery](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_5)
 6. [Day 6: AWS Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_6)
 7. [Day 7: Simple Storage Service (S3)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_7)
+8. [Day 8: Identity & Access Management (IAM) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_8)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -121,6 +122,26 @@ Feel free to explore the Day 6 folder to dive deeper into these topics and acces
 Building upon our previous knowledge gained during the first six days of our 60 Days DevOps Challenge, we're diving into the powerful world of Simple Storage Service (S3). Day 7 focuses on understanding S3's unique features, bucket management, pricing, versioning advantages, and recovery. We'll explore static website hosting, various storage classes, replication options, access control, and Life Cycle Management. Additionally, we'll delve into Event Notification with SNS and SQS Services. Let's expand our expertise in S3 and continue mastering AWS services in DevOps!
 
 Feel free to explore the Day 7 folder to dive deeper into these topics and access additional resources related to AWS storage services.
+
+## Day 8: Identity & Access Management (IAM) in AWS
+
+On Day 8 of our DevOps learning journey, we will delve deeper into Identity & Access Management (IAM) in AWS. IAM is a crucial service that allows us to control and manage access to our AWS resources securely. By granting appropriate permissions to individual users and entities, we can ensure the principle of least privilege, enhancing the security and efficiency of our AWS infrastructure.
+
+### What's in the Day 8 folder?
+
+In the Day 8 folder, you will discover the following topics related to AWS Identity & Access Management (IAM):
+
+1. **IAM Users**: Learn how to create individual IAM users within your AWS account and assign unique credentials (username and password or access keys) to each user. These IAM users will have specific permissions and policies associated with them, enabling fine-grained control over access.
+
+2. **IAM Groups**: Organize users into logical groups to simplify access management. By creating groups and assigning common permissions and policies to them, you can efficiently manage user access based on job roles and responsibilities.
+
+3. **IAM Roles**: Explore IAM roles, which are similar to users but are not associated with a specific person or identity. Roles are assumed by trusted entities, such as AWS services or applications running on EC2 instances, allowing them to perform actions securely.
+
+4. **IAM Policies**: Understand IAM policies, which are JSON documents defining permissions for users, groups, and roles. Policies specify the actions that are allowed or denied on specific resources, granting control over access.
+
+5. **Access Keys**: Discover how IAM provides access keys (consisting of an access key ID and a secret access key) for programmatic access to AWS resources via the AWS API. These keys are essential for developers and automation scripts.
+
+Feel free to explore the Day 8 folder to dive deeper into these topics and access additional resources related to AWS Identity & Access Management. By mastering IAM, we can ensure secure access control and efficient management of our AWS resources.
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
