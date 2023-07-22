@@ -1,11 +1,11 @@
 # Day 8: Identity & Access Management
-"Identity & Access Management (IAM) is a service provided by Amazon Web Services (AWS) that helps you control and manage access to your AWS resources securely. When you first create an AWS account, you have full access to all AWS services, which is called the AWS account root user.
+Identity & Access Management (IAM) is a service provided by Amazon Web Services (AWS) that helps you control and manage access to your AWS resources securely. When you first create an AWS account, you have full access to all AWS services, which is called the AWS account root user.
 
 However, in a real-world scenario, an organization or a team may use the AWS account, and they might not want to give full access to every team member or employee. Instead, they want to provide specific permissions to each person based on their tasks. This is where IAM comes in handy.
 
 With IAM, you can create individual IAM users for each team member or employee, and each IAM user has limited access to AWS services based on what they need to do their job. For example, you can create an IAM user and give them access only to the Amazon EC2 service to manage virtual machines, or you can assign another IAM user access to Amazon S3 to handle file storage.
 
-By implementing IAM, organizations can follow the principle of least privilege, granting only the necessary permissions to each IAM user, ensuring that AWS resources are secure and access is tightly controlled."
+By implementing IAM, organizations can follow the principle of least privilege, granting only the necessary permissions to each IAM user, ensuring that AWS resources are secure and access is tightly controlled.
 
 ## Here are some key points about IAM:
 
