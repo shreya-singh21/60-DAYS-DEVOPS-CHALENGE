@@ -1,13 +1,13 @@
-# Identity & Access Management
+# Day 8: Identity & Access Management
+"Identity & Access Management (IAM) is a service provided by Amazon Web Services (AWS) that helps you control and manage access to your AWS resources securely. When you first create an AWS account, you have full access to all AWS services, which is called the AWS account root user.
 
-IAM (Identity and Access Management) is a service provided by Amazon Web Services (AWS) that enables you to securely manage access to your AWS resources. IAM allows you to create and control AWS users, groups, roles, and their permissions, allowing you to manage who can access specific resources and what actions they can perform.
+However, in a real-world scenario, an organization or a team may use the AWS account, and they might not want to give full access to every team member or employee. Instead, they want to provide specific permissions to each person based on their tasks. This is where IAM comes in handy.
 
-When we first create an AWS account, it has complete access to all AWS services. This identity is called the AWS account root user.
+With IAM, you can create individual IAM users for each team member or employee, and each IAM user has limited access to AWS services based on what they need to do their job. For example, you can create an IAM user and give them access only to the Amazon EC2 service to manage virtual machines, or you can assign another IAM user access to Amazon S3 to handle file storage.
 
-IAM allows you to implement the principle of least privilege, where users are granted only the permissions necessary to perform their specific tasks. This helps ensure that your AWS resources are secure and access is tightly controlled.
+By implementing IAM, organizations can follow the principle of least privilege, granting only the necessary permissions to each IAM user, ensuring that AWS resources are secure and access is tightly controlled."
 
-
-**Here are some key points about IAM:**
+## Here are some key points about IAM:
 
 **1.Users**: IAM allows you to create individual IAM users within your AWS account. Each user is assigned unique credentials (username and password or access keys) and can have specific permissions and policies associated with them.
 
@@ -20,7 +20,7 @@ IAM allows you to implement the principle of least privilege, where users are gr
 **5.Access Keys**: IAM provides access keys, consisting of an access key ID and a secret access key, which are used for programmatic access to AWS resources via the AWS API.
 
 
-**IAM - FEATURES**
+## IAM - FEATURES
 
 **• Shared access to the AWS account**: The main feature of IAM is that it allows you to create separate usernames and passwords for individual users or resources and delegate access.
 
@@ -35,7 +35,7 @@ IAM allows you to implement the principle of least privilege, where users are gr
 **• Granular permissions**: Each user can be granted with different set granular permissions as required to perform their job.
 
 
-**TYPES OF ACCOUNT IN AWS**
+## TYPES OF ACCOUNT IN AWS
 
 1. Root User<br/>
 2. IAM User<br/>
@@ -57,7 +57,7 @@ Number of ways we can login to AWS account<br/>
 Console/Graphical User Interface (GUI)<br/>
 Command Line Interface
 
-**Lets create IAM User**
+## Lets create IAM User
 
 1. Go to IAM.
 
@@ -123,9 +123,9 @@ Command Line Interface
           2. In IAM account if the person is trying to access the service which they don't have permission will get the error message.
 
 
-**GROUPS & ATTACH POLICIES**
+## GROUPS & ATTACH POLICIES
 
-IAM Group is a collection of users. In IAM group we can add user and attach policies. Whatever policies atatched to group will apply the same policies on users and whenever the user is going to remove automatically permission is going to remove from user.
+IAM Group is a collection of  IAM users. In IAM group we can add user and attach policies. Whatever policies atatched to group will apply the same policies on users and whenever the user is going to remove automatically permission is going to remove from user.
 
 **Following are some important characteristics of user groups:**
 
@@ -155,9 +155,19 @@ IAM Group is a collection of users. In IAM group we can add user and attach poli
 8. If you create user2 and add in same group then user2 will have same  access as the group.
 
 
-**CUSTOM POLICIES**
+## CUSTOM POLICIES
 
-Custom policies means we acn create our own policies based on requirement.
+In AWS Identity and Access Management (IAM), Custom Policies allow you to create your own set of rules and permissions to control access to AWS resources based on your specific requirements. These policies are custom-made and tailored to meet the needs of your organization or individual users.
+**Example**
+Let's say you have an AWS account with multiple IAM users, each with different roles and responsibilities. One of the users, John, is responsible for managing Amazon S3 buckets, while another user, Sarah, needs access to EC2 instances for testing purposes.
+
+To give John and Sarah the necessary permissions without granting them full access to the entire AWS environment, you can create Custom Policies. For John, you would create a policy that grants him read, write, and delete access to specific S3 buckets. For Sarah, you would create a policy that allows her to start, stop, and terminate EC2 instances.
+
+By applying these Custom Policies, John and Sarah will have the precise access they need to perform their tasks, while other resources in the AWS account remain secure.
+
+Custom Policies provide you with fine-grained control over access to AWS resources, allowing you to enforce the principle of least privilege. This principle ensures that users have only the permissions required for their specific tasks, minimizing potential security risks and enhancing the overall security of your AWS environment.
+
+**Steps**
 
 1. Go to IAM
 
@@ -185,7 +195,7 @@ Custom policies means we acn create our own policies based on requirement.
 12. Now login to particular user and you will find that the user have access to list and read whetever have in the IAM service.
 
 
-**PASSWORD POLICIES**
+## PASSWORD POLICIES
 
 We can set a custom password policy on our AWS account to specify complexity requirements and mandatory rotation periods for your IAM users' passwords. The IAM password policy does not apply to the AWS account root user password.
 
@@ -223,7 +233,7 @@ When we configure a custom password policy for your account, we can specify the 
 6. Save changes.
 
 
-**MULTI-FACTOR AUTHENTICATION**
+## MULTI-FACTOR AUTHENTICATION
 
 MFA, or Multi-Factor Authentication, is a security feature provided by AWS IAM (Identity and Access Management). It adds an extra layer of protection to user accounts by requiring users to provide additional authentication factors, in addition to their username and password, when signing in to AWS services.
 
@@ -249,7 +259,7 @@ AWS provides two options for MFA devices:
 **2.Hardware MFA Device**: A hardware MFA device is a physical device that generates MFA authentication codes. It is a separate device, often in the form of a keychain or small token, that you carry with you. The device typically has a button that you press to generate the authentication code. Examples of hardware MFA devices include YubiKey and RSA SecurID.
 
 
-**To use Multi-Factor Authentication (MFA) in AWS, you can follow these steps:**
+### To use Multi-Factor Authentication (MFA) in AWS, you can follow these steps:
 
 **MFA – ROOT USER**
 
@@ -332,7 +342,7 @@ AWS provides two options for MFA devices:
 13. Try to login IAM user
 
 
-**COMMAND LINE INTERFACE**
+## COMMAND LINE INTERFACE
 
 AWS CLI (Command Line Interface) is a unified tool provided by Amazon Web Services (AWS) that allows you to interact with various AWS services through a command-line interface. It enables you to manage and automate your AWS resources using scripts or commands from your local machine.
 
@@ -498,7 +508,7 @@ Creating IAM user with CLI
     aws ec2 terminate-instances --instance-ids <Instance_Id>
 
 
-**IAM- ROLES**
+## IAM- ROLES
 
 In AWS IAM (Identity and Access Management), a role is an entity that defines a set of permissions and policies. Roles are used to grant temporary access to AWS resources to entities such as IAM users, AWS services, or external identities (e.g., federated users).
 
