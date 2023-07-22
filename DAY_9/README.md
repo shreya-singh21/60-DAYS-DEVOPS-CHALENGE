@@ -137,7 +137,7 @@ DNS.
 
 7. Create One More Subnet with Public Subnet name in other availability zone.
 
-**While craeting subnets did we mentioned any thing that define public subnet or private subnet?**
+**While craeting subnets did we mentioned anything that define public subnet or private subnet?**
 **By deafault all subnet are private subnets**
 
 **Subnet - Make Subnet as Public**
