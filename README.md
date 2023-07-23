@@ -14,6 +14,7 @@ Here is an overview of the 60-day roadmap:
 6. [Day 6: AWS Snapshots, Amazon Machine Images (AMIs), Scheduled Snapshots, Data Lifecycle Manager, and the Recycle Bin](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_6)
 7. [Day 7: Simple Storage Service (S3)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_7)
 8. [Day 8: Identity & Access Management (IAM) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_8)
+9. [Day 9: Virtual Private Cloud (VPC) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_9)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -142,6 +143,32 @@ In the Day 8 folder, you will discover the following topics related to AWS Ident
 5. **Access Keys**: Discover how IAM provides access keys (consisting of an access key ID and a secret access key) for programmatic access to AWS resources via the AWS API. These keys are essential for developers and automation scripts.
 
 Feel free to explore the Day 8 folder to dive deeper into these topics and access additional resources related to AWS Identity & Access Management. By mastering IAM, we can ensure secure access control and efficient management of our AWS resources.
+
+# Day 9: Virtual Private Cloud (VPC) in AWS
+
+Welcome to Day 9 of our DevOps learning journey! Today, we'll explore Virtual Private Cloud (VPC) in AWS, a crucial service that allows you to create custom networking environments tailored to your application requirements.
+
+## What's in the Day 9 folder?
+
+In the Day 9 folder, you'll find the following topics related to AWS Virtual Private Cloud:
+
+1. **Default VPC vs. Custom VPC**: Understand the differences between the default VPC, which is automatically created, and custom VPCs that offer more control over security and network architecture.
+
+2. **Key Features of AWS VPC**: Explore the powerful features of VPC, including IP address selection, subnet creation, route tables, VPC peering, and secure access to Amazon S3 data.
+
+3. **VPC Sizing**: Learn how to specify IPv4 CIDR blocks for VPCs, ranging from /16 to /28, and associate additional CIDR blocks with the VPC.
+
+4. **VPC Subnets**: Discover the concept of subnets within a VPC, categorized into public and private subnets for different levels of internet access.
+
+5. **Creating VPC and Subnets**: Follow a step-by-step guide on how to create a custom VPC and configure subnets with specific IP address ranges.
+
+6. **Connecting Instances and Bastion Server**: Learn how to connect instances in private subnets using a Bastion server located in the public subnet.
+
+7. **Internet Gateway and NAT Gateway**: Understand the role of Internet Gateway in enabling public subnet instances' internet access and NAT Gateway for private subnet internet connectivity.
+
+8. **Network Access Control List (NACL)**: Discover how NACLs act as a stateless firewall at the subnet level, controlling inbound and outbound traffic based on rules.
+
+Mastering VPC is essential for building secure, scalable, and customizable networking environments in AWS. Dive into the Day 9 folder to expand your expertise in VPC and AWS networking.
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
