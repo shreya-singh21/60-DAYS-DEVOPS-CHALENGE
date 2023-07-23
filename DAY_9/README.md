@@ -33,7 +33,7 @@ A Custom virtual private cloud (VPC) is a virtual network dedicated to your AWS 
 6. We can create 200 Subnets in one VPC & 1000 Subnets in one region
 
 
-## VPC - Sizing
+## VPC - SIZING
 
 When you create a VPC, you must specify an IPv4 CIDR block for the VPC. The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). After you've created your VPC, you can associate additional IPv4 CIDR blocks with the VPC.
 
@@ -62,7 +62,7 @@ VPC needs a set of IP addresses in the form of a Classless Inter-Domain Routing 
 4. Create VPC.
 
 
-**SUBNET**
+## VPC - SUBNET
 
 In a Virtual Private Cloud (VPC) in Amazon Web Services (AWS), a subnet is a segmented portion of the VPC's IP address range. It is a way to partition the VPC into smaller, more manageable network segments.
 
@@ -158,13 +158,14 @@ Now under this subnet whatever EC2 machine will create will automatically get pu
 **To connect our machine we need an internet connectivity**
 
 
-**Internet Gateway**
+## VPC - INTERNET GATEWAY
 
 Component that allows communication between our VPC and the internet.
 
 By default to our VPC don't have internet connectivity.
 
 With the help of internet gateway our public subnet will get public internet
+
 
 **Let's create internet gateway for VPC**
 
@@ -179,7 +180,7 @@ After creation of internet gateway will get popup saying that "Attach to a VPC".
 **Now we have to attach Internet Gateway to public subnet. for that we use Route Table**
 
 
-**Route Table**
+## VPC - ROUTE TABLE
 
 In AWS Virtual Private Cloud (VPC), a route table is a fundamental component that controls the routing of network traffic between different subnets within the VPC and to the internet. It acts as a set of rules, determining where the traffic should be directed based on its destination.
 
@@ -221,7 +222,8 @@ In AWS Virtual Private Cloud (VPC), a route table is a fundamental component tha
 
 Now our Subnet become a public subnet.
 
-**EC2 - Public Subnet**
+
+**Create EC2 Instance - Public Subnet**
 
 1. Go to EC2
 
@@ -257,7 +259,7 @@ Now our Subnet become a public subnet.
 Go to EC2. Click on istance and check public IP and private IP<br/>
 You will get dynamic Public IP because you have mentioned anywhere in Security Group and Private IP will be given in the range.
 
-**EC2 - Private Subnet**
+**Create EC2 Instance - Private Subnet**
 
 In this Private Subnet will create database in EC2 machine and will link with Public Subnet EC2 machines not from any part of the world.Public Subnet EC2 machines can only access
 
@@ -296,7 +298,7 @@ Go to EC2. Click on istance and check public IP and private IP<br/>
 You will not get Public IP because you have  not mentioned anywhere in Security Group and Private IP will be given in the range.
 
 
-## Bastion Server
+## BASTON SERVER
 
 A bastion host is a server whose purpose is to provide access to a private network from an external network, such as the Internet.
 
@@ -307,6 +309,7 @@ No, we cannot connect directly because we have not given public Ip address.
 
 How can we connect to this machine?<br/>
 With the help of bastion server.
+
 
 **Let's create EC2 machine**
 
@@ -366,7 +369,7 @@ With the help of bastion server.
     We need to take help of NAT(Network Address Translation) gateway.
 
 
-## Network Address Translation
+## NETWORK ADDRESS TRANSLATION
 
 Network Address Translation help us to provide private internet access to private subnet.
 
@@ -418,7 +421,7 @@ NAT gateway always creates in public subnet then link it with the help of route 
 **Now EC2 machine has private internet**
 
 
-## Network Access Control Lists
+## NETWORK ACCESS CONTROL LIST
 
 It is a security layer for our VPC that controls the traffic in and out of one or more subnets. It is an optional layer for our VPC.
 
@@ -572,7 +575,7 @@ Total Number of Ports are 0 to 65535 in networking but NAT gateway uses ports 10
 
 ## DIFFERENCE BETWEEN SECURITY GROUP AND NACL
 
-**SECURITY GROUP**
+**Security Group**
 
 1. Operates at the Instance Level<br/>
 2. It is first Layer of Defense <br/>
