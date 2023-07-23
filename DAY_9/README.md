@@ -303,7 +303,7 @@ Go to EC2. Click on istance and check public IP and private IP<br/>
 You will not get Public IP because you have  not mentioned anywhere in Security Group and Private IP will be given in the range.
 
 
-## BASTON SERVER
+## BASTION SERVER
 
 A bastion host is a server whose purpose is to provide access to a private network from an external network, such as the Internet.
 
