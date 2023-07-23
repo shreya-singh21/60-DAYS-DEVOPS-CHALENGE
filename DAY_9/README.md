@@ -69,7 +69,7 @@ In a Virtual Private Cloud (VPC) in Amazon Web Services (AWS), a subnet is a seg
 Each subnet is associated with a specific CIDR (Classless Inter-Domain Routing) block, which is a range of IP addresses. Subnets within a VPC can be of different sizes and are used to isolate and organize resources within the VPC. Subnets play a crucial role in enabling the isolation and control of network traffic between different groups of resources.
 
 **Earlier we were dividing aws region into parts called VPC**<br/>
-**Now I am dividing the VPC into small-small parts called subnets**
+**Now we need to divide the VPC into small-small parts called subnets**
 
 **Subnets can be categorized into two main types:**
 
@@ -80,12 +80,12 @@ Each subnet is associated with a specific CIDR (Classless Inter-Domain Routing) 
 
 **By default when we create subnet under VPC it will be created as private subnet**
 
-**For Subnet I need to give IP address range**
+**For Subnet we need to give IP address range**
 
 **Can we give any IP to subnet?**<br/>
 No, the ip address range which we have given to VPC so In that range only we need to give to subnet.<br/>
 
-I need to give Ip address in this 10.0.0.0/16 range <br/>
+We need to give Ip address in this 10.0.0.0/16 range <br/>
 
 The first two number in Ip address will be same 10.0.1.0/24<br/>
 
@@ -140,9 +140,9 @@ DNS.
 **While creating subnets did we mentioned anything that define public subnet or private subnet?**
 **By deafault all subnet are private subnets**
 
-**Subnet - Make Subnet as Public**
+**Make Subnet as Public**
 
-1. Select public subnet.
+1. Choose any subnet that you want to make public subnet if you have created multiple subnet .
 
 2. Go to action
 
@@ -152,11 +152,16 @@ DNS.
 
 Now under this subnet whatever EC2 machine will create will automatically get public access.
 
-**Just creating subnet will not going to make EC2 machine public, we need to to do one mpre thing!!**
+**NOTE** 
+When we create a subnet and launch an EC2 machine within that subnet, the EC2 instance does not have internet connectivity by default. To enable internet connectivity for the EC2 instance, we need to perform one more step. This step involves creating an Internet Gateway, which allows the EC2 instance to access the internet and be publicly reachable.
 
+When we create a subnet in AWS, it is like a private network within our Virtual Private Cloud (VPC). By default, instances within the subnet cannot access the internet, and the internet cannot reach them directly.
 
-**To connect our machine we need an internet connectivity**
+To enable internet connectivity for an EC2 instance within the subnet, we need to create an Internet Gateway and attach it to our VPC. The Internet Gateway acts as a bridge between your VPC and the internet.
 
+Once the Internet Gateway is attached, the EC2 instance can send and receive data over the internet, making it publicly accessible and allowing you to connect to it from the internet.
+
+So, creating a subnet alone is not enough to make an EC2 instance publicly accessible. We also need to create an Internet Gateway and associate it with your VPC to enable internet connectivity for our EC2 instance.
 
 ## VPC - INTERNET GATEWAY
 
@@ -188,7 +193,7 @@ In AWS Virtual Private Cloud (VPC), a route table is a fundamental component tha
 
 2. You have find two route tables<br/>
    one route table we are getting my defalut from AWS beacuse we have deaflut VPC <br/>
-   second route table you will find that it is linked with yout VPC but we haven't created it. When we creates VPC by defalut AWS will create a default route tabel for our VPC. If we want to use we can sue it but we'll another route table.
+   second route table you will find that it is linked with your VPC but we haven't created it. When we creates VPC by defalut AWS will create a default route tabel for our VPC. If we want to use we can sue it but we'll another route table.
 
 3.  Give the name of route table
 
@@ -282,7 +287,7 @@ In this Private Subnet will create database in EC2 machine and will link with Pu
 9. Create Security Group and Enable MYSQL/Aurora. <br/>
    MYSQL/Aurora are database.
 
-10. To access this databse we will give "custom" instead of Anywhere because we want to access this database from public subnet instance.Whatever the instance in public subnet can connect to database but other than public subnet instance no one can connect to database. 
+10. To access this databse we will give "custom" instead of Anywhere because we want to access this database from public subnet instance. Whatever the instance in public subnet can connect to database but other than public subnet instance no one can connect to database. 
 
 11. Mention this 10.0.2.0/24 IP of Public Subnet in MYSQL/Aurora database . 
 
@@ -311,7 +316,7 @@ How can we connect to this machine?<br/>
 With the help of bastion server.
 
 
-**Let's create EC2 machine**
+**Let's create EC2 machine and keep its name Bastion**
 
 1. Go to EC2
 
@@ -348,7 +353,7 @@ With the help of bastion server.
 
     You will get "permission denied"<br/>
 
-    In this case we need PEM file instead of .ppk file. Means I need to transfer PEM file to Bastion Server using Winscp.<br/>
+    In this case we need PEM file instead of .ppk file. Means you need to transfer PEM file to Bastion Server using Winscp or any file transfer application.<br/>
 
     Open Winscp and copy public IP of bastion server.Connect to baston server and transfer PEM file.<br/>
 
