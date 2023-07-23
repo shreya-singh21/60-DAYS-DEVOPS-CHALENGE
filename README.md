@@ -144,11 +144,11 @@ In the Day 8 folder, you will discover the following topics related to AWS Ident
 
 Feel free to explore the Day 8 folder to dive deeper into these topics and access additional resources related to AWS Identity & Access Management. By mastering IAM, we can ensure secure access control and efficient management of our AWS resources.
 
-# Day 9: Virtual Private Cloud (VPC) in AWS
+## Day 9: Virtual Private Cloud (VPC) in AWS
 
 Welcome to Day 9 of our DevOps learning journey! Today, we'll explore Virtual Private Cloud (VPC) in AWS, a crucial service that allows you to create custom networking environments tailored to your application requirements.
 
-## What's in the Day 9 folder?
+**What's in the Day 9 folder?**
 
 In the Day 9 folder, you'll find the following topics related to AWS Virtual Private Cloud:
 
