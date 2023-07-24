@@ -149,7 +149,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 10. Give CIDR to private subnet - 10.0.2.0/16
 
-11. create private subnet.
+11. Create private subnet.
 
 12. Create Route table
 
@@ -270,7 +270,58 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 65. Check if you able to connect Private EC2 instance of VPC2 with SSH command. <br/>
     No
 
-66. 
+66. We need to link the subnets means we need to craete routes in our both the subnets.
+
+67. Create route table for first VPC
+
+68. Go to route table. Create route table.
+
+69. Give the name of route table.
+
+70. Attach VPC1
+
+71. Create route.
+
+72. Click on Action. Edit subnet association.
+
+73. Select private subnet.
+
+74. Click on Action. Edit routes
+
+75. Earlier we used to select "internet gateway" now this time we will select "peering connection". Give 28.200.0.0/16 IP address as destination because this time we are linking subnets with each other. We want to private subnet of VPC1 to private subnet of VPC2 so that is why in VPC1 we gave the ip of private subnet VPC2.
+
+76. Same thing we have to do in VPC2
+
+77. Create route of VPC2.
+
+78. Click on Action. Edit subnet association.
+
+79. Select private subnet.
+
+80. Click on Action. Edit routes.
+
+81. Give target as peering connection and destination as 10.0.2.0/16 (private subnet of VPC1)
+
+82. Try to connect machine from private subnet of VPC1 to private subnet of VPC2 with the help of ssh command of private subnet of VPC2.
+
+83. This time we will able to connect.
+
+84. Also we can do ping request from private subnet of VPC1 to private subnet of VPC2 - ping 28.200.0.0/16, it will work.
+
+85. **Can we do ping request from private subnet of VPC2 to private subnet of VPC1?**<br/>
+      No, because in the private subnet of VPC2 we haven't enable ping request.<br/>
+
+86. Go to Security group and enable ping request.<br/>
+    Enable ICMP IPV4 and give 28.200.0.0/16 IP.
+
+87. Now the ping request will work from VPC2 of private subnet.
+
+
+
+
+
+
+
 
 
 
