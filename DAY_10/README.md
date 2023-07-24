@@ -98,7 +98,7 @@ Finally we will do peering between two VPCs and will mention subnet in which we 
 Also we enable SSH port on both machine beacuse it is mandatory if we want to do connection between 2 machines.
 
 
-**Benefits of VPC Peering**
+**BENEFITS**
 
 • Improve Security
 
@@ -106,7 +106,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 • Get more flexibility for services that don’t need to connect to the Internet.
 
-**Limitations**
+**LIMITATION**
 
 • We cannot perform peering if both VPC have same CIDR, but we can perform VPC if you have a different CIDR.
 
@@ -127,7 +127,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 4. Create VPC
 
-5. Craete Internet Gateway
+5. Create Internet Gateway
 
 6. Attach to VPC1
 
@@ -315,6 +315,171 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
     Enable ICMP IPV4 and give 28.200.0.0/16 IP.
 
 87. Now the ping request will work from VPC2 of private subnet.
+
+
+## VPC - ENDPOINT
+
+A VPC endpoint enables us to privately connect our VPC to support AWS services. Instances in our VPC do not require Public IP Addresses to communicate with resources in the service. They remove the need of Internet Gateway, Nat Gateway and VPN Connection to access AWS services.
+
+**ENDPOINTS - TYPES**
+
+• Interface Endpoint
+
+• Gateway Endpoint
+
+**INTERFACE ENDPOINTS**:
+
+Interface Endpoints are powered by AWS PrivateLink and provide private access to AWS services that are integrated with PrivateLink. These services have their own service-specific endpoint names, and they use Elastic Network Interfaces (ENIs) to establish connections between your VPC and the AWS service.
+
+Interface Endpoints use private IP addresses, and the traffic stays within the AWS network, ensuring a secure and efficient communication channel.
+
+Some AWS services that support Interface Endpoints through AWS PrivateLink include Amazon S3, Amazon DynamoDB, Amazon API Gateway, Amazon CloudWatch, and more.
+
+**GATEWAY ENDPOINTS**:
+
+Gateway Endpoints are used for accessing AWS services that support VPC endpoints but are not integrated with AWS PrivateLink. These endpoints use VPC route tables to route traffic directly to the service, making them easy to set up and manage.
+
+Gateway Endpoints do not require ENIs, and they are associated with specific route tables in your VPC to direct traffic to the appropriate service.
+
+As of now, Amazon S3 and Amazon DynamoDB support Gateway Endpoints for VPC access.
+
+In this we will create 1 VPC<br/>
+Under VPC we will create public subnet and private subnet
+Then we will connect s3 bucket with private subnet with the help of VPC Endpoint.
+
+
+**Let's create VPC Endpoint**
+
+1. Create First VPC
+
+2. Name the VPC - VPC
+
+3. Give the CIDR - 10.0.0.0/16
+
+4. Create VPC
+
+5. Create 2 Subnets
+
+6. Give name of subnet - Public-subnet-1
+
+7. Give CIDR to public subnet - 10.0.1.0/16
+
+8. Click on subnet. Click on Edit.
+
+9. Click on auto assign public ip
+
+10. Create 2nd subnet in VPC1
+
+11. Give name of subnet - Private-subnet-1
+
+12. Give CIDR to private subnet - 10.0.2.0/16
+
+13. Create private subnet.
+
+14. Create Internet Gateway
+
+15. Attach to VPC
+
+16. Create route table
+
+17. Select VPC
+
+18. Click on Action.
+
+19. Edit subnet association
+
+20. Assign public subnet.
+
+21. Edit routes
+
+22. Select target as Internet Gateway and destination as 0.0.0.0/0
+
+23. In this we need two route tables. one we attach with public subnet and other we attach with private subnet.<br/>
+    Also we have two route tables. One is just we created and earlier we have seen that whenever we creates VPC, AWS will create route table for use so that routw table will use.
+
+24. Attach the default route table with private subnet. For public subnet we have already created route table and attached to    public subnet.
+
+25. Now Create End point
+
+26. Go to Endpoint
+
+27. Click on Create endpoint
+
+28. Find S3
+
+29. Select VPC
+
+30. Select Private Subnet route table beacuse we are linking aws service with private subnet and then private subnet to public subnet.
+
+31. Create Endpoint.
+
+32. Create EC2 machines
+
+33. Create Linux EC2 Machines in Public Subnet
+
+34. Create Security Group
+
+35. Select type as SSH & Source as Anywhere
+
+36. Launch Instance.
+
+37. Create another EC2 machines
+
+33. Create Linux EC2 Machines in Private Subnet
+
+34. Create Security Group
+
+35. Select type as SSH & Source as 10.0.1.0/16(public subnet instances can access private subnet instances)
+
+36. Launch Instance.
+
+37. Now we are going to connect public machine and from public machine will connect private machine.
+
+38. Connect Public machine of VPC.
+
+39. Create Pem file to connect Private instance using Public Instance - vim <pemfilename>.pem
+
+40. Change the Permissions - chmod 400 <pemfilename>.pem
+
+41. switch user - sudo su
+
+42. Copy & Paste the SSH Command of Private Instance
+
+43. We will be connected to private subnet.
+
+44. Earlier when we are using S3 service we are working with public subnet in case of NAT gateway. Now this time we are using private subnet.
+
+45. switch user - sudo su
+
+46. Connect to aws. Command to connect aws. Configure AWS - aws configure
+
+47. Now generate access key ID and secrate key ID
+
+48. Give the access key and secrate key ID
+
+49. Enter Region - ap-south-1
+
+50. Enter format - text
+
+51. Create S3 Bucket - aws s3 mb s3://<Bucket_Name>
+
+52. List of S3 Buckets - aws s3 ls
+
+**Note** - Right now what we have created s3 we can create it from local machine, public machine so what is the purpose of endpoint and create s3 .<br/>
+          If we delete endpoint then we cannot create S3 and like in NAT gateway we don't need internet connection here.
+
+**Endpoint is used whenever we want to connect aws service privately**    
+
+
+## VPC - FLOW LOGS
+
+
+
+
+
+
+
+
 
 
 
