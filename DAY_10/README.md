@@ -652,6 +652,33 @@ VPC Flow Logs is a feature that enables you to capture information about the IP 
 18. There we will find the logs
 
 
+**Note**- In real time it is difficult to read those logs because there are 100s of lines logs.
+
+To resolve ths issue we have Athena service. Wth the help of this we can read logs very easily by running few sql queries.It is showing in table format.We can link s3 bucket with this Athena service.
+
+
+**S3 -ATHENA**
+
+Amazon Athena is a server less query service that makes analysis of data, using standard SQL, stored in Amazon S3 simpler. With few clicks in the AWS Management Console, customers can point Amazon Athena at their data stored in Amazon S3 and run queries using standard SQL to get results in seconds.
+
+In Athena service we have to link s3 bucket.
+
+1. Click on Edit Settings.
+
+2. Browse our s3 bucket
+
+3. Select the existing s3 bucket where we are storing VPC Flow Logs
+
+4. Click on choose & Save
+
+5. Go to Editor and start creating our tables.
+
+6. So under particular dates whatever files we have sytem will going to read it.
+
+
+
+
+
    
 
 
