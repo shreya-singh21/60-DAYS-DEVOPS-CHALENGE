@@ -153,27 +153,29 @@ When a user tries to access your website, AWS Route 53 measures the network late
 
 **Example:**
 
-Let's say you have your website hosted in two AWS regions: "US East" and "US West." When a user from India visits your website, Route 53 will measure the latency to both regions. If the user is physically closer to "US West," Route 53 will direct them to the servers in that region because it provides the fastest response time for the user in India.
+Let's say you have your website hosted in two AWS regions: Mumbai and Sydney, and you want to direct traffic to the region with the lowest latency for users in each respective region.
 
 **Steps to Implement Latency-Based Routing Policy in AWS Route 53:**
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
+1. Go to the AWS Management Console and navigate to the Route 53 dashboard.
+2. Click on "Hosted Zones" and select your domain name.
+3. Click on "Create Record" to add a new record set for your domain.
+4. Enter a unique name for the record (e.g., "www").
+5. For the routing policy, choose "Latency Routing Policy."
+6. Click on "Alias" and select the Application Load Balancer for the Mumbai region.
+7. Choose the region where your Mumbai load balancer is created and select the load balancer from the list.
+8. Select "Latency" as the route policy for the Mumbai region.
+9. Uncheck the option to evaluate target health (since latency is based on network performance, not target health).
+10. Enter a unique record ID for this record.
+11. Click on "Add Another Record" to add another record for the Sydney region.
+12. Repeat steps 4 to 9, but this time select the Application Load Balancer for the Sydney region.
+13. Choose the region where your Sydney load balancer is created and select the load balancer from the list.
+14. Select "Latency" as the route policy for the Sydney region.
+15. Uncheck the option to evaluate target health.
+16. Enter a unique record ID for this record as well.
+17. Click on "Create Records" to create the latency routing policy for your domain.
 
-2. Click on "Create Record Set" for the domain you want to configure.
-
-3. Select "Latency" from the Routing Policy drop-down menu.
-
-4. Enter the desired values for "Name" and "Type." For example, "www" and "A."
-
-5. In the "Value" field, add the IP address or resource record of the server in the "US East" region.
-
-6. Click on "Define Latency Record" to add another record set for the "US West" region.
-
-7. In the "Value" field, add the IP address or resource record of the server in the "US West" region.
-
-8. Review the settings and click "Create" to apply the Latency-Based Routing Policy.
-
-With the Latency-Based Routing Policy, Route 53 will automatically direct users to the AWS region that offers the lowest network latency for their location. This ensures that your website's content is delivered with minimal delay, providing a smoother and faster user experience.
+Now, when users enter your domain name (e.g., www.example.com) in their web browser, AWS Route 53 will route the traffic to the region with the lowest latency for each user. This ensures that users are directed to the region that will provide them with the best performance and response time.
 
 ## Failover Routing Policy
 
