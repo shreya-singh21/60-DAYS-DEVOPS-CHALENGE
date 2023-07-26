@@ -473,7 +473,186 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 
 ## VPC - FLOW LOGS
 
+VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data can be published to Amazon CloudWatch Logs or Amazon S3.
 
+
+1. Create VPC
+
+2. Name the VPC - VPC
+
+3. Give the CIDR - 10.0.0.0/16
+
+4. Create VPC
+
+5. Create Subnet
+
+6. Give name of subnet - Public-subnet
+
+7. Give CIDR to public subnet - 10.0.1.0/16
+
+8. Click on subnet. Click on Edit.
+
+9. Click on auto assign public ip
+
+10. Create Internet Gateway
+
+11. Attach to VPC
+
+12. Create route table
+
+13. Select VPC
+
+14. Click on Action.
+
+15. Edit subnet association
+
+16. Assign public subnet.
+
+17. Edit routes
+
+18. Select target as Internet Gateway and destination as 0.0.0.0/0
+
+19. Create EC2 machines
+
+20. Create Linux EC2 Machines in Public Subnet
+
+21. Create Security Group
+
+22. Select type as SSH & HTTP port and Source as Anywhere
+
+23. Give the bootstarp script<br/>
+    #!/bin/bash<br/>
+    sudo su<br/>
+    yum update<br/>
+    yum install httpd<br/>
+    cd /var/www/html<br/>
+    echo "AmazonWebservices" > index.html<br/>
+    service httpd start<br/>
+    chkconfig httpd on<br/>
+
+24. Launch Instance.
+
+25. Check the public Ip of EC2 machine in the browser<br/>
+    It will open.
+
+
+**FLOW LOGS – S3**
+
+1. Create S3 Bucket & Don’t give public Access
+
+2. Go to S3.
+
+3. create bucket
+
+4. Giv ethe name of bucket.
+
+5. Click on create bucket.
+
+6. Now create flow logs in S3.
+
+7. Go to VPC service. Select your VPC.
+
+8. Below down we will find Flow logs section.
+
+9. Create flow logs
+
+10. Give the name of flow logs
+
+11. Select filter <br/>
+    Accept <br/>
+    Reject <br/>
+    All <br/>
+
+12. Maximum Aggregation interval<br/>
+    10 minutes<br/>
+    1 minutes<br/>
+
+13. Destination<br/>
+    Send to an Amazon S3 Bucket
+
+14. Give s3 bucket ARN<br/>
+    To get s3 bucket ARN. Go to s3, select bucket you will get ARN. Copy ARN.
+
+15. Select Log record format<br/>
+    AWS default format<br/>
+    Custom format
+
+16. Click on create flow logs
+
+17. Now go to s3, under bucket you will get logs
+
+
+**FLOW LOGS – CLOUD WATCH**
+
+1. Go to cloudwatch service
+
+2. Go to log grups. Under this log group aws is creating logs
+
+3. Give the name of log group
+
+4. Select Retention days (After how many day aws log get expired)<br/>
+   Select never expire
+
+5. Create log group.
+
+6. Now go to VPC
+
+7. Click on flow logs
+
+8. Click on create flow logs
+
+9. Give the name of flow logs
+
+10. Select filter as All
+
+11. Select Maximum aggregation interval & Select Cloud Watch Logs
+
+12. Give the destination log group which we have created in the starting of cloudwatch logs
+
+13. To create this log group we need IAM role.<br/>
+    Create IAM role<br/>
+    Create policy<br/>
+    select cloudwatch service<br/>
+    Select actions <br/>
+    In list Select (DescribeLogGroups, DescribeLogStreams)<br/>
+    In Write Select (CreateLogGroup, CreateLogStream, PutLogEvents)<br/>
+    Select resource as all resources<br/>
+    Give policy name<br/>
+    create policy<br/>
+
+    Now create role<br/>
+    Select custom trust policy<br/>
+    We need to give seprate json code<br/>
+    {<br/>
+    "Version": "2012-10-17",<br/>
+    "Statement": [<br/>
+        {<br/>
+            "Sid": "",<br/>
+            "Effect": "Allow",<br/>
+            "Principal": {<br/>
+                "Service": "vpc-flow-logs.amazonaws.com"<br/>
+            },<br/>
+            "Action": "sts:AssumeRole"<br/>
+        }<br/>
+    ]<br/>
+}<br/>
+    Click on Next<br/>
+    Select the policy which we have created<br/>
+    Enter the role name & description<br/>
+    Click on create role<br/>
+
+14. Go back to VPC. select IAM role
+
+15. Click on create Flow logs
+
+16. Go to cloudwatch log group
+
+17. Click on search log group
+
+18. There we will find the logs
+
+
+   
 
 
 
