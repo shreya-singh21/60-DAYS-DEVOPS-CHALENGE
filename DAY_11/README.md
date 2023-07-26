@@ -63,7 +63,7 @@ Imagine you have a website hosted on an EC2 instance in the US-West (Oregon) reg
 
 With the Simple Routing Policy, Route 53 looks at the resource record set associated with the domain (e.g., the "A" record), which contains the IP address "203.0.113.10" for your website. Route 53 then responds to the DNS query with this IP address. The user's web browser can now use this IP address to connect to your website hosted in the US-West (Oregon) region.
 
-### Steps to Create Simple Routing Policy in AWS Route 53 with an AWS Domain
+#### Steps to Create Simple Routing Policy in AWS Route 53 with an AWS Domain
 
 To create a simple routing policy in AWS Route 53, you will need a domain name. Domain names serve as user-friendly addresses for accessing websites or applications hosted on the internet. You have two options to obtain a domain name: you can either purchase it directly from AWS or from another domain registrar outside of AWS.
 
@@ -106,8 +106,8 @@ The Weighted Routing Policy in AWS Route 53 allows you to divide website traffic
 
 Imagine you have two regions, "AP South 1" and "AP East 1," and you want to distribute traffic between them. With the Weighted Routing Policy, you can configure the percentages for each region. For example:
 
-- 80% of website visitors go to servers in "AP South 1."
-- 20% of website visitors go to servers in "AP East 1."
+- 60% of website visitors go to servers in "AP South 1."
+- 40% of website visitors go to servers in "AP East 1."
 
 **Example:**
 
@@ -115,27 +115,30 @@ Let's say you have an online store, and during a special promotion, you expect a
 
 This way, you can control the distribution of traffic and ensure both regions are utilized effectively to provide a smooth experience for your website visitors.
 
-**Steps to Create Weighted Routing Policy in AWS Route 53:**
+#### Steps to Create Weighted Routing Policy in AWS Route 53 with an AWS Domain
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
+To create a weighted routing policy in AWS Route 53 with an AWS domain, we can follow the same steps as we did for the simple routing policy. However, there's an additional step: we'll need to create a new Application Load Balancer with an EC2 instance in the new region where we want to distribute traffic.
 
-2. Click on "Create Record Set" for the domain you want to configure.
+Once we have the new load balancer set up, we can proceed to add records in Route 53. When selecting the routing policy, choose "Weighted Routing Policy," and then specify the weight for each load balancer. This weight determines the proportion of traffic that will be directed to each region, allowing you to control the distribution based on your desired percentages.
 
-3. Select "Weighted" from the Routing Policy drop-down menu.
+Let's say we have two regions, Mumbai and Sydney, and we want to distribute incoming traffic with a weight of 60% to the Mumbai region and 40% to the Sydney region. Here's how we can do it:
 
-4. Enter the desired values for "Name" and "Type." For example, "www" and "A."
+1. Go to the AWS Management Console and navigate to the Route 53 dashboard.
+2. Click on "Hosted Zones" and select your domain name.
+3. Click on "Create Record" to add a new record set for your domain.
+4. Enter a unique name for the record (e.g., "www").
+5. For the routing policy, choose "Weighted Routing Policy."
+6. Click on "Alias" and select the Application Load Balancer for the Mumbai region.
+7. Choose the region where your Mumbai load balancer is created and select the load balancer from the list.
+8. Enter the weight as 60 to assign 60% of the traffic to the Mumbai region.
+9. Check the option to evaluate target health.
+10. Enter a unique record ID for this record.
+11. Click on "Add Another Record" to add another record for the Sydney region.
+12. Repeat steps 4 to 9, but this time select the Application Load Balancer for the Sydney region and give it a weight of 40%.
+13. Enter a unique record ID for this record as well.
+14. Click on "Create Records" to create the weighted routing policy for your domain.
 
-5. In the "Value" field, add the IP address or resource record of the server or resource in "AP South 1."
-
-6. Set the "Weight" to 80 to indicate that 80% of traffic should go to "AP South 1."
-
-7. Click on "Define Weighted Record" to add another record set for "AP East 1."
-
-8. In the "Value" field, add the IP address or resource record of the server or resource in "AP East 1."
-
-9. Set the "Weight" to 20 to indicate that 20% of traffic should go to "AP East 1."
-
-10. Review the settings and click "Create" to apply the Weighted Routing Policy.
+Now, when users enter your domain name (e.g., www.example.com) in their web browser, AWS Route 53 will distribute the incoming traffic based on the weights you specified. 60% of the traffic will be directed to the resources in the Mumbai region, and 40% will be sent to the resources in the Sydney region. 
 
 With the Weighted Routing Policy set up, Route 53 will automatically distribute incoming traffic between the specified regions based on the assigned weights. This allows you to balance traffic load and ensure high availability and performance across your resources.
 
