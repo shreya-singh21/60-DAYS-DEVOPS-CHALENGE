@@ -676,6 +676,99 @@ In Athena service we have to link s3 bucket.
 6. So under particular dates whatever files we have sytem will going to read it.
 
 
+## AWS - VPN CONFIGURATION (OPENVPN)
+
+Amazon Web Services (AWS) offers Virtual Private Network (VPN) solutions to securely connect your on-premises network or data center to your AWS VPC (Virtual Private Cloud) over the internet. A VPN establishes an encrypted tunnel between your local network and the AWS cloud, enabling secure communication and data transfer between the two environments.
+
+1. Check our Public IP<br/>
+   Go to browser and type whatismyipaddress. We will get our Ip address
+
+2. Create Open VPN EC2 Machine
+
+3. Go to EC2 machine
+
+4. Give name
+
+5. There are predefine AMI we have in AWS<br/>
+   click on Browse more AMI
+
+6. We have AWS marketplace AMI. This is the third party AMI
+
+7. Search OpenVPN
+
+8. Click on select
+
+9. Click on Continue
+
+10. Select the Instance type as t2.micro
+
+11. Use Default VPC & Subnet
+
+12. System is creating the Security group.
+
+13. Launch the instance
+
+14. Note down EC2 machine public IP
+
+15. Connect EC2 Machine with Putty
+
+16. Earlier we are using username as ec2-user for linux type of instances but this time we are using openVPN and openVPN is of Ubuntu type of operating system.
+
+17. So default username will be root.
+
+18. It will install openVPN using root user.
+
+19. Now it will ask you to login vpn
+
+20. Again connect putty with user openvpnas
+
+21. Now set openVPN password
+
+22. Command to set password - sudo passwd openvpn
+
+23. Enter our Password
+
+24. Now try to connect your private network<br/>
+    https://<publicip>:943/admin
+
+25. Enter username (openvpn) & password
+
+26. Click on sign in
+
+27. Click on Agree
+
+28. In openVPN we will enable one option
+
+29. Click on VPN Settings
+
+30. Go to Routing
+
+31. Select yes for Internet traffic
+
+32. Click on save setting
+
+33. Now Login with user access<br/>
+    https://<publicip>:943/
+
+34. Enter our username (openvpn) & password
+
+35. Download openvpn as per the operating system
+
+36. Click on more info & then Click on Run anyway
+
+37. Accept the terms & Install
+
+38. Open tool openvpn
+
+39. Click on Connect
+
+40. Enter username & password
+
+41. Check the IP Address from whatismyipaddress.com. You will find your system is connected with OpenVPN a private network.
+    Your system Ip address has changed to openvpn ip address.
+
+
+
 
 
 
