@@ -63,16 +63,32 @@ Imagine you have a website hosted on an EC2 instance in the US-West (Oregon) reg
 
 With the Simple Routing Policy, Route 53 looks at the resource record set associated with the domain (e.g., the "A" record), which contains the IP address "203.0.113.10" for your website. Route 53 then responds to the DNS query with this IP address. The user's web browser can now use this IP address to connect to your website hosted in the US-West (Oregon) region.
 
-**Steps to Create Simple Routing Policy in AWS Route 53:**
+### Steps to Create Simple Routing Policy in AWS Route 53 with an AWS Domain
 
-To use the Simple Routing Policy in Route 53, follow these steps:
+To create a simple routing policy in AWS Route 53, you will need a domain name. Domain names serve as user-friendly addresses for accessing websites or applications hosted on the internet. You have two options to obtain a domain name: you can either purchase it directly from AWS or from another domain registrar outside of AWS.
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
-2. Select the hosted zone for your domain.
-3. Create a new record set (e.g., "www.example.com").
-4. Choose the Simple routing policy option.
-5. Enter the relevant resource record values, such as the IP address for your website.
-6. Save the changes.
+If you choose to buy the domain from AWS, the steps for creating the simple routing policy will be different compared to when you use a domain from an external registrar. Let's first understand the process of setting up a simple routing policy with an AWS domain name, and later we will explore the steps for other domain registrars.
+
+**Steps for Setting Up Simple Routing Policy with an AWS Domain Name**
+
+1. Go to the AWS Management Console and navigate to the Route 53 dashboard.
+2. Click on "Registered Domains" to buy a domain name according to your budget and requirements. You can purchase a domain name directly from AWS or from other domain registrars.
+3. After creating the domain, set up your web server or application. For this example, let's create one or two EC2 instances to host your website or application.
+4. Next, create a target group in the EC2 service and attach the EC2 instances to this target group. If you have more than two EC2 instances, you can add them to the same target group as well.
+5. Now, create an Application Load Balancer in the EC2 service and attach the target group to this load balancer. The load balancer will distribute incoming traffic across the EC2 instances in the target group.
+6. Once the load balancer is successfully created, copy its DNS name (endpoint) provided by AWS.
+7. Paste the load balancer's DNS name into your web browser and check if it displays your website or application. This step ensures that the load balancer is working correctly and forwarding traffic to the EC2 instances.
+8. Go back to the Route 53 dashboard and click on "Hosted Zones."
+9. Click on the domain name that you created earlier.
+10. Click on "Create Record" to add a new record set for your domain.
+11. Enter "www" as the Record Name to create a subdomain for your website (e.g., www.example.com).
+12. For the routing policy, choose "Simple Routing Policy."
+13. Click on "Alias," and select your Application Load Balancer from the dropdown list.
+14. Choose the region where your load balancer is created (e.g., Mumbai region) and select the load balancer from the list.
+15. Finally, click on "Create Records" to create the simple routing policy for your domain.
+
+Now, when users enter your domain name (e.g., www.example.com) in their web browser, AWS Route 53 will route the traffic to your Application Load Balancer, which, in turn, will distribute the traffic across the EC2 instances in the target group. This ensures high availability and fault tolerance for your web application.
+
 
 **Important Considerations**
 
