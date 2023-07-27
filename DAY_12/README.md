@@ -390,6 +390,79 @@ Example - We have primary database. In main database we can read data as well as
 4. Select create a standby instance
 
 
+## KEY VALUE DATABASE - DYNAMO DB
+
+Amazon DynamoDB is a fast, fully-managed NoSQL database service that makes it simple and costeffective to store and retrieve any amount of data, and serve any level of request traffic.
+
+
+**Features of DynamoDB**
+
+DynamoDB Has Two Constraints<br/>
+Primary Key (Partition Key)<br/>
+Composite Primary Key (Sort Key)<br/>
+
+
+**PRIMARY KEY(PARTITION KEY)**
+
+In classes we give unique roll number to  every students no one will get same roll number<br/>
+rollno -> student name<br/>
+This unique roll no will be our Partition key where we can only enter the unique values. If we give duplicate values then system will show error message.<br/>
+In partition key we have unique features.
+
+There is also other feature of primary key is not null. If we give student name and not give the roll number then it will show error.
+
+When I apply partition key we cannot enter duplicate values and we cannot give null.Always need to enter unique values.
+
+
+**COMPOSITE KEY(SORT KEY)**
+
+Sort key is apply on multiple column. In this If we have two column like Branch code and Account Number and we have given 1234 as Branch code and 5678 as Account Number. In next entry we can give same 1234 as Branch code but need to give another Account number like 9012. In this we can enter duplicate value but only in one column. 
+
+
+**Let's create DynamoDb database**
+
+1. Go to DynamoDB 
+
+2. Click on Create table
+
+3. Enter the table Name
+
+4. Enter Partition Key
+
+5. Enter Sort Key
+
+6. Click on create table.
+
+7. Click on table name
+
+8. Click on Explore table items
+
+9. Now we have to create item. Click on Create item
+
+10. Enter the value
+
+11. By default in aws we have two column but we can get more numbers of column nad also can set attribute. Click on Add New Attributes for more columns
+
+12. Select type as string
+
+13. Enter the attribute name & value
+
+14. Click on Create Item
+
+**Note** - In this we can give duplicate values only in one column. We cannot give duplicate values in both column.<br/>
+           Also we can not leave column as blank. It will throw error message.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
