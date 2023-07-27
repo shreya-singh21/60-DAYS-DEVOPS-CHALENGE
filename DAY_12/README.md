@@ -247,6 +247,152 @@ Example - We have primary database. In main database we can read data as well as
 
 
 
+**Let's start creation of RDS**
+
+1. Go to RDS Service.
+
+2. Click on create database.
+
+3. Select standard create as database creation method
+
+4. Below down will get six type of RDS<br/>
+   • Amazon Aurora<br/>
+   • Oracle<br/>
+   • Microsoft SQL Server<br/>
+   • MySQL<br/>
+   • PostgreSQL<br/>
+   • MariaDB<br/>
+   
+5. Select MySQL
+
+6. In template will get<br/>
+   Production <br/>
+   Dev/Test<br/>
+   Free Tier<br/>
+
+7. Select free tier
+
+8. Enter the database name
+
+9. Enter Master password & confirm password
+
+10. Select type of instance - t2.micro
+
+11. Allocate storage for database
+
+12. Click on Enable storage autosacaling. It will automativally increased the size of database when there is need.
+
+13. Go to Connectivity
+
+14. Select default VPC & Select default subnet group
+
+15. Select Yes for Public Access
+
+16. Select Create new for Security group & enter the name for security group
+
+17. Select availability Zone
+
+18. Click on Create database
+
+19. When it get ready it will take automatc backup.
+
+20. Download MYSQL Workbench. It is a tool whwre we can execute our SQL queries
+
+21. We will connect database with Mysql workbench
+
+22. Open MYSQL Workbench
+
+23. Click on Database 
+
+24. Click on Manage connection
+
+25. Give connection name
+
+26. Give the hostname(endpoint)
+    To get the endpoint
+    Go to database
+    Click on database
+    Below down will get endpoint
+    paste the endpoint to the hostname
+
+27. Enter username - admin
+
+28. Click on store in vault
+
+29. Enter password
+
+30. Click on ok
+
+31. Again go to database
+
+32. Click on connect to database
+
+33. Click ok
+
+34. We can type command - show database<br/>
+    It will show all existing databases
+
+35. We can run any SQL queries
+
+
+**RDS - READ REPLICA**
+
+1. Select database. Click on Action.
+
+2. Click on create read replica
+
+3. Select type of instance
+
+4. We can allocate storage
+
+5. We can give destination region
+
+6. Select default security group
+
+7. We can enable delete protection so in real time can delete this data.
+
+8. Click on read replica
+
+**Note** - Read Replica is chargable.
+
+
+**RDS - MANUAL SNAPSHOT**
+
+1. Select database. Click on Action.
+
+2. Click on take snapshot
+
+**Note** - Manual snapshot is chargable.
+
+
+**RDS - RESTORE SNAPSHOT**
+
+1. If we have snapshot then select the particular snapshot.
+
+2. Click on Action and restore snapshot
+
+
+**RDS - RESTORE BACKUP**
+
+1. Select automatic backup.
+
+2. Go to Action and click on restore to point in time.
+
+
+**RDS - ENABLE MULTI AVAILABILITY ZONE**
+
+1. Select database
+
+2. Click on modify
+
+3. Go to Availability & Durability
+
+4. Select create a standby instance
+
+
+
+
+
 
 
 
