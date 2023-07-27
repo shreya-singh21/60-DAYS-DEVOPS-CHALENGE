@@ -315,7 +315,9 @@ By configuring the Geolocation routing policy with specific locations and a defa
 
 ## Multivalue Routing Policy
 
-The Multivalue Routing Policy in AWS Route 53 allows you to return multiple values, such as IP addresses for different web servers, in response to DNS queries. This helps distribute traffic across multiple healthy resources, improving the availability and performance of your application.
+Multivalue routing is a powerful feature in AWS Route 53 that allows returning multiple values, such as IP addresses for web servers, in response to DNS queries. This approach also helps in checking the health of each resource, ensuring that only values for healthy resources are returned. Although it is not a substitute for a load balancer, multivalue routing can significantly improve availability and load balancing by using DNS effectively.
+
+Route 53 can respond to DNS queries with up to eight healthy records and provides different answers to different DNS resolvers. If you don't associate a health check with a multivalue answer record, Route 53 considers the record to be healthy by default. When you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records. However, when all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records
 
 **How It Works:**
 
@@ -331,25 +333,48 @@ Let's say you have a high-traffic website that needs to be highly available. You
 
 - Users' web browsers will then choose one of the IP addresses to connect to, distributing the traffic among the web servers.
 
-**Steps to Implement Multivalue Routing Policy in AWS Route 53:**
+### Steps to Create Multivalue Routing Policy in AWS Route 53
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
+**Step 1: Create Health Checks for both regions:**
 
-2. Click on "Create Record Set" for the domain you want to configure.
+1. Click on "Create Health Check" in the AWS Route 53 dashboard.
+2. Enter a name for the health check, e.g., "Mumbai Health Check."
+3. Enter the IP Address of the machine in the Mumbai region (First Machine) that you want to monitor.
+4. Click on "Next."
+5. Configure additional settings as needed for the health check.
+6. Click on "Create Health Check" to save the settings.
+7. Repeat the above steps to create a health check for another region, e.g., "Sydney Health Check."
 
-3. Select "Multivalue" from the Routing Policy drop-down menu.
+**Step 2: Create Multivalue Records for mumbai region in Route 53:**
 
-4. Enter the desired values for "Name" and "Type." For example, "www" and "A."
+1. Click on "Hosted Zones" in the AWS Route 53 dashboard.
+2. Select your domain name from the list.
+3. Click on "Create Record" to add a new record set for your domain.
+4. Enter the record name as "www" or any subdomain you prefer.
+5. Enter the public IP address of the machine in the Mumbai region in the "Value" field.
+6. Set the TTL (Time-to-Live) as 1 minute (1M).
+7. For the routing policy, choose "Multivalue Answer."
+8. Select the health check you created earlier for the Mumbai region.
+9. Enter a unique Record ID for this record.
+10. Click on "Create Records" to create the multivalue answer record for the Mumbai region.
 
-5. In the "Value" field, add the IP addresses or resource records of the web servers hosting your application.
+**Step 3: Add Multivalue Answer Record for Sydney Region:**
 
-6. Click "Define Health Check" to configure health checks for each resource. This ensures that only healthy resources are returned in the DNS response.
+1. Click on "Create Record" to add another record set for your domain.
+2. Enter the record name as "www" or any subdomain you prefer.
+3. Enter the public IP address of the machine in the Sydney region in the "Value" field.
+4. Set the TTL (Time-to-Live) as 1 minute (1M).
+5. For the routing policy, choose "Multivalue Answer."
+6. Select the health check you created earlier for the Sydney region.
+7. Enter a unique Record ID for this record.
+8. Click on "Create Records" to create the multivalue answer record for the Sydney region.
 
-7. Configure the health checks with the appropriate settings, such as the protocol, port, and threshold for health checks.
+**Step 4: Verify the Multivalue Routing Policy:**
 
-8. Review the settings and click "Create" to apply the Multivalue Routing Policy.
+1. Now, you can check the domain name in multiple systems to observe how the multivalue routing policy returns different IP addresses based on health checks and DNS resolvers.
 
-By using the Multivalue Routing Policy, you can distribute traffic across multiple resources, making your application more resilient to failures and providing a better user experience. Additionally, Route 53 will only return IP addresses of healthy resources, ensuring that users are directed to functioning web servers.
+By following these steps, you have successfully configured a Multivalue Routing Policy in AWS Route 53, enhancing the availability and load balancing capabilities of your website across different regions.
+
 
 
 
