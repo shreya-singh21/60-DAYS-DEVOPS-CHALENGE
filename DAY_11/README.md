@@ -187,27 +187,50 @@ With the Failover Routing Policy, you set up two resources (for example, two dif
 
 **Example:**
 
-Let's say you have your website hosted in two AWS regions: "US East" and "US West." You designate "US East" as the primary resource and "US West" as the secondary resource. When both regions are up and running, all users are directed to the "US East" region. But if there's an issue in "US East" (e.g., a server outage or network problem), Route 53 detects the unavailability and instantly switches all the traffic to the "US West" region, ensuring continuous access to your website.
+Let's say you have your website hosted in two AWS regions: "Mumbai" and "Sydney." You designate "Mumbai" as the primary resource and "Sydney" as the secondary resource. When both regions are up and running, all users are directed to the "Mumbai" region. But if there's an issue in "Mumbai" (e.g., a server outage or network problem), Route 53 detects the unavailability and instantly switches all the traffic to the "Sydney" region, ensuring continuous access to your website.
 
-**Steps to Implement Failover Routing Policy in AWS Route 53:**
+### Steps to Create Failover Routing Policy in AWS Route 53 with an AWS Domain
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
+For the Failover routing policy, we need to have a minimum of two load balancers. Similar to the steps we followed for creating load balancers in the Simple, Weighted, and Latency policies, we will first create a load balancer with a few EC2 instances in the Mumbai region. Next, we'll create another load balancer with a single EC2 instance in the Sydney region. After creating the load balancers, we need to set up a health check, where we will attach the Mumbai region's load balancer.
 
-2. Click on "Create Record Set" for the domain you want to configure.
+#### Setting Up Health Check
 
-3. Select "Failover" from the Routing Policy drop-down menu.
+1. For the Failover policy, Health check is mandatory.
+2. Click on "Health check."
+3. Click on "Create health check."
+4. Enter the name for the health check.
+5. Select "Specify endpoint by domain name."
+6. Set the protocol as "HTTP."
+7. In the domain name field, enter the DNS name of the Mumbai load balancer.
+8. Set the port number to 80.
+9. For the path, enter "/index.html."
+10. Click on "Advanced configuration."
+11. Set the request interval as "Fast (10 Seconds)."
+12. Set the failure threshold as "1."
+13. Click on "Next."
+14. Click on "Create Health check."
 
-4. Enter the desired values for "Name" and "Type." For example, "www" and "A."
+#### Adding Failover Routing Policy
 
-5. In the "Value" field, add the IP address or resource record of the primary resource (e.g., the server in "US East").
+1. Click on "Hosted Zones."
+2. Click on "Create record."
+3. Enter the route name.
+4. Click on "Alias."
+5. Select the application load balancer.
+6. Choose the Mumbai region.
+7. Select the load balancer.
+8. Set the route policy to "Failover."
+9. Choose the Failover record type as "Primary."
+10. Select the health check that we created earlier.
+11. Enter the Record ID.
+12. Click on "Add another record."
+13. Similarly, create the record for the Sydney region.
+14. Choose the Failover record type as "Secondary."
+15. Enter the Record ID.
+16. Click on "Evaluate target health."
+17. Click on "Create record."
 
-6. Click on "Define Failover Record" to add another record set for the secondary resource (e.g., the server in "US West").
-
-7. In the "Value" field, add the IP address or resource record of the secondary resource (e.g., the server in "US West").
-
-8. Choose the appropriate failover configuration: "Primary" for the primary resource and "Secondary" for the secondary resource.
-
-9. Review the settings and click "Create" to apply the Failover Routing Policy.
+Now, the Failover routing policy is set up for your domain. To check if it's working correctly, stop both the Mumbai instances and wait for a few minutes. Then, check the domain to see if the Failover policy is routing traffic to the secondary region (Sydney).
 
 With the Failover Routing Policy, you can create a resilient and highly available architecture for your application. Route 53's health checks ensure that users are seamlessly redirected to the backup resource when the primary resource faces issues, providing a smooth and reliable user experience.
 
