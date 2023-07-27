@@ -74,7 +74,7 @@ If you choose to buy the domain from AWS, the steps for creating the simple rout
 1. Go to the AWS Management Console and navigate to the Route 53 dashboard.
 2. Click on "Registered Domains" to buy a domain name according to your budget and requirements. You can purchase a domain name directly from AWS or from other domain registrars.
 3. After creating the domain, set up your web server or application. For this example, let's create one or two EC2 instances to host your website or application.
-4. Next, create a target group in the EC2 service and attach the EC2 instances to this target group. If you have more than two EC2 instances, you can add them to the same target group as well.
+4. Next, create a target group and add EC2 instances.
 5. Now, create an Application Load Balancer in the EC2 service and attach the target group to this load balancer. The load balancer will distribute incoming traffic across the EC2 instances in the target group.
 6. Once the load balancer is successfully created, copy its DNS name (endpoint) provided by AWS.
 7. Paste the load balancer's DNS name into your web browser and check if it displays your website or application. This step ensures that the load balancer is working correctly and forwarding traffic to the EC2 instances.
