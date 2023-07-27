@@ -253,25 +253,64 @@ Suppose you have an e-commerce website, and you want to provide the best experie
 
 - Users from the US are directed to servers in the US data center, ensuring a localized shopping experience.
 
-**Steps to Implement Geolocation Routing Policy in AWS Route 53:**
+### Steps to Create Geolocation Routing Policy in AWS Route 53
 
-1. Sign in to the AWS Management Console and navigate to the Route 53 dashboard.
+For the Geolocation routing policy, similar to the steps we followed for creating load balancers in other policies, we need to have two load balancers—one in the Mumbai region and another in the Sydney region. Once the load balancers are set up, we will create records in Route 53 for the Geolocation policy. The Geolocation policy allows you to route traffic based on the geographic location of your users. You can specify locations by continent, country, or state (only in the US).
 
-2. Click on "Create Record Set" for the domain you want to configure.
+**Here are the steps to create the Geolocation routing policy in AWS Route 53:**
 
-3. Select "Geolocation" from the Routing Policy drop-down menu.
+Step 1: Click on "Create Record" in the AWS Route 53 dashboard.
 
-4. Enter the desired values for "Name" and "Type." For example, "www" and "A."
+Step 2: Enter a unique route name for the record. For example, you can use "www" to create a subdomain like "www.example.com."
 
-5. In the "Value" field, add the IP address or resource record of the server in the designated geographic location.
+Step 3: Click on "Alias" to associate the record with a resource. Select the application load balancer you previously created in the Mumbai region.
 
-6. Choose the appropriate geographic location from the "Location" drop-down menu. You can select a continent, country, or state (only available for the US).
+Step 4: Choose the appropriate load balancer from the list. In this case, you will select the load balancer in the Mumbai region.
 
-7. Click "Add Location" to add more record sets for different geographic locations if needed.
+Step 5: For the routing policy, choose "Geolocation." This will enable the Geolocation routing policy for this record.
 
-8. Review the settings and click "Create" to apply the Geolocation Routing Policy.
+Step 6: Click on "Evaluate target health" to enable health checking for the record. This ensures that traffic is only routed to healthy resources.
 
-With the Geolocation Routing Policy, you can tailor your application's responses based on the geographic location of your users. This ensures that users are directed to the nearest and most appropriate server, resulting in improved performance, reduced latency, and a better overall user experience.
+Step 7: Select the location as "India." Here, you specify the geographic location for which you want the traffic to be directed to the Mumbai region. You can also specify other locations such as continents, countries, or states (only applicable to the US) depending on your requirements.
+
+Step 8: Enter a unique Record ID for this record. This ID helps in identifying the record and managing it within the Route 53 hosted zone.
+
+Step 9: Click on "Add Another Record" to create another record for the Sydney region.
+
+Step 10: For this new record, select the location as "United States." This will route traffic from the US to the Sydney region.
+
+Step 11: Enter a unique Record ID for this record as well.
+
+Step 12: Click on "Create Records" to create the Geolocation routing policy for your domain.
+
+### Geolocation Policy (Default)
+
+The Geolocation Policy (Default) is used when there is no specific geographic match for a user's location. In other words, if a user's location doesn't match any of the defined locations in the Geolocation routing policy, the default location will be used.  
+
+For example, let's say you have two regions for your website: Mumbai and Sydney. You want to route traffic from users located in India to the Mumbai region, while all other users from around the world should be redirected to the Sydney region. In this scenario, you would configure the Geolocation routing policy with a specific location for India, and then set the Default location to redirect all other users to the Sydney region.
+
+**Here are the steps to create the Geolocation Policy (Default) for your domain:**
+
+Step 1: Enter the record Name. This can be the same as the previous record or a different subdomain, depending on your setup.
+
+Step 2: Enter the route name. This can be the same as the previous record or a different name for organizational purposes.
+
+Step 3: Click on "Alias" and select the application load balancer in the Sydney region.
+
+Step 4: Choose the load balancer from the list.
+
+Step 5: For the routing policy, choose "Geolocation" to enable the Geolocation routing policy for this record.
+
+Step 6: Click on "Evaluate target health" to enable health checking for the record.
+
+Step 7: Select the location as "Default." This location is used when a user's location doesn't match any specific location defined in the Geolocation routing policy. Traffic from such users will be directed to the resources in the Sydney region by default.
+
+Step 8: Enter a unique Record ID for this record.
+
+Step 9: Click on "Create record" to create the Geolocation Policy (Default) for your domain.
+
+By configuring the Geolocation routing policy with specific locations and a default location, you can direct traffic to the most appropriate resources based on the geographic location of your users, providing them with a better user experience and optimized content delivery.
+
 
 
 ## Multivalue Routing Policy
