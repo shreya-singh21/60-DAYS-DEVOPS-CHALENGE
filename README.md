@@ -32,7 +32,7 @@ Feel free to explore the Day 1 folder to dive deeper into the topic and access a
 
 ## Day 2: Linux Commands and File and Folder Transfer between Local Machine and EC2 using SCP
 
-## Introduction to Linux
+**Introduction to Linux**
 
 In Day 2, we will start by exploring the basics of Linux. Linux is an open-source operating system widely used in the DevOps world. Understanding Linux and its commands is essential for DevOps.
 
