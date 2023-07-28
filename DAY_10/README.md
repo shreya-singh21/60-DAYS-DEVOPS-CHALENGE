@@ -51,8 +51,9 @@ Below are the steps to practically perform a use case using the Reachability Ana
 37. Click on "Create and analyze path."
 38. Now, in the Reachability Analyzer, you will see the entire path of the connectivity test.
 39. Disconnect the connectivity by removing the Internet Gateway from the route table.
-40. Check the Reachability Analyzer again and go to "Action" and "View details." You will find the test will run again and show an error, helping you identify where the issue is occurring and enabling you to rectify it.
-    By following these steps, you can practically perform a use case of Reachability Analyzer to test and troubleshoot network connectivity between resources in your AWS Virtual Private Cloud (VPC).
+40. Check the Reachability Analyzer again and go to "Action" and "View details." You will find the test will run again and show an error, helping you identify where the issue is occurring and enabling you to rectify it.<br>
+
+By following these steps, you can practically perform a use case of Reachability Analyzer to test and troubleshoot network connectivity between resources in your AWS Virtual Private Cloud (VPC).
 
 
 ## VPC - PEERING
