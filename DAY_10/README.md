@@ -58,17 +58,25 @@ By following these steps, you can practically perform a use case of Reachability
 
 ## VPC - PEERING
 
-A VPC peering connection is a networking connection between two VPCs that enables routing of traffic between them using private IP addresses. VPC peering connection can be established between our own VPCs, or with a VPC in another AWS account in a single different region.
+A VPC peering connection is a networking connection between two VPCs that enables routing of traffic between them using private IP addresses. VPC peering connection can be established between our own VPCs, or with a VPC in another AWS account in a single or different region.
 
-**In simple words** : Connectivity between two or multiple VPCs called as VPC Peering.
+Think of VPC peering as a private connection between two virtual private clouds (VPCs) in AWS. It's like creating a direct, private pathway between two separate areas in a neighborhood. With VPC peering, these two VPCs can easily talk to each other using their own private addresses, just like neighbors talking across the pathway.
 
-In this we will create 2 VPCs: VPC1 and VPC2.<br/>
-In VPC1 we will create 2subnets : public subnet and private subnet.<br/>
-In VPC2 we will create 1 subnet : private subnet<br/>
-In VPC1 we will do peering between public subnet and private subnet<br/>
-Finally we will do peering between two VPCs and will mention subnet in which we want to do peering like private subnet of VPC1 and private subnet of VPC2.<br/>
-Also we enable SSH port on both machine beacuse it is mandatory if we want to do connection between 2 machines.
+For example, imagine you have two VPCs in different regions. One is in New York, and the other is in California. Instead of sending messages or data through the internet, which can be slow and less secure, you create a private pathway (VPC peering connection) between the two VPCs. Now, they can communicate quickly and securely, making it easy for resources in one VPC to work with resources in the other VPC as if they were part of the same network
 
+**In simple words:** VPC Peering allows us to connect two or more VPCs together so they can communicate securely.<br/>
+
+To demonstrate the practical setup of VPC Peering, we'll create two VPCs: VPC1 and VPC2.<br/>
+
+In VPC1, we'll create two subnets: a public subnet and a private subnet.<br/>
+
+In VPC2, we'll create one private subnet.<br/>
+
+Next, we'll create a peering connection between the public subnet and the private subnet in VPC1.<br/>
+
+Finally, we'll establish a peering connection between VPC1 and VPC2, specifying the private subnets of both VPCs for communication.<br/>
+
+Remember, it is important to enable the SSH port on both EC2 machines created within the private subnets of both VPCs. This step ensures they can securely establish a connection between each other.
 
 **BENEFITS**
 
@@ -109,7 +117,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 9. Give name of subnet - Public-subnet-1
 
-10. Give CIDR to public subnet - 10.0.1.0/16
+10. Give CIDR to public subnet - 10.0.1.0/24
 
 11. Click on subnet. Click on Edit.
 
@@ -119,7 +127,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 14. Give name of subnet - Private-subnet-1
 
-10. Give CIDR to private subnet - 10.0.2.0/16
+10. Give CIDR to private subnet - 10.0.2.0/24
 
 11. Create private subnet.
 
@@ -153,7 +161,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 26. Create Security Group
 
-27. Select type as SSH & source as custom and give 10.0.1.0/16 means we are giving access to complete subnet so that whatever the EC2 machine are there in public subnet all can access to private subnet.
+27. Select type as SSH & source as custom and give 10.0.1.0/24 means we are giving access to complete subnet so that whatever the EC2 machine are there in public subnet all can access to private subnet.
 
 28. Launch the Instance
 
@@ -171,7 +179,7 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 35. Give name of subnet - Private-subnet-2
 
-36. Give CIDR to public subnet - 28.200.1.0/16
+36. Give CIDR to public subnet - 28.200.1.0/24
 
 37. Create subnet.
 
@@ -183,10 +191,10 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 40. Create Security Group
 
-41. Select type as SSH & source as custom and give 10.0.2.0/16 means we are giving access to complete subnet so that whatever the EC2 machine are there in private subnet VPC1 all can access to private subnet VPC2.
+41. Select type as SSH & source as custom and give 10.0.2.0/24 means we are giving access to complete subnet so that whatever the EC2 machine are there in private subnet VPC1 all can access to private subnet VPC2.
 
 42. Also enable ping request to check connection between 2 VPCs<br/>
-    Enable ICMP IPV4 and give 10.0.2.0/16 IP.
+    Enable ICMP IPV4 and give 10.0.2.0/24 IP.
 
 43. We have done setup for our second VPC
 
@@ -291,7 +299,13 @@ Also we enable SSH port on both machine beacuse it is mandatory if we want to do
 
 ## VPC - ENDPOINT
 
-A VPC endpoint enables us to privately connect our VPC to support AWS services. Instances in our VPC do not require Public IP Addresses to communicate with resources in the service. They remove the need of Internet Gateway, Nat Gateway and VPN Connection to access AWS services.
+VPC endpoint is like a private tunnel that allows your resources (such as EC2 instances) within a Virtual Private Cloud (VPC) to directly and securely communicate with certain AWS services without needing a public IP address or going through the public internet.<br>
+
+Here's an example to help you understand:<br>
+
+Imagine you have a VPC on AWS, and you want your EC2 instances inside that VPC to access AWS services like Amazon S3 (cloud storage) or DynamoDB (NoSQL database) without exposing them to the public internet. With a VPC endpoint, you can set up a private connection between your VPC and the specific AWS service. This means your EC2 instances can securely access S3 or DynamoDB without needing public IP addresses, eliminating the need for an Internet Gateway, NAT Gateway, or VPN connection.<br>
+
+In summary, VPC endpoints make it easier and more secure for your resources in the VPC to access AWS services privately, without the overhead and complexities of public internet access.
 
 **ENDPOINTS - TYPES**
 
@@ -334,7 +348,7 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 
 6. Give name of subnet - Public-subnet-1
 
-7. Give CIDR to public subnet - 10.0.1.0/16
+7. Give CIDR to public subnet - 10.0.1.0/24
 
 8. Click on subnet. Click on Edit.
 
@@ -344,7 +358,7 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 
 11. Give name of subnet - Private-subnet-1
 
-12. Give CIDR to private subnet - 10.0.2.0/16
+12. Give CIDR to private subnet - 10.0.2.0/24
 
 13. Create private subnet.
 
@@ -367,7 +381,7 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 22. Select target as Internet Gateway and destination as 0.0.0.0/0
 
 23. In this we need two route tables. one we attach with public subnet and other we attach with private subnet.<br/>
-    Also we have two route tables. One is just we created and earlier we have seen that whenever we creates VPC, AWS will create route table for use so that routw table will use.
+    Also we have two route tables. One is just we created and earlier we have seen that whenever we creates VPC, AWS will create route table for use so that route table will use.
 
 24. Attach the default route table with private subnet. For public subnet we have already created route table and attached to    public subnet.
 
@@ -401,7 +415,7 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 
 34. Create Security Group
 
-35. Select type as SSH & Source as 10.0.1.0/16(public subnet instances can access private subnet instances)
+35. Select type as SSH & Source as 10.0.1.0/24(public subnet instances can access private subnet instances)
 
 36. Launch Instance.
 
@@ -438,14 +452,26 @@ Then we will connect s3 bucket with private subnet with the help of VPC Endpoint
 52. List of S3 Buckets - aws s3 ls
 
 **Note** - Right now what we have created s3 we can create it from local machine, public machine so what is the purpose of endpoint and create s3 .<br/>
-          If we delete endpoint then we cannot create S3 and like in NAT gateway we don't need internet connection here.
+If we delete endpoint then we cannot create S3 and like in NAT gateway we don't need internet connection here.
 
 **Endpoint is used whenever we want to connect aws service privately**    
 
 
 ## VPC - FLOW LOGS
 
-VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data can be published to Amazon CloudWatch Logs or Amazon S3.
+VPC Flow Logs is a helpful tool that allows you to track and monitor the network traffic flowing in and out of your Virtual Private Cloud (VPC). It captures information about the IP traffic going to and from the network interfaces within your VPC.
+
+Here's an example to make it clearer:<br>
+
+Imagine you have set up a VPC on AWS, and it contains various resources like EC2 instances, databases, and load balancers. With VPC Flow Logs enabled, AWS will start recording details about each network packet that enters or leaves your VPC. This includes information like source and destination IP addresses, ports, protocols, and the amount of data transferred.<br>
+
+Now, this data can be very valuable for troubleshooting network issues, analyzing security threats, and understanding the overall flow of traffic in your VPC. You have two options to store the captured flow log data:<br>
+
+Amazon CloudWatch Logs: You can choose to publish the flow log data to Amazon CloudWatch Logs. This allows you to easily view and analyze the logs directly from the AWS Management Console or use CloudWatch features to set up alerts and perform real-time monitoring.<br>
+
+Amazon S3: Alternatively, you can store the flow log data in Amazon S3, which is a highly scalable and durable object storage service. This option is useful if you want to retain the logs for an extended period or if you prefer to use custom analysis tools or third-party software to process the data.<br>
+
+In summary, VPC Flow Logs provide essential insights into the network traffic within your VPC, and you can choose to store this information in either Amazon CloudWatch Logs or Amazon S3 for further analysis and monitoring.<br>
 
 
 1. Create VPC
@@ -460,7 +486,7 @@ VPC Flow Logs is a feature that enables you to capture information about the IP 
 
 6. Give name of subnet - Public-subnet
 
-7. Give CIDR to public subnet - 10.0.1.0/16
+7. Give CIDR to public subnet - 10.0.1.0/24
 
 8. Click on subnet. Click on Edit.
 
@@ -516,7 +542,7 @@ VPC Flow Logs is a feature that enables you to capture information about the IP 
 
 3. create bucket
 
-4. Giv ethe name of bucket.
+4. Giv the name of bucket.
 
 5. Click on create bucket.
 
