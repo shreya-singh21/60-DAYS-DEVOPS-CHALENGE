@@ -41,11 +41,11 @@ Topics covered in the Introduction to Linux section include:
 - Where to run Linux commands
 - Examples of popular Linux operating systems
 
-## Importance of Learning Linux and Linux Commands for DevOps Practitioners
+**Importance of Learning Linux and Linux Commands for DevOps Practitioners**
 
 Next, we will discuss the significance of learning Linux and Linux commands for DevOps practitioners. As a DevOps professional, having a solid understanding of Linux will empower you to effectively work with various tools and technologies used in the DevOps ecosystem.
 
-## Types of Linux Commands
+**Types of Linux Commands**
 
 We will then explore different types of Linux commands. Linux commands are categorized based on their functionality and purpose. Understanding these command types will help you navigate and utilize Linux effectively.
 
