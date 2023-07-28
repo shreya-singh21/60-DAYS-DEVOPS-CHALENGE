@@ -10,7 +10,7 @@ For example, let's say you have a web server and a database server in your VPC. 
 
 In short, VPC Reachability Analyzer helps you troubleshoot and make sure that all the pieces of your project in the cloud can communicate with each other smoothly, saving you time and effort in resolving network issues.
 
-Below are the steps to practically perform a use case using the Reachability Analyzer to check the reachability between an EC2 instance and an Internet Gateway in your Virtual Private Cloud (VPC):
+**Below are the steps to practically perform a use case using the Reachability Analyzer to check the reachability between an EC2 instance and an Internet Gateway in your Virtual Private Cloud (VPC):**
 
 1. Create a new VPC (Virtual Private Cloud).<br>
 2. Give the VPC a name.<br>
@@ -53,7 +53,7 @@ Below are the steps to practically perform a use case using the Reachability Ana
 39. Disconnect the connectivity by removing the Internet Gateway from the route table.
 40. Check the Reachability Analyzer again and go to "Action" and "View details." You will find the test will run again and show an error, helping you identify where the issue is occurring and enabling you to rectify it.<br>
 
-**By following these steps, you can practically perform a use case of Reachability Analyzer to test and troubleshoot network connectivity between resources in your AWS Virtual Private Cloud (VPC).**
+By following these steps, you can practically perform a use case of Reachability Analyzer to test and troubleshoot network connectivity between resources in your AWS Virtual Private Cloud (VPC).
 
 
 ## VPC - PEERING
