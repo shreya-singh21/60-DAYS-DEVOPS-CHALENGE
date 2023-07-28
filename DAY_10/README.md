@@ -1,87 +1,58 @@
 ## REACHABILITY ANALYZER
 
-VPC Reachability Analyzer is a configuration analysis tool that enables us to perform connectivity testing between a source resource and a destination resource in our virtual private clouds (VPCs). At times, when customers are deploying large workloads in AWS, it is also quite difficult and time consuming to troubleshoot network connectivity issues mainly due to misconfigurations. This is where VPC Reachability Analyzer can help.
+VPC Reachability Analyzer is a tool provided by AWS that helps us test and check if there are any problems with the connections between different resources in our virtual private clouds (VPCs).
 
-1. Create VPC.
+Imagine you have set up multiple servers and services in your AWS account to run a big project. Sometimes, these resources may have trouble communicating with each other due to mistakes or errors in the way they are configured. It can be challenging and time-consuming to find out what's causing the issue.
 
-2. Give the VPC name.
+VPC Reachability Analyzer comes to the rescue in such situations. It allows you to run tests and see if there are any connectivity problems between different parts of your project. By using this tool, you can quickly identify and fix any misconfigurations that may be causing network connectivity issues, making it easier to ensure that all your resources can talk to each other correctly.
 
-3. Enter IPV4 CIDR
-   ex- 10.0.0.0/16
+For example, let's say you have a web server and a database server in your VPC. You want to make sure that the web server can connect to the database server. With VPC Reachability Analyzer, you can run a test to see if the web server can reach the database server and vice versa. If there's any problem or misconfiguration that is preventing them from talking to each other, the tool will help you identify and troubleshoot the issue.
 
-4. Create VPC.
+In short, VPC Reachability Analyzer helps you troubleshoot and make sure that all the pieces of your project in the cloud can communicate with each other smoothly, saving you time and effort in resolving network issues.
 
-5. Create Subnet.
+Below are the steps to practically perform a use case using the Reachability Analyzer to check the reachability between an EC2 instance and an Internet Gateway in your Virtual Private Cloud (VPC):
 
-6. Click on subnets
-
-7. Select your VPC 
-
-8. Enter subnet name, Select availability zone & Enter 10.0.1.0/16 CIDR Block.
-
-9. Click on Create subnet.
-
-10. Click on edit Subnet setting.
-
-11. click on enable auto assign public IPv4 address.
-
-12. Go to internet gateway.
-
-13. Give the name of internet gateway
-
-14. create internet gateway
-
-15. After creation of internet gateway will get popup saying that "Attach to a VPC". Click on that popup.
-
-16. Create route table.
-
-17. Click on route table
-
-18. Give the name of route table
-
-19. Select your VPC
-
-20. Click on create route table.
-
-21. Edit Subnet Association
-
-22. Edit routes
-
-23. Click on add routes
-
-24. Select Internet Gateway as target
-
-25. Give 0.0.0.0 as destination. 0.0.0.0 means open to all.
-
-26. Create Linux EC2 Machine in our VPC & Subnet
-
-27. Enable SSH Port 
-
-28. Go to VPC
-
-29. Click on Reachability Analyzer 
-
-30. Click on create and analyze path
-
-31. Enter the name
-
-32. Select sourec and destination means from which source and destination you want to check connectivity.
-
-33. Select the Source type (Instances)
-
-34. Select the source as EC2
-
-35. Select the Destination type (Internet Gateway)
-
-36. Select the destination as Internet gateway ID
-
-37. Click on create and analyze path
-
-38. Now in Reachability Analyzer you will see the whole path
-
-39. Now if you disconnect the connectivity means if you remove the internet gateway from route table 
-
-40. Check the Reachability Analyzer. Go to Action and view details you will find one more time it will run and it shows error. You can check where error is showing and you can rectify it.
+Create a new VPC (Virtual Private Cloud).
+Give the VPC a name.
+Enter an IPv4 CIDR block (e.g., 10.0.0.0/16) for the VPC.
+Create the VPC.
+Create a subnet within the VPC.
+Click on "Subnets" in the VPC dashboard.
+Select your VPC from the list.
+Enter a subnet name, select an availability zone, and enter a CIDR block for the subnet (e.g., 10.0.1.0/24).
+Click on "Create subnet."
+Click on "Edit Subnet setting."
+Click on "Enable auto-assign public IPv4 address."
+Go to the "Internet Gateways" section.
+Give the Internet Gateway a name.
+Create the Internet Gateway.
+After creating the Internet Gateway, a popup will appear saying "Attach to a VPC." Click on that popup and select your VPC to attach the Internet Gateway.
+Create a route table for the VPC.
+Click on "Route Tables."
+Give the route table a name.
+Select your VPC from the list.
+Click on "Create route table."
+Edit Subnet Association for the route table to include the subnet you created earlier.
+Edit routes for the route table.
+Click on "Add routes."
+Select the Internet Gateway as the target.
+Give the destination as "0.0.0.0" to allow traffic to all destinations (internet).
+Create a Linux EC2 instance in your VPC and subnet.
+Enable SSH port on the EC2 instance to allow remote access.
+Go to AWS Network Manager (earlier reachability analyser comes in vpc).
+Click on "Reachability Analyzer."
+Click on "Create and analyze path."
+Enter a name for the path analysis.
+Select the source and destination for the connectivity test (e.g., EC2 instance as the source and Internet Gateway as the destination).
+Select the source type as "Instances."
+Choose the EC2 instance as the source.
+Select the destination type as "Internet Gateway."
+Choose the Internet Gateway ID as the destination.
+Click on "Create and analyze path."
+Now, in the Reachability Analyzer, you will see the entire path of the connectivity test.
+Disconnect the connectivity by removing the Internet Gateway from the route table.
+Check the Reachability Analyzer again and go to "Action" and "View details." You will find the test will run again and show an error, helping you identify where the issue is occurring and enabling you to rectify it.
+By following these steps, you can practically perform a use case of Reachability Analyzer to test and troubleshoot network connectivity between resources in your AWS Virtual Private Cloud (VPC).
 
 
 ## VPC - PEERING
