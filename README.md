@@ -15,6 +15,7 @@ Here is an overview of the 60-day roadmap:
 7. [Day 7: Simple Storage Service (S3)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_7)
 8. [Day 8: Identity & Access Management (IAM) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_8)
 9. [Day 9: Virtual Private Cloud (VPC) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_9)
+10. [Day 10: VPC Reachability Analyzer, VPC Peering, VPC Endpoints, VPC Flow Logs, AWS VPN Configuration (OpenVPN)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_10)
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -169,6 +170,24 @@ In the Day 9 folder, you'll find the following topics related to AWS Virtual Pri
 8. **Network Access Control List (NACL)**: Discover how NACLs act as a stateless firewall at the subnet level, controlling inbound and outbound traffic based on rules.
 
 Mastering VPC is essential for building secure, scalable, and customizable networking environments in AWS. Dive into the Day 9 folder to expand your expertise in VPC and AWS networking.
+
+## Day 10: VPC Reachability Analyzer, VPC Peering, VPC Endpoints, VPC Flow Logs, AWS VPN Configuration (OpenVPN)
+Day 10 of our DevOps learning journey focuses on essential components to enhance the connectivity, security, and monitoring of our AWS Virtual Private Cloud (VPC) environments.<br>
+
+We start with the VPC Reachability Analyzer, a powerful tool enabling us to perform connectivity testing between VPC resources and troubleshoot network issues efficiently. We'll practically use it to check the reachability between an EC2 instance and an Internet Gateway in the VPC.<br>
+
+Next, we explore VPC Peering, which provides private connectivity between two VPCs without public IP addresses or Internet Gateways. We'll discuss its benefits and limitations, followed by a hands-on guide to create VPC Peering connections.<br>
+
+Moving on, we dive into VPC Endpoints, crucial for securely connecting our VPC to AWS services without public internet access. We'll learn about two types: Interface Endpoint and Gateway Endpoint, and explore how to create them.<br>
+
+Additionally, we'll cover VPC Flow Logs, which offer insights into IP traffic within our VPC. We'll understand how to capture and publish flow log data to Amazon CloudWatch Logs and Amazon S3 for monitoring and analysis.<br>
+
+Furthermore, we'll explore the integration of Amazon S3 with Athena, a serverless query service for analyzing data directly in S3 using SQL-like queries.<br>
+
+Finally, we'll tackle the AWS VPN Configuration (OpenVPN), setting up a secure virtual private network for remote access to VPC resources.<br>
+
+By mastering these components, you'll build robust and secure AWS VPC environments for your applications and services, making your DevOps journey even more successful. Feel free to explore the Day 10 folder to dive deeper into these topics and access additional resources.
+
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
