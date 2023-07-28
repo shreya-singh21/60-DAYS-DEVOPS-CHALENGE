@@ -12,11 +12,11 @@ In short, VPC Reachability Analyzer helps you troubleshoot and make sure that al
 
 Below are the steps to practically perform a use case using the Reachability Analyzer to check the reachability between an EC2 instance and an Internet Gateway in your Virtual Private Cloud (VPC):
 
-Create a new VPC (Virtual Private Cloud).
-Give the VPC a name.
-Enter an IPv4 CIDR block (e.g., 10.0.0.0/16) for the VPC.
-Create the VPC.
-Create a subnet within the VPC.
+Create a new VPC (Virtual Private Cloud).<br>
+Give the VPC a name.<br>
+Enter an IPv4 CIDR block (e.g., 10.0.0.0/16) for the VPC.<br>
+Create the VPC.<br>
+Create a subnet within the VPC.<br>
 Click on "Subnets" in the VPC dashboard.
 Select your VPC from the list.
 Enter a subnet name, select an availability zone, and enter a CIDR block for the subnet (e.g., 10.0.1.0/24).
