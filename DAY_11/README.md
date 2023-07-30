@@ -376,6 +376,74 @@ Let's say you have a high-traffic website that needs to be highly available. You
 By following these steps, you have successfully configured a Multivalue Routing Policy in AWS Route 53, enhancing the availability and load balancing capabilities of your website across different regions.
 
 
+## Setting up AWS EC2 with 3rd Party Domain using Simple Routing Policy
+
+### Introduction
+This guide provides step-by-step instructions to set up an AWS EC2 instance and configure it with a third-party domain using the Simple Routing Policy in AWS Route 53.
+
+### Prerequisites
+1. An AWS account with appropriate permissions to create EC2 instances and manage Route 53.
+2. A domain purchased from a domain registrar like GoDaddy or Hostinger.
+
+### Steps
+1. **Buy Domain**: Purchase the desired domain (e.g., example.com) from a domain registrar like GoDaddy or Hostinger.
+
+2. **Create EC2 Machine**: Set up an EC2 instance on AWS to host your website or application.
+
+3. **Add Bootstrap Script**: Use the provided bootstrap script to automate the configuration process on the EC2 instance.
+
+4. **Create Security Group**: Create a security group for the EC2 instance to control inbound and outbound traffic.
+
+5. **Enable SSH Port & HTTP**: Configure the security group to allow SSH access (port 22) and HTTP access (port 80) to the EC2 instance.
+
+6. **Copy the Public IP**: Take note of the public IP address of the EC2 instance, which will be used for routing traffic.
+
+7. **Go to Route 53**: Navigate to the AWS Route 53 service to manage DNS settings.
+
+8. **Go to Hosted Zone**: Access the Hosted Zone section in Route 53 to manage domain names and DNS records.
+
+9. **Click on Create Hosted Zone**: Create a new hosted zone for your domain (e.g., example.com).
+
+10. **Enter Domain Name**: Enter your domain name (e.g., example.com) and add an optional description.
+
+11. **Select Type as Public Hosted Zone**: Specify that this hosted zone is publicly accessible for internet traffic.
+
+12. **Click on Create Hosted Zone**: Create the hosted zone to proceed with DNS configuration.
+
+13. **Click on Create Record**: Within the hosted zone, create DNS records to route traffic.
+
+14. **Select Record Type as Route Traffic to an IPV4**: Choose the "A" record type to route traffic to an IPv4 address.
+
+15. **Enter Value as Public IP Address of Our EC2 Machine**: Enter the public IP address of your EC2 instance.
+
+16. **Select TTL (Time to Live) as 60**: Set the Time to Live (TTL) to 60 seconds to control DNS caching.
+
+17. **Click on Create Records**: Create the "A" record to link your domain (example.com) to the EC2 instance's public IP address.
+
+18. **Create One More Record**: Additionally, create another DNS record.
+
+19. **Enter Record Name**: Set a name for the record, e.g., "www".
+
+20. **Select Record Type as CNAME Routes Traffic to Another Domain**: Choose the "CNAME" record type to create a subdomain that points to another domain.
+
+21. **In the Value Enter as Domain Name**: Enter the domain name (e.g., "subdomain.example.com") that the subdomain should point to.
+
+22. **Click on Create Records**: Create the "CNAME" record to route traffic from the subdomain (e.g., "www.example.com") to the specified domain (e.g., "subdomain.example.com").
+
+23. **Note Down the Values for Type NS**: Take note of the NS (Name Server) values provided by Route 53.
+
+24. **Go to the Domain Provider Website**: Visit the website of the third-party domain provider (GoDaddy, Hostinger, etc.) where you purchased the domain (example.com).
+
+25. **Click on Change Nameservers**: Access the DNS settings for your domain.
+
+26. **Select Change Nameservers**: Choose to change the nameservers associated with the domain.
+
+27. **Enter the DNS Names**: Enter the NS (Name Server) values obtained from Route 53 to allow Route 53 to handle DNS requests for the domain.
+
+28. **Click on Save**: Save the changes to update the nameservers for the domain.
+
+29. **Now Check the Website**: After DNS propagation, the domain (example.com) will be successfully configured with AWS EC2 instances using a Simple Routing Policy. You can access the website using the domain name and verify its functionality.
+
 
 
 
