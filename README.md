@@ -16,6 +16,8 @@ Here is an overview of the 60-day roadmap:
 8. [Day 8: Identity & Access Management (IAM) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_8)
 9. [Day 9: Virtual Private Cloud (VPC) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_9)
 10. [Day 10: VPC Reachability Analyzer, VPC Peering, VPC Endpoints, VPC Flow Logs, AWS VPN Configuration (OpenVPN)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_10)
+11. [Day 11: Domain Name System (DNS)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_11)
+
 ## Day 1: Cloud Computing
 
 In the [Day 1 folder](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_1), you will find the learnings related to cloud computing. Cloud computing is a fundamental concept in DevOps, and it involves leveraging remote servers and services for storing, managing, and processing data.
@@ -187,6 +189,12 @@ Furthermore, we'll explore the integration of Amazon S3 with Athena, a serverles
 Finally, we'll tackle the AWS VPN Configuration (OpenVPN), setting up a secure virtual private network for remote access to VPC resources.<br>
 
 By mastering these components, you'll build robust and secure AWS VPC environments for your applications and services, making your DevOps journey even more successful. Feel free to explore the Day 10 folder to dive deeper into these topics and access additional resources.
+
+## Day 11: Domain Name System (DNS)
+
+Day 11 covered the Domain Name System (DNS) and the AWS DNS service called Route 53. DNS acts like a phonebook for the internet, translating human-friendly domain names into IP addresses. Route 53 offers different routing policies for directing traffic to resources, such as Simple Routing for single resources, Weighted Routing for traffic distribution, Latency-Based Routing for low-latency response, Failover Routing for high availability, Geolocation Routing for directing traffic based on user location, and Multivalue Routing for returning multiple IP addresses. The day also provided steps to set up AWS EC2 with a third-party domain using the Simple Routing Policy in Route 53. <br>
+
+Feel free to explore the Day 11 folder to dive deeper into these topics and access additional resources related DNS.
 
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
