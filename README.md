@@ -17,6 +17,7 @@ Here is an overview of the 60-day roadmap:
 9. [Day 9: Virtual Private Cloud (VPC) in AWS](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_9)
 10. [Day 10: VPC Reachability Analyzer, VPC Peering, VPC Endpoints, VPC Flow Logs, AWS VPN Configuration (OpenVPN)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_10)
 11. [Day 11: Domain Name System (DNS)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_11)
+12. [## Day 12: AWS Dadatabase](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_12)
 
 ## Day 1: Cloud Computing
 
@@ -195,7 +196,10 @@ By mastering these components, you'll build robust and secure AWS VPC environmen
 Day 11 covered the Domain Name System (DNS) and the AWS DNS service called Route 53. DNS acts like a phonebook for the internet, translating human-friendly domain names into IP addresses. Route 53 offers different routing policies for directing traffic to resources, such as Simple Routing for single resources, Weighted Routing for traffic distribution, Latency-Based Routing for low-latency response, Failover Routing for high availability, Geolocation Routing for directing traffic based on user location, and Multivalue Routing for returning multiple IP addresses. The day also provided steps to set up AWS EC2 with a third-party domain using the Simple Routing Policy in Route 53. <br>
 
 Feel free to explore the Day 11 folder to dive deeper into these topics and access additional resources related DNS.
+## Day 12: AWS Dadatabase
+In Day 12 of the #60DaysDevOpsChallenge, we dive into the world of databases! Discover the importance of databases in applications, why companies store data, and why databases are superior to Excel for certain use cases. Explore various AWS database types like Relational, Key-Value, In-Memory, Document, Wide Column, Graph, Time Series, and Ledger. Learn about the advantages of AWS databases and get hands-on with Amazon RDS and DynamoDB
 
+Feel free to explore the Day 12 folder to delve deeper into the world of databases, gain more insights about various database types, and access additional resources related to Amazon RDS and DynamoDB to enhance your data management skills!
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
