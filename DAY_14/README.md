@@ -1,4 +1,4 @@
-# CLOUDFORMATION
+# CLOUD FORMATION
 
 AWS CloudFormation is a service provided by Amazon Web Services (AWS) that allows you to create and manage AWS resources using templates. It enables you to define your infrastructure as code, allowing for automated provisioning, deployment, and management of your AWS resources in a consistent and repeatable manner.
 
