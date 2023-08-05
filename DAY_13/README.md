@@ -1,16 +1,16 @@
 # LAMBDA
 
-Lambda is a trigger-based service that executes a specific code whenever a particular action is performed in the system.<br>
+In Aws Lambda is a trigger-based service that executes a specific code whenever a particular action is performed in the system.<br>
 
-Lambda: Refers to "AWS Lambda," which is a serverless computing service provided by Amazon Web Services (AWS). It allows you to run code without provisioning or managing servers. You upload your code to Lambda, and it automatically handles the infrastructure and scaling for you.<br>
+**Lambda: Refers to** "AWS Lambda," which is a serverless computing service provided by Amazon Web Services (AWS). It allows you to run code without provisioning or managing servers. You upload your code to Lambda, and it automatically handles the infrastructure and scaling for you.<br>
 
-Trigger-based service: AWS Lambda is a trigger-based service, meaning it responds to events or triggers that occur within the AWS ecosystem or integrated services. These triggers can be events like changes to data in a database, updates to files in an S3 bucket, HTTP requests to an API Gateway, and more.<br>
+**Trigger-based service:** AWS Lambda is a trigger-based service, meaning it responds to events or triggers that occur within the AWS ecosystem or integrated services. These triggers can be events like changes to data in a database, updates to files in an S3 bucket, HTTP requests to an API Gateway, and more.<br>
 
-Executes a specific code: When Lambda is triggered, it executes a specific piece of code that you have written and uploaded to Lambda. This code can be written in various programming languages supported by Lambda, such as Python, Node.js, Java, etc.<br>
+**Executes a specific code:** When Lambda is triggered, it executes a specific piece of code that you have written and uploaded to Lambda. This code can be written in various programming languages supported by Lambda, such as Python, Node.js, Java, etc.<br>
 
-Particular action: The code in Lambda is executed in response to a specific event or action. For example, if you have a Lambda function that processes images, it could be triggered whenever a new image is uploaded to an S3 bucket.<br>
+**Particular action:** The code in Lambda is executed in response to a specific event or action. For example, if you have a Lambda function that processes images, it could be triggered whenever a new image is uploaded to an S3 bucket.<br>
 
-System: In this context, the "system" refers to the AWS environment or other integrated services where the events or triggers occur.<br>
+**System:** In this context, the "system" refers to the AWS environment or other integrated services where the events or triggers occur.<br>
 
 Whenever system is executed code only for that time you will be charged and the code whatever you have given that need to be executed within 900 seconds or 15min.<br>
 
@@ -169,7 +169,7 @@ To start monitoring your AWS resources with CloudWatch, follow these simple step
 
 3. **View Insights:** Once data is collected, you can easily view and analyze it through CloudWatch's intuitive interface.
 
-## Usage:
+#### Usage:
 
 CloudWatch is essential for ensuring the smooth and secure operation of your AWS resources. It empowers you to make informed decisions, proactively respond to potential issues, and optimize the performance of your applications and services.
 
@@ -177,7 +177,7 @@ In summary, CloudWatch is a valuable monitoring service in AWS that helps you ke
 
 
 
-**MONITORING SERVICE - TYPES**
+**Monitoring Services - Types**
 
 • Basic Monitoring<br/>
 • Detailed Monitoring
@@ -302,7 +302,7 @@ By keeping track of your AWS costs with Billing Alarms, you can ensure you stay 
 27. Check our email & Confirm Email
 
 
-# CALCULATOR
+# AWS-CALCULATOR
 
 AWS Pricing Calculator is a web-based planning tool that you can use to create estimates for your AWS use cases. AWS Pricing Calculator is provided at no charge.
 
