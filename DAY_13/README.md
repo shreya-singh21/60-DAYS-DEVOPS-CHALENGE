@@ -1,18 +1,26 @@
-## LAMBDA
+# LAMBDA
 
-Lambda is trigger service . Whenever system is going to perform particular action then code whatever we have given to lambda that needs to be executed. 
+Lambda is a trigger-based service that executes a specific code whenever a particular action is performed in the system.<br>
 
-Whenever system is executed code only for that time you will be charged and the code whatever you have given that need to be executed within 900 seconds or 15min.
+Lambda: Refers to "AWS Lambda," which is a serverless computing service provided by Amazon Web Services (AWS). It allows you to run code without provisioning or managing servers. You upload your code to Lambda, and it automatically handles the infrastructure and scaling for you.<br>
 
+Trigger-based service: AWS Lambda is a trigger-based service, meaning it responds to events or triggers that occur within the AWS ecosystem or integrated services. These triggers can be events like changes to data in a database, updates to files in an S3 bucket, HTTP requests to an API Gateway, and more.<br>
 
-AWS Lambda is a service which computes the code without any server. It is said to be server less compute. The code is executed based on the response of events in AWS services.
+Executes a specific code: When Lambda is triggered, it executes a specific piece of code that you have written and uploaded to Lambda. This code can be written in various programming languages supported by Lambda, such as Python, Node.js, Java, etc.<br>
 
-To get working with AWS Lambda, we just have to push the code in AWS Lambda service. All other tasks and resources such as infrastructure, operating system, maintenance of server, code monitoring, logs and security is taken care by AWS.
+Particular action: The code in Lambda is executed in response to a specific event or action. For example, if you have a Lambda function that processes images, it could be triggered whenever a new image is uploaded to an S3 bucket.<br>
 
-Lambda is also called as Serverless service because to work with this we don't need to create ec2 server.
+System: In this context, the "system" refers to the AWS environment or other integrated services where the events or triggers occur.<br>
 
+Whenever system is executed code only for that time you will be charged and the code whatever you have given that need to be executed within 900 seconds or 15min.<br>
 
-**LAMBDA - FUNCTIONS SUPPORT CODE**
+AWS Lambda is a service which computes the code without any server. It is said to be server less compute. The code is executed based on the response of events in AWS services.<br>
+
+To get working with AWS Lambda, we just have to push the code in AWS Lambda service. All other tasks and resources such as infrastructure, operating system, maintenance of server, code monitoring, logs and security is taken care by AWS.<br>
+
+In summary, AWS Lambda is a service that runs your code in response to events or triggers that occur in the AWS environment or integrated services. It allows you to create custom logic without managing the underlying infrastructure, providing a serverless and scalable solution for event-driven applications and workflows.<br>
+
+**AWS Lambda - Supported Programming Languages**
 
 It support seven programmimng language<br/>
 • Node.js<br/>
@@ -24,7 +32,7 @@ It support seven programmimng language<br/>
 • Powershell<br/>
 
 
-**LAMBDA - ADVANTAGES**
+**Advantages Of AWS Lambda**
 
 **Ease of Working with Code**: AWS Lambda gives you the infrastructure to upload your code. It takes care of maintaining the code and triggers the code whenever the required event happens. It allows you to choose the memory and the timeout required for the code. AWS Lambda can also execute parallel requests as per the event triggers.
 
@@ -37,7 +45,7 @@ It support seven programmimng language<br/>
 
 **Let's create lambda**
 
-In this whenevr we upload object in s3 bucket then system is executing trigger with the help of lambda and the details whatever we have written in object is going to store under our table called DynamoDb.
+We will create a Lambda function that triggers whenever an object is uploaded to an S3 bucket. The Lambda function will extract the information from the uploaded object and store it in our DynamoDB table. Follow the steps below to set up the Lambda function.
 
 1. To work with lambda prequisites is to create IAM role.
 
@@ -128,11 +136,45 @@ In this whenevr we upload object in s3 bucket then system is executing trigger w
 When we upload object in s3, lambda trigger will execute and we will find table in DynamoDb.
 
 
-## MONITORING SERVICE - CLOUDWATCH
+# Monitoring Service - CloudWatch
 
-Amazon Web Services (AWS) monitoring is a set of practices we can use to verify the security and performance of our AWS resources and data. These practices rely on various tools and services to collect, analyze, and present data insights.
+In Amazon Web Services (AWS), monitoring is like having a watchful guardian that keeps an eye on your AWS resources and data. It ensures their security and performance so you can have peace of mind while running your applications and services in the cloud. One of the important tools for monitoring in AWS is called "Amazon CloudWatch."
 
-With this monitoring service we can monitor our EC2 machine.
+#### What Does CloudWatch Do?
+Amazon CloudWatch collects and tracks data from various AWS resources in real-time. It keeps a close watch on your virtual machines (EC2 instances), databases, storage, and other services you use in AWS. CloudWatch takes important measurements and stores them securely for analysis.
+
+#### Key Benefits of CloudWatch:
+
+1. **Performance Insights:** Keep track of how your AWS resources are performing, identifying any areas that need improvement.
+
+2. **Alerts and Alarms:** Set up custom alerts and alarms based on specific thresholds. Get notified if any metric crosses the threshold, enabling quick responses to issues.
+
+3. **Dashboards and Visualizations:** CloudWatch creates customizable dashboards and visualizations, providing an easy-to-understand overview of your resource health.
+
+4. **Historical Analysis:** Store historical data to analyze trends and patterns over time.
+
+5. **Integration with Other Services:** CloudWatch seamlessly integrates with other AWS services, making it a crucial component of your monitoring and operational setup.
+
+#### Monitoring EC2 Instances:
+
+One of the most common use cases for CloudWatch is monitoring EC2 instances, which are virtual machines in the AWS cloud. With CloudWatch, you can keep track of key metrics like CPU utilization, network traffic, disk performance, and more for each running EC2 instance.
+
+#### Setting Up Monitoring:
+
+To start monitoring your AWS resources with CloudWatch, follow these simple steps:
+
+1. **Enable CloudWatch:** Enable CloudWatch for the AWS services and resources you want to monitor.
+
+2. **Data Collection:** CloudWatch automatically collects data from your resources, so no manual configuration is needed.
+
+3. **View Insights:** Once data is collected, you can easily view and analyze it through CloudWatch's intuitive interface.
+
+## Usage:
+
+CloudWatch is essential for ensuring the smooth and secure operation of your AWS resources. It empowers you to make informed decisions, proactively respond to potential issues, and optimize the performance of your applications and services.
+
+In summary, CloudWatch is a valuable monitoring service in AWS that helps you keep your resources in check, detect issues early, and ensure your applications and services run smoothly in the cloud.
+
 
 
 **MONITORING SERVICE - TYPES**
@@ -156,9 +198,9 @@ With this monitoring service we can monitor our EC2 machine.
 
 **To check detailed Monitoring**
 
-1. To enable detailed monitoring click on manage detailed monitoring.
+1. To enable detailed monitoring, click on manage detailed monitoring in ec2.
 
-2. Check enable & click on save
+2. Check enable & click on save<br>
 
 Now system is start displaying us details about the particular EC2 machine.
 
@@ -179,10 +221,32 @@ Now system is start displaying us details about the particular EC2 machine.
 10. We can select the metric name & See more details about the graph.
 
 
-## BILLING ALARM
+# Billing Alarm - Keep Track of Your AWS Costs
 
-We can monitor your estimated AWS charges by using Amazon CloudWatch. When we enable the monitoring of estimated charges for our AWS account, the estimated charges are calculated and sent several times daily to CloudWatch as metric data. Billing metric data is stored in the US East (N. Virginia) Region and represents worldwide charges.
+We can monitor our estimated AWS charges by using Amazon CloudWatch. When we enable the monitoring of estimated charges for our AWS account, the estimated charges are calculated and sent several times daily to CloudWatch as metric data.<br>
+The Billing Alarm acts as your financial watchdog for your AWS account. It helps you monitor and track the estimated spending on AWS services, much like a diligent assistant keeping an eye on your expenses.
 
+#### How Does it Work?
+
+When you enable the Billing Alarm, AWS will calculate your estimated charges multiple times a day and send this information to Amazon CloudWatch. CloudWatch acts as a secure vault, storing all the cost-related data.
+
+#### Why Use Billing Alarm?
+
+The Billing Alarm acts as a spending limit for your AWS account. You can set a specific budget that you don't want to exceed. If your estimated charges approach or surpass that limit, CloudWatch will raise an alarm. It serves as a warning signal, alerting you when your spending reaches a predefined threshold.
+
+#### Example:
+
+Imagine you're running a website on AWS, and you want to ensure you don't spend more than $50 per month. By setting up a Billing Alarm with CloudWatch to monitor your spending, you'll receive an immediate notification if your estimated charges reach or exceed $50. This way, you can take control of your costs and avoid overspending.
+
+#### Note:
+
+The billing metric data is securely stored in a special location (US East - N. Virginia Region), covering your AWS charges from around the world.
+
+Using Billing Alarms and CloudWatch empowers you to be financially savvy with your AWS spending and prevents any surprises when it comes to your bills!
+
+By keeping track of your AWS costs with Billing Alarms, you can ensure you stay within your budget and enjoy a seamless experience using AWS services. Happy cloud computing!
+
+**To anable the billing you can these steps**
 1. Go to My Account
 
 2. Click on my Account
@@ -238,7 +302,7 @@ We can monitor your estimated AWS charges by using Amazon CloudWatch. When we en
 27. Check our email & Confirm Email
 
 
-## CALCULATOR
+# CALCULATOR
 
 AWS Pricing Calculator is a web-based planning tool that you can use to create estimates for your AWS use cases. AWS Pricing Calculator is provided at no charge.
 
@@ -255,11 +319,31 @@ AWS Pricing Calculator is a web-based planning tool that you can use to create e
 6. save and view summary
 
 
-## CLOUD TRAIL
+# Cloud Trail: Track your AWS Activities
 
-AWS Cloud Trail is an AWS service that helps us enable governance, compliance, and operational and risk auditing of our AWS account. Actions taken by a user, role, or an AWS service are recorded as events in Cloud Trail. All the activities can be tracked by user using cloud trail. By default only root user can see the event history. If IAM user want to see the event history we need to attach the role (Cloud Trail) to the IAM User
+#### What is CloudTrail?
 
-It is going to track eaca and every activity in aws.
+AWS CloudTrail is like a security camera for your AWS account. It helps you keep an eye on all the actions performed by users, roles, or AWS services. Think of it as a detailed activity log that records everything happening in your AWS world.
+
+#### How Does it Work?
+
+Whenever someone does something in your AWS account, CloudTrail records it as an event. These events are like footprints that show who did what and when they did it. It's like having a trail of breadcrumbs to follow.
+
+#### Why Use CloudTrail?
+
+CloudTrail helps you ensure governance, compliance, and risk auditing. It's like having a watchful eye to maintain control and security in your AWS environment. You can see what changes were made, who made them, and stay on top of your account's security.
+
+#### Example:
+
+Let's say you have a team of developers working on your AWS projects. With CloudTrail, you can see who deployed a new server, who changed the security settings, and who accessed sensitive data. It's like having a security camera that captures all the important actions.
+
+#### Note:
+
+By default, only the root user can see the event history. But if you want your IAM users to see the event history, you can attach the CloudTrail role to their IAM accounts. It's like giving them permission to watch the security camera too.
+
+With CloudTrail, you have better control, security, and understanding of what's happening in your AWS world. It's like having a superpower to keep track of your AWS activities!
+
+It is going to track each and every activity in aws.
 
 1. Go to Cloud Trail
 
