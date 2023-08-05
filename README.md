@@ -18,6 +18,7 @@ Here is an overview of the 60-day roadmap:
 10. [Day 10: VPC Reachability Analyzer, VPC Peering, VPC Endpoints, VPC Flow Logs, AWS VPN Configuration (OpenVPN)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_10)
 11. [Day 11: Domain Name System (DNS)](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_11)
 12. [Day 12: AWS Dadatabase](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_12)
+13. [Day 13: AWS Lambda,CloudWatch logs, Billing, AWS Pricing Calculator, CloudTrail](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_13)
 
 ## Day 1: Cloud Computing
 
