@@ -200,6 +200,8 @@ Feel free to explore the Day 11 folder to dive deeper into these topics and acce
 In Day 12 of the #60DaysDevOpsChallenge, we dive into the world of databases! Discover the importance of databases in applications, why companies store data, and why databases are superior to Excel for certain use cases. Explore various AWS database types like Relational, Key-Value, In-Memory, Document, Wide Column, Graph, Time Series, and Ledger. Learn about the advantages of AWS databases and get hands-on with Amazon RDS and DynamoDB
 
 Feel free to explore the Day 12 folder to delve deeper into the world of databases, gain more insights about various database types, and access additional resources related to Amazon RDS and DynamoDB to enhance your data management skills!
+## Day 12: AWS Lambda,CloudWatch logs, Billing, AWS Pricing Calculator, CloudTrail
+Dive into the world of AWS Lambda and serverless computing in Day 13 of the #60DaysDevOpsChallenge. Discover how AWS Lambda automates tasks by executing code in response to triggers, optimizing resource usage. Explore trigger-based services, benefits of serverless computing, and AWS Lambda's seamless integration with other AWS services. Learn about supported programming languages, simplified code deployment, CloudWatch logs, billing based on usage, monitoring with CloudWatch, billing alarms, AWS Pricing Calculator, and the role of CloudTrail. Explore the Day 13 folder to unleash the power of AWS Lambda and enhance your applications' efficiency and scalability
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
