@@ -16,7 +16,6 @@ AWS CloudFormation is a service provided by Amazon Web Services (AWS) that allow
 
 **Stack updates**: As your application evolves, you can use CloudFormation to update your stacks with new resources or changes to existing resources. CloudFormation will intelligently apply only the necessary changes to bring your stack to the desired state.
 
-
 **Example use case**:
 
 Let's say you want to deploy a web application that consists of an Amazon EC2 instance, an Amazon RDS database, and an Elastic Load Balancer (ELB). Instead of manually creating these resources and configuring them, you can use CloudFormation to define a template that describes all the necessary resources, their properties, and relationships. You can include parameters to customize the deployment, such as instance type, database credentials, and more.
