@@ -32,6 +32,8 @@ Using AWS CloudFormation, you can easily manage complex infrastructure setups an
 • Cloud Formation<br/>
 
 
+**Let's start creation of Cloud Formation**
+
 1. Go to Cloud Formation
 
 2. Click on Create stack
@@ -41,7 +43,7 @@ Using AWS CloudFormation, you can easily manage complex infrastructure setups an
     • Use a sample template - In this we have given saveral option like LAMP Stack. We can select them and use them.<br/>
     • Create template in designer - In this we can create our own template.<br/>
 
-4. For our case click on use a sample template
+4. For our case select use a sample template.
 
 5. Select the sample code (Lamp Stack)<br/>
    LAMP - Linux Apache MySQL PHP
@@ -66,18 +68,21 @@ Using AWS CloudFormation, you can easily manage complex infrastructure setups an
 
 15. Check instance.
 
-16. There we will find the instance has been created.
+16. We will find the instance has been created.
 
-17. If we delete the Stack and we will see the EC2 Machine is automatically deleted.
+17. If we delete the Stack then we will see the EC2 Machine is automatically deleted.
 
 
 ## ELASTIC BEANSTALK
 
-AWS Elastic Beanstalk helps to quickly deploy and manage applications in the AWS Cloud without having to worry about the infrastructure that runs those applications.
+AWS Elastic Beanstalk helps to quickly deploy and manage applications in the AWS Cloud without having to worry about the infrastructure that runs those applications. It is mainly use by the developers.
 
 Developers write the code, they upload the code into Elastic Beanstalk. Infrastructure will be created automatically for testing the application.It abstracts the underlying infrastructure complexities, allowing developers to focus on writing code rather than managing servers.
 
-Elastic Beanstalk provides developers and systems administrators an easy, fast way to deploy and manage the applications without having to worry about AWS infrastructure.
+Elastic Beanstalk provides developers and systems administrator an easy, fast way to deploy and manage the applications without having to worry about AWS infrastructure.
+
+
+**Let's create the Elastic Beanstalk**
 
 1. Go to Elastic Beanstalk
 
@@ -104,7 +109,7 @@ Elastic Beanstalk provides developers and systems administrators an easy, fast w
 
 AWS Trusted Advisor is an online tool provided by Amazon Web Services (AWS) that helps customers optimize their AWS environment and improve operational performance, security, and cost efficiency. It provides real-time guidance and best practices based on AWS's extensive experience in managing cloud infrastructures.
 
-Trusted Advisor checks the following five categories
+**Trusted Advisor checks the following five categories**<br/>
 • Cost Optimization<br/>
 • Security<br/>
 • Fault Tolerance<br/>
@@ -142,6 +147,8 @@ Amazon Simple Email Service (SES) is a cloud-based email sending service provide
 
 **Bounce and Complaint Handling**: SES automatically handles bounce-backs (undeliverable emails) and complaints (emails marked as spam) and manages the suppression list, ensuring that you don't send emails to invalid addresses or recipients who have opted out.
 
+
+**Let's use the SES service**
 
 1. Go to SES Service
 
