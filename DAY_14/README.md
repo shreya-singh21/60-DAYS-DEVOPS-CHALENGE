@@ -38,7 +38,7 @@ Using AWS CloudFormation, you can easily manage complex infrastructure setups an
 
 2. Click on Create stack
 
-3. There we will find 3 options of preparing template
+3. There we will find 3 options of preparing template<br/>
     • Template is ready - In this we can select our existing template.<br/>
     • Use a sample template - In this we have given saveral option like LAMP Stack. We can select them and use them.<br/>
     • Create template in designer - In this we can create our own template.<br/>
@@ -147,8 +147,7 @@ Amazon Simple Email Service (SES) is a cloud-based email sending service provide
 
 **Bounce and Complaint Handling**: SES automatically handles bounce-backs (undeliverable emails) and complaints (emails marked as spam) and manages the suppression list, ensuring that you don't send emails to invalid addresses or recipients who have opted out.
 
-
-**Let's use the SES service**
+Let's create the SES service**
 
 1. Go to SES Service
 
