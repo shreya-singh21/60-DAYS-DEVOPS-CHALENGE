@@ -185,7 +185,7 @@ Amazon Simple Email Service (SES) is a cloud-based email sending service provide
 16. Click on Send test email
 
 
-**Note** - We can link this SES service with our website also. If we are using any html website then we can link SES with the help of SMTP (Simple Mail Transfer Settings). If we are using any wordpress websites so In Wordpress we have some plugins to send emails using SMTP.
+**Note** - We can link this SES service with our website also. If we are using any html website then we can link SES with the help of SMTP (Simple Mail Transfer Settings). If we are using any wordpress websites then In Wordpress we have some plugins to send emails using SMTP.
 
 
 
