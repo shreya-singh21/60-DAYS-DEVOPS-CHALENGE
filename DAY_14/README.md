@@ -110,6 +110,7 @@ Elastic Beanstalk provides developers and systems administrator an easy, fast wa
 AWS Trusted Advisor is an online tool provided by Amazon Web Services (AWS) that helps customers optimize their AWS environment and improve operational performance, security, and cost efficiency. It provides real-time guidance and best practices based on AWS's extensive experience in managing cloud infrastructures.
 
 **Trusted Advisor checks the following five categories**<br/>
+
 • Cost Optimization<br/>
 • Security<br/>
 • Fault Tolerance<br/>
