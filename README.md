@@ -20,6 +20,7 @@ Here is an overview of the 60-day roadmap:
 12. [Day 12: AWS Dadatabase](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_12)
 13. [Day 13: AWS Lambda,CloudWatch logs, Billing, AWS Pricing Calculator, CloudTrail](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_13)
 14. [Day 14: AWS CloudFormation,Elastic Beanstalk, Trusted Advisor, Amazon SES](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_14)
+15. [Day 15: AWS Backup, DataSync, Snow Family](https://github.com/shreya-singh21/60-DAYS-DEVOPS-CHALENGE/tree/master/DAY_15)
 
 ## Day 1: Cloud Computing
 
@@ -207,6 +208,9 @@ Dive into the world of AWS Lambda and serverless computing in Day 13 of the #60D
 
 ## Day 14: AWS CloudFormation,Elastic Beanstalk, Trusted Advisor, Amazon SES
 Welcome to Day 14 of the #60DaysDevOpsChallenge! Today, we're talking about making things simpler with AWS CloudFormation, Elastic Beanstalk, Trusted Advisor, and Amazon SES. Learn how to create resources effortlessly, deploy applications faster, get helpful tips, and send emails easily. Check out the Day 14 folder for hands-on examples and resources. 
+
+## Day 15: AWS Backup, DataSync, Snow Family
+Day 15 of the #60DaysDevOpsChallenge introduces the power of data management. Learn how to safeguard your data with AWS Backup, seamlessly transfer large amounts of data using DataSync, and explore the Snow Family for efficient data migration. Dive into the Day 15 folder for hands-on examples and resources, and master the art of data control in AWS.
 
 As you progress through the challenge, make sure to check the corresponding folders for each day to access the specific learnings and resources related to that topic.
 
