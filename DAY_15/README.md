@@ -354,3 +354,17 @@ Snowball Edge is sold as a 100-terabyte, rackmountable piece of hardware. A user
 
 **Digital Forensics**: In digital forensics investigations, Snowball can be employed to transfer evidence data securely to the cloud for analysis and evidence preservation.
 
+
+**Let's read snowmobile in brief**<br/>
+**SNOWMOBILE**
+
+AWS Snowmobile is a 45-foot rugged shipping container that’s typically hauled by a semi-trailer truck. It is used to transfer huge volumes of data (up to 100PB) to AWS. The AWS Snowmobile comes in handy when moving entire data centers, video libraries, image repositories, or other types of huge data that needs to be migrated to AWS. Before the introduction of AWS Snowmobile, clients would need years to migrate their data which was painfully slow and expensive.
+
+The snowmobile is usually transported to your data center and then it is configured by the AWS personnel to be a node on your network for file transfer via a high-speed network. Once the high-speed network has been configured, your data can be transferred to the snowmobile after which it is driven back to AWS for importation to the cloud.
+
+
+**SNOWMOBILE USE CASES**
+
+**Shutting down legacy data centers**: Before you shutdown your data center, you will want to make sure you have migrated all your data to the cloud. The AWS Snowmobile will help you move all your data efficiently and inexpensively.
+
+**Huge data migration**: Snowmobile can help businesses that collect huge amounts (Exabyte’s of data) from their premises to AWS in a low-cost and yet secure and efficient manner. Examples of applications include satellite images, genomic sequences, seismic data, video libraries, image repositories, financial data, etc.
