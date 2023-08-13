@@ -241,9 +241,20 @@ We can do this datasync on same region and on cross region.
 
 63. Select between aws storage service option
 
-64. Select create a new location
+64. Select create a new location. In this we have to give the source details.
 
-65. 
+65. Select the service as source . Select Amazon EFS filesystem.
+
+66. Select Region as Mumbai
+
+67. Now select filesystem as EFS1.
+
+68. Select subnet. 
+
+69. Select the security group which you have attached with our EC2 machine. We have attached the NFS port security group and SSH.
+
+70. 
+   
 
 
 
