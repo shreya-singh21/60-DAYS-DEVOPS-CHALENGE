@@ -368,3 +368,4 @@ The snowmobile is usually transported to your data center and then it is configu
 **Shutting down legacy data centers**: Before you shutdown your data center, you will want to make sure you have migrated all your data to the cloud. The AWS Snowmobile will help you move all your data efficiently and inexpensively.
 
 **Huge data migration**: Snowmobile can help businesses that collect huge amounts (Exabyte’s of data) from their premises to AWS in a low-cost and yet secure and efficient manner. Examples of applications include satellite images, genomic sequences, seismic data, video libraries, image repositories, financial data, etc.
+
