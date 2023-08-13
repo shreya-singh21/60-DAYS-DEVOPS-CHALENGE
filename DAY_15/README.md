@@ -97,8 +97,7 @@ AWS DataSync helps you move data between different places, like from your on-pre
 
 So, whether you're moving data to the cloud, between different cloud services, or even back to your own servers, AWS DataSync is like your trusty moving service that takes care of all the heavy lifting. It's like having a team of digital movers that ensure your data gets to where it needs to be, hassle-free! 
 
-**EFS to EFS**<br/>
-We can do this datasync on same region and on cross region.
+**Note** - We can perform datasync on same region and on cross region.
 
 
 **DATASYNC IN SAME REGION**
@@ -296,7 +295,8 @@ We can do this datasync on same region and on cross region.
    
 89. This is we have done with the help of datasync same region.
 
-90. 
+
+**Note**- For datasync in same region we have selected mumbai region and In mumbai region we created both EC2 instance, security group, efs but in case of datasync in cross region, we have to select different region and there we have to create EC2 machine, security group and efs after doing setup we have to go to datasync service and select different region.
 
 
     
