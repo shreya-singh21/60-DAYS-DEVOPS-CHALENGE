@@ -299,5 +299,42 @@ So, whether you're moving data to the cloud, between different cloud services, o
 **Note**- For datasync in same region we have selected mumbai region and In mumbai region we created both EC2 instance, security group, efs but in case of datasync in cross region, we have to select different region and there we have to create EC2 machine, security group and efs after doing setup we have to go to datasync service and select different region.
 
 
-    
+## AWS SNOWFAMILY  
+
+Snow family is a data migration service. They help in the transportation of data both into as well as out of AWS. AWS customers can use the Snow family members for migrating data to AWS securely and cheaply.It is a collection of physical devices and services designed to help organizations transfer large amounts of data securely and efficiently between on-premises environments and the cloud. These devices are particularly useful when traditional network-based data transfers are slow, impractical, or expensive.
+
+
+**AWS Snow Family members**<br/>
+AWS Snowcone<br/>
+AWS Snowball (Snowball Edge)<br/>
+AWS Snow Mobile
+
+
+**Let's read snowcone in brief**<br/>
+**SNOWCONE**
+
+AWS Snowcone is a secure, portable, and ruggedized edge computing device that integrates lightly with AWS compute and storage services. With a weight of 4.5lbs, Snowcone is the smallest AWS snow family member. Its ruggedized casing makes it suitable for harsh environments and is, therefore, suitable for extreme weather conditions, shop floors, and all kinds of factories. 
+
+It comes with two vCPUs, 8TB HDD, and 4GB RAM which enable it to run workloads at the edge. It also has a USB-C port, Wi-Fi, and two Gigabit Ethernet ports for data transfer. You can use it to gather, process, and migrate data via the AWS Data Sync feature (online transfer) or by shipping your device to AWS (Offline transfer).
+
+What makes Snowcone unique is that it can be powered by a standard 45W power bank. AWS Snowcone is therefore extremely portable and flexible. Snowcone supports the NFS file system and allows for data transfer from Linux, macOS, and Windows servers.
+
+
+**SNOWCONE USE CASES**
+
+**Edge Computing**: Snowcone's small compute capacity allows it to perform edge computing tasks, such as data preprocessing and analysis, at the location where the data is collected. This is valuable for scenarios where real-time insights are required without the latency of sending data to a central location.
+
+**Remote Sites**: Organizations with remote sites, such as construction sites, drilling locations, or research stations, can use Snowcone to transfer data securely to the cloud without relying on consistent network connectivity.
+
+**Field Operations**: Field operations often require data collection in areas with limited network access. Snowcone enables field teams to collect and transfer data without needing high-speed internet connections.
+
+**Disaster Recovery**: Snowcone can be used in disaster recovery scenarios to back up critical data from affected areas, ensuring data continuity even in challenging circumstances.
+
+**Healthcare**: In healthcare settings, Snowcone can be used to transfer medical data from remote clinics or mobile units to central data repositories while adhering to privacy and security requirements.
+
+
+
+**Let's read snowball in brief**<br/>
+**SNOWBALL**
+
 
