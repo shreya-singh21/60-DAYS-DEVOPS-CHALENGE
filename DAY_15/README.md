@@ -253,9 +253,50 @@ We can do this datasync on same region and on cross region.
 
 69. Select the security group which you have attached with our EC2 machine. We have attached the NFS port security group and SSH.
 
-70. 
-   
+70. Now we have give the destination details.
 
+71. Select Amazon EFS filesystem as destination location.
+
+72. Select Region as Mumbai
+
+73. Select second EFS as Filesystem
+
+74. Select subnet in which instance has been created .
+
+75. Select the security group as NFS port and SSH.
+
+76. Click on Next
+
+77. Enter the task Name
+
+78. Now in Verify data section we will get three options<br/>
+    check integrity data transfer<br/>
+    verify only the data transfer<br/>
+    verify all data in the destination
+
+79. Select verify all data in the destination option in Verify data 
+
+80. In data transfer setion select Transfer all data
+
+81. Now we can schedule the datasync on hourly basis, daily, monthly, yearly. Within that duration our data will migrate from source to destination. Minimum time we can set is 1min.
+
+82. Select Log Level as Don’t Send logs to Cloud Watch
+
+83. Click on next
+
+84. Click on Create Task
+
+85. Our task is created. Go to History section.
+
+86. We can see our task is running or not and can also manually start the task by clicking on start button and then click on start by default. Other it will run atomatically by the time we have set.
+
+87. Now check the first EFS in first instance by going to cd efs directory in putty. We will find file1, file2, file3.
+
+88. Now check the second EFS in second instance  by going to cd efs directory in putty. We will find file1, file2, file3, file4, file5. All files has been migrated to second instance efs directory.
+   
+89. This is we have done with the help of datasync same region.
+
+90. 
 
 
     
