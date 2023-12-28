@@ -7,6 +7,7 @@ Linux is an operating system kernel, the core part of an operating system. It's 
 **Analogy:** Think of Linux as the engine in a car, providing the essential functions for the system to run.
 ## Ubuntu:
 Ubuntu is a specific operating system that uses the Linux kernel. It's a complete package that includes not just the Linux kernel but also a desktop environment, applications, and other software.
+<br>
 **Analogy:** If Linux is the engine, Ubuntu is like the whole car – the engine, the interior, the windows, everything. It's a user-friendly version of Linux designed for ease of use.
 ### :computer: Where to Run Linux Commands?
 
