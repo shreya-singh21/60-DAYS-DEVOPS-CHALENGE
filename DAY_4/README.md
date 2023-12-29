@@ -188,7 +188,7 @@ Application Load Balancer routing traffic to targets based on the content of the
   yum update -y<br>
   yum install httpd -y<br>
   cd /var/www/html<br>
-  echo "AmazonWebservices" > index.html<br>
+  echo "EC2 Machine 1" > index.html<br>
   service httpd start<br>
   chkconfig httpd on<br>
 
@@ -219,7 +219,7 @@ Application Load Balancer routing traffic to targets based on the content of the
     yum update -y<br>
     yum install httpd -y<br>
     cd /var/www/html<br>
-    echo "AmazonWebservices" > index.html<br>
+    echo "EC2 Machine 2" > index.html<br>
     service httpd start<br>
     chkconfig httpd on<br>
 
